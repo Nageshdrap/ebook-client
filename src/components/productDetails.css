@@ -1,0 +1,29 @@
+button{
+    border: none;
+    color: black;
+    width: 49%;
+    transition: transform 0.1s;
+}
+.wish{
+    background-color: #4caf50;
+    color: white;
+}
+p{
+    margin: 0;
+}
+.button:active{
+    transform: scale(0.95);
+}
+
+
+@media screen and (min-width:310px) and (max-width:767px){
+    .mB{
+        margin-top: 45px;
+    }
+    .thumbnil-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+}

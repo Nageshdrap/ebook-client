@@ -1,0 +1,29 @@
+
+.edit-profile{
+    margin-top: 10px;
+}
+.profile-info{
+    margin: auto;
+    width: 60%;
+    height: max-content;
+    
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width:310px) and (max-width:767px){
+    .edit-profile{
+        margin-top: 70px;
+    }
+    .profile-info{
+        
+        width: 95%;
+      
+    }
+    
+}

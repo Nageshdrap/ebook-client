@@ -1,0 +1,28 @@
+.payment-options {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .option.selected {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+  }
+  
+  .option input {
+    cursor: pointer;
+  }
+  input[type="radio"]{
+    width: 20px;
+    height: 20px;
+}

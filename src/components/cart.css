@@ -1,0 +1,76 @@
+.overlay{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(33, 35, 38, 0.7);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    animation: sildein 0.8s ease-in-out;
+
+}
+.cart-item{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 480px;
+    height: 100vh;
+    z-index: 11;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    animation: sildein 0.8s ease-in-out;
+}
+.cart-footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.cart-place{
+    
+    background-color: #4caf50;
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+}
+.productn p{
+    width: 100%;
+    height: 3em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.bounce-img{
+    animation: bounce 1s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%,100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes sildein {
+    from{
+        opacity: 0;
+        transform: translatex(100%);
+        
+    }
+    to {
+        opacity: 1;
+        transform: translatex(0);
+    }
+    
+}
+@media screen and (min-width:310px) and (max-width:767px){
+    .cart-item{
+        width: 85%;
+    }
+}

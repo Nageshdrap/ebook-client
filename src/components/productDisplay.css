@@ -1,0 +1,69 @@
+
+/* .product button{
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    display: none;
+    width: 100%;
+    padding: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: bottom 0.6s ease-in-out;
+}
+.product:hover button{
+    display: block;
+    bottom: 130px;
+} */
+.product p{
+    width: 100%;
+    height: 3em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+.product1:hover{
+    cursor: pointer;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1),
+                10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.proimg{
+    position: relative;
+}
+.wishicon{
+    position: absolute;
+    top: -15px;
+    right: -40px;
+    
+}
+
+
+@media screen and (min-width:310px) and (max-width:767px){
+
+
+.product img{
+    width: 100%;
+    height: 200px;
+}
+.product{
+    margin-top: 10px;
+}
+.mP{
+    margin-top: 50px;
+}
+.wishicon{
+    position: absolute;
+    top: -15px;
+    right: -30px;
+    
+}
+
+
+
+}

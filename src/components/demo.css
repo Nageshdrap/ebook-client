@@ -1,0 +1,9 @@
+
+
+.text{
+    border: 2px solid green;
+}
+.text input{
+    border: none;
+    outline: none;
+}

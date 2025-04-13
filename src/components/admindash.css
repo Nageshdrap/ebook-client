@@ -1,0 +1,23 @@
+.sidemenu{
+   
+    width: 250px;
+    height: max-content;
+    position: absolute;
+    top: 90px;
+
+}
+.dash{
+    width: 400px;
+    height: 450px;
+    overflow-y: scroll;
+}
+.adminlist .btn{
+    white-space: nowrap;
+}
+
+@media screen and (min-width:310px) and (max-width:767px){
+.adminlist{
+    overflow-x: scroll;
+}
+
+}

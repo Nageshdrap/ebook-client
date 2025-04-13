@@ -1,0 +1,154 @@
+header .searchbox{
+    width: 100%;
+    height: 50px;
+    border: 2px solid green;
+
+}
+header{
+    z-index: 9;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: transform 0.3s ease-in-out;
+
+}
+.visible{
+    transform: translateY(0);
+}
+.hidden{
+    transform: translateY(-200%);
+}
+header nav .dropbox{
+    width: 30%;
+    position: relative;
+    
+    
+}
+header .searchbox input{
+    outline: none;
+    border: none;
+    width: 60%;
+    height: 100%;
+    
+}
+header .searchbox .searchicon{
+    background-color: #4caf50;
+    color: white;
+}
+
+header nav .dropbox::after{
+    content: '';
+    width: 2px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 9px;
+    right: 0px;
+
+}
+header nav .dropbox .arrow.active{
+    transform: rotate(270deg);
+    transition: 0.5s;
+}
+.user-info.active{
+    width: 250px;
+    height: 90vh;
+    
+    position: absolute;
+    top: 90px;
+    
+    display: block;
+    z-index: 11;
+}
+.user-info.inactive{
+    display: none;
+}
+.user-info.active ul li{
+    list-style: none;
+    padding: 10px;
+}
+.user-info.active ul a{
+    color: rgba(0, 0, 0, 0.874);
+}
+.user-info.active ul li:hover{
+    background-color: #4caf50;
+    color: white;
+}
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    background-color: white;
+  }
+  
+  .category-dropdown {
+    display: flex;
+    
+    align-items: center;
+    gap: 5px;
+    padding: 10px 15px;
+    background-color: #f4f4f4;
+    cursor: pointer;
+  }
+  
+  .category-dropdown .icon {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .search-input {
+    
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .search-input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .search-button {
+    
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+   margin-right: -20px;
+  }
+  
+  .search-button .search-icon {
+    font-size: 16px;
+    margin: 0;
+  }
+.qunti{
+    top: 0px;
+    right: -15px;
+    font-size: smaller;
+    
+}
+ 
+@media screen and (min-width:310px) and (max-width:767px){
+    
+    .user-info.active{
+        opacity: 1;
+        position: absolute;
+        top: 130px;
+        /* left: 130px; */
+        right: 10px;
+        height: fit-content;
+    } 
+    .user-info.inactive{
+        display: none;
+    }
+}
+
+
+
+

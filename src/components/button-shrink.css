@@ -1,0 +1,39 @@
+/* Base button style */
+.shrink-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: #2196f3;
+    color: white;
+    border: none;
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(1);
+  }
+  
+  /* Shrink effect when clicked */
+  .shrink-button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Alternative shrink animation with different properties */
+  .shrink-button.active {
+    transform: scale(0.9);
+    padding: 12px 27px;
+    font-size: 16px;
+    background: #1976d2;
+  }
+  
+  /* For a more dramatic shrink animation */
+  @keyframes shrink {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(0.85);
+    }
+  }
+  
+  .shrink-animation {
+    animation: shrink 0.2s ease forwards;
+  }
