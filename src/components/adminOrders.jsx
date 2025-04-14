@@ -14,7 +14,7 @@ const AdminOrders = () =>{
        try {
         const order_id = id;
         console.log(order_id,"nhm")
-         await axios.put(`http://127.0.0.1:4500/api/updateAdminOrder/${order_id}`, {status:newStatus});
+         await axios.put(`https://ebook-server-4izu.onrender.com/api/updateAdminOrder/${order_id}`, {status:newStatus});
         fetchOrders();
        } catch (error) {
          console.log("error at frontend")

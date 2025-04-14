@@ -14,7 +14,7 @@ const Orders = () =>{
     const token = localStorage.getItem("token");
 
     const fetchOrders = async () =>{
-        const res = await axios.get('http://127.0.0.1:4500/api/getorders',{
+        const res = await axios.get('https://ebook-server-4izu.onrender.com/api/getorders',{
             headers:{Authorization:`Bearer ${token}`},
         })
         setOrders(res.data);

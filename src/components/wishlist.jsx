@@ -15,7 +15,7 @@ export function WishList(){
     const [product , setProduct] = useState([]);
 
     const fetchWishProduct = async () =>{
-        const res = await axios.get('http://127.0.0.1:4500/api/wishlist',{
+        const res = await axios.get('https://ebook-server-4izu.onrender.com/api/wishlist',{
             headers:{Authorization:`Bearer ${token}`}
         });
         setProduct(res.data);

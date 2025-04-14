@@ -57,7 +57,7 @@ export function RegiserUser(){
            }),
            onSubmit:(users) => {
             console.log(users);
-           const login = axios.post(`http://127.0.0.1:4500/api/register`,users);
+           const login = axios.post(`https://ebook-server-4izu.onrender.com/api/register`,users);
             navigate('/login');
            }
            

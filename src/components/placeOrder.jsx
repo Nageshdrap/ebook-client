@@ -42,7 +42,7 @@ export function PlaceOrder(){
 
     const handleCoupon =async () =>{
         if(coupon){
-        const res = await axios.post('http://127.0.0.1:4500/api/coupon',{couponCode:coupon , totalCost:total});
+        const res = await axios.post('https://ebook-server-4izu.onrender.com/api/coupon',{couponCode:coupon , totalCost:total});
         // setCouponData(res.data);
         // toast.error(res.data.msg);
         if(res.data.success){
@@ -62,7 +62,7 @@ export function PlaceOrder(){
     const fetchCart = async () =>{
         try {
             
-            const { data } = await axios.get('http://127.0.0.1:4500/cart/cartitems',{
+            const { data } = await axios.get('https://ebook-server-4izu.onrender.com/cart/cartitems',{
                 headers:{Authorization : `Bearer ${localStorage.getItem("token")}`},
             });
             setCartItem(data.cart.items || []);
@@ -76,7 +76,7 @@ export function PlaceOrder(){
     const removeCart = async (id)=>{
         const productId = id;
 
-        const { data } = await axios.delete(`http://127.0.0.1:4500/cart/remove/${productId}`,{
+        const { data } = await axios.delete(`https://ebook-server-4izu.onrender.com/cart/remove/${productId}`,{
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
  
         });
@@ -102,7 +102,7 @@ export function PlaceOrder(){
                 productId === item.productId._id ? {...item , quantity: newQuantity} : item
             )
           );
-           const {data} =await axios.put(`http://127.0.0.1:4500/cart/update/${productId}` , {quantity:newQuantity , couponValue:coupons},{
+           const {data} =await axios.put(`https://ebook-server-4izu.onrender.com/cart/update/${productId}` , {quantity:newQuantity , couponValue:coupons},{
                 
                      headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
             });
@@ -150,7 +150,7 @@ export function PlaceOrder(){
         console.log("grand", cartData.grandAmount );
         try {
             if(method === "cod" ){
-                 await axios.post('http://127.0.0.1:4500/api/order' , cartData ,{
+                 await axios.post('https://ebook-server-4izu.onrender.com/api/order' , cartData ,{
                     headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
 
                  });
@@ -160,7 +160,7 @@ export function PlaceOrder(){
                 return;
             }else{
                 setLoading(true);
-                const { data } =  await axios.post('http://127.0.0.1:4500/api/order' , cartData ,{
+                const { data } =  await axios.post('https://ebook-server-4izu.onrender.com/api/order' , cartData ,{
                     headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
 
                  });
@@ -193,7 +193,7 @@ export function PlaceOrder(){
                         paymentId: response.razorpay_payment_id,
                         signature:response.razorpay_signature
                    };
-                   const verifyRes = await axios.post('http://127.0.0.1:4500/api/verify-payment', verifyData);
+                   const verifyRes = await axios.post('https://ebook-server-4izu.onrender.com/api/verify-payment', verifyData);
                    setLoading(true);
                    setTimeout(()=>{
                     setLoading(false);

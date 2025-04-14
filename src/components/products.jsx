@@ -23,14 +23,14 @@ const Products = ({product}) =>{
             const updatedLikedItems = likedItems.includes(productId);
 
             if(updatedLikedItems){
-               const res = await axios.delete(`http://127.0.0.1:4500/api/wishlist/${productId}`,{
+               const res = await axios.delete(`https://ebook-server-4izu.onrender.com/api/wishlist/${productId}`,{
                     headers:{Authorization: `Bearer ${token}`}
                 });
                 const updateLiked = likedItems.filter((id)=> id !== productId);
                 setLikedItems(updateLiked);
                 toast.success(res.data.msg);
             }else{
-                const res = await axios.post('http://127.0.0.1:4500/api/wishlist',{productId},{
+                const res = await axios.post('https://ebook-server-4izu.onrender.com/api/wishlist',{productId},{
                     headers:{Authorization: `Bearer ${token}`}
                 });
                 const updateLiked = [...likedItems,productId];
@@ -43,7 +43,7 @@ const Products = ({product}) =>{
         }
     }
     const fetchWishlist = async () =>{
-        const res = await axios.get('http://127.0.0.1:4500/api/wishlist',{
+        const res = await axios.get('https://ebook-server-4izu.onrender.com/api/wishlist',{
             headers:{Authorization:`Bearer ${token}`}
         });
         setWishlist(res.data);

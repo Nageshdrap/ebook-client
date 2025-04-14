@@ -27,7 +27,7 @@ export function ProductDetails(){
     const [isShrunk , setIsShrunk] = useState(false);
 
   async  function  loadProductDetails(id){
-       await axios.get(`http://127.0.0.1:4500/api/productdetails/${id}`)
+       await axios.get(`https://ebook-server-4izu.onrender.com/api/productdetails/${id}`)
         .then(Res =>{
            setProduct(Res.data);
    });
@@ -39,7 +39,7 @@ export function ProductDetails(){
         console.log(productId);
         const token = localStorage.getItem('token');
         if( token){
-           const res = await axios.post('http://127.0.0.1:4500/cart/add',{ productId , quantity:1 },{
+           const res = await axios.post('https://ebook-server-4izu.onrender.com/cart/add',{ productId , quantity:1 },{
                 headers : {Authorization : `Bearer ${localStorage.getItem("token")}`}
            });
            fetchCarts();

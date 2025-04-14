@@ -16,7 +16,7 @@ export function SearchPage(){
         const fetchSearch =async () =>{
            try {
             console.log(query);
-            const {data} =await axios.get(`http://127.0.0.1:4500/api/search?q=${query}`);
+            const {data} =await axios.get(`https://ebook-server-4izu.onrender.com/api/search?q=${query}`);
              setProduct(data);
            } catch (error) {
                 console.error("error in fetching");

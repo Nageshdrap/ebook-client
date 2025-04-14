@@ -25,7 +25,7 @@ const EditProfile = () =>{
         console.log(user);
     }
     const userSave = async () =>{
-        const res = await axios.put('http://127.0.0.1:4500/api/login/update',user , {
+        const res = await axios.put('https://ebook-server-4izu.onrender.com/api/login/update',user , {
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
         })
         setAlertMassege(res.data.msg);
@@ -35,7 +35,7 @@ const EditProfile = () =>{
 
     useEffect( ()=>{
         const fetchUser = async () =>{
-        const res = await axios.get(`http://127.0.0.1:4500/api/user`,{
+        const res = await axios.get(`https://ebook-server-4izu.onrender.com/api/user`,{
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
  
         });

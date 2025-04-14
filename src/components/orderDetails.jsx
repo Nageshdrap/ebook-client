@@ -21,7 +21,7 @@ const OrderDetails = () =>{
             console.log("token", token);
             const orderId = id;
             console.log(orderId);
-            const res = await axios.get(`http://127.0.0.1:4500/api/getorderDetails/${orderId}`,{
+            const res = await axios.get(`https://ebook-server-4izu.onrender.com/api/getorderDetails/${orderId}`,{
                 headers : {Authorization : `Bearer ${localStorage.getItem("token")}`}
             })
             setPro(res.data);

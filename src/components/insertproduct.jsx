@@ -62,7 +62,7 @@ export function InsertProduct(){
 
 
 
-     await axios.post('http://127.0.0.1:4500/api/insert-product', formData,{
+     await axios.post('https://ebook-server-4izu.onrender.com/api/insert-product', formData,{
             headers:{
                 'Content-Type':'multipart/form-data'
 
@@ -72,8 +72,8 @@ export function InsertProduct(){
 
     useEffect(()=>{
 
-        const fecthCategory = axios.get('http://127.0.0.1:4500/api/category').then(res => res.data);
-        const fecthSubCategory = axios.get('http://127.0.0.1:4500/api/subcategory').then(res => res.data);
+        const fecthCategory = axios.get('https://ebook-server-4izu.onrender.com/api/category').then(res => res.data);
+        const fecthSubCategory = axios.get('https://ebook-server-4izu.onrender.com/api/subcategory').then(res => res.data);
         
         Promise.all([fecthCategory , fecthSubCategory])
         .then(([categoryData , subCategoryData]) =>{

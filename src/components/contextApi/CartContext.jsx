@@ -12,7 +12,7 @@ export const CartProvider = ({children}) =>{
     const [cartItems , setCartItems] = useState([]);
 
     const fetchCarts =async () =>{
-        const { data } = await axios.get('http://127.0.0.1:4500/cart/cartitems',{
+        const { data } = await axios.get('https://ebook-server-4izu.onrender.com/cart/cartitems',{
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`},
         });
         setCartItems(data.cart.items || []);

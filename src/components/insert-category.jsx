@@ -14,7 +14,7 @@ export function InsertCategory(){
         const formData = new FormData();
         formData.append("name", value);
 
-        await axios.post('http://127.0.0.1:4500/api/category', formData,{
+        await axios.post('https://ebook-server-4izu.onrender.com/api/category', formData,{
             headers:{
                 'Content-Type':'application/json'
             }

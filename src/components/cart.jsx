@@ -34,7 +34,7 @@ export function Cart({cartOpen , setCartOpen}){
     const fetchCart = async () =>{
         try {
             
-            const { data } = await axios.get('http://127.0.0.1:4500/cart/cartitems',{
+            const { data } = await axios.get('https://ebook-server-4izu.onrender.com/cart/cartitems',{
                 headers:{Authorization : `Bearer ${localStorage.getItem("token")}`},
             });
             setCartItem(data.cart.items || []);
@@ -47,7 +47,7 @@ export function Cart({cartOpen , setCartOpen}){
     const removeCart = async (id)=>{
         const productId = id;
 
-        const { data } = await axios.delete(`http://127.0.0.1:4500/cart/remove/${productId}`,{
+        const { data } = await axios.delete(`https://ebook-server-4izu.onrender.com/cart/remove/${productId}`,{
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
  
         });
@@ -66,7 +66,7 @@ export function Cart({cartOpen , setCartOpen}){
                 productId === item.productId._id ? {...item , quantity: newQuantity} : item
             )
           );
-           const { data } =await axios.put(`http://127.0.0.1:4500/cart/update/${productId}` , {quantity:newQuantity},{
+           const { data } =await axios.put(`https://ebook-server-4izu.onrender.com/cart/update/${productId}` , {quantity:newQuantity},{
                 
                     headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
             });

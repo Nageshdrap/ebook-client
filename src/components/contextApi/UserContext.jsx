@@ -13,7 +13,7 @@ export const UserProvider = ({children}) =>{
     
 
     const fetchUser = async () =>{
-        const res =await axios.get(`http://127.0.0.1:4500/api/user`,{
+        const res =await axios.get(`https://ebook-server-4izu.onrender.com/api/user`,{
                 
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
     });

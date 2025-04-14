@@ -21,7 +21,7 @@ export function ProductDisplay(){
     let [arrayKeywords, setArrayKeywords] = useState([]);
 
         function LoadProducts(){
-            axios.get('http://127.0.0.1:4500/api/product')
+            axios.get('https://ebook-server-4izu.onrender.com/api/product')
             .then(Res =>{
                 setproduct(Res.data);
                

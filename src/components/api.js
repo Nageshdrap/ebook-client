@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 const API = axios.create({
-    baseURL:"http://localhost:4500/api",
+    baseURL:"https://ebook-server-4izu.onrender.com/api",
     
 });
 

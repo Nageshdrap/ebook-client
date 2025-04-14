@@ -15,7 +15,7 @@ export function InsertSubcategory(){
 
     function loadCategory(){
 
-            axios.get('http://127.0.0.1:4500/api/category')
+            axios.get('https://ebook-server-4izu.onrender.com/api/category')
             .then((res)=>{
                 setCategory(res.data);
                
@@ -39,7 +39,7 @@ export function InsertSubcategory(){
         e.preventDefault();
        
 
-        await axios.post('http://127.0.0.1:4500/api/subcategory', formData,{
+        await axios.post('https://ebook-server-4izu.onrender.com/api/subcategory', formData,{
             headers:{
                 'Content-Type':'application/json'
             }

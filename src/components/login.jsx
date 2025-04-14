@@ -31,7 +31,7 @@ export function Login({clientId}){
         
         const handleGoogleSuccess = async (credentialResponse) =>{
             try {
-                const res = await axios.post("http://127.0.0.1:4500/api/auth/google",{
+                const res = await axios.post("https://ebook-server-4izu.onrender.com/api/auth/google",{
                     credential:credentialResponse.credential,
                 })
                 if(res.data.success){
@@ -64,7 +64,7 @@ export function Login({clientId}){
         },
         onSubmit: async (user)=>{
         
-           const res = await axios.post('http://127.0.0.1:4500/api/login',user);
+           const res = await axios.post('https://ebook-server-4izu.onrender.com/api/login',user);
            
             if(res.data.success){
                 toast.success(res.data.message);
