@@ -120,7 +120,9 @@ export function Login({clientId}){
   onError={() => {
     console.log('Login Failed');
   }}
-
+  useOneTap={false}
+  flow="auth-code"
+  redirectUri="https://booklean.in"
 />
         </div>
             <ToastContainer position="bottom-center" autoClose={2000} transition={Bounce} theme="dark" hideProgressBar={true}/>
