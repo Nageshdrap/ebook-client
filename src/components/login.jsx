@@ -114,7 +114,7 @@ export function Login({clientId}){
             <div>
                  <hr />
             </div>
-            
+            <div style={{width:'100%'}}>
             <GoogleLogin
                 width="100%"
                 onSuccess={handleGoogleSuccess}
@@ -125,6 +125,7 @@ export function Login({clientId}){
   flow="auth-code"
   redirectUri="https://booklean.in"
 />
+</div>
         </div>
             <ToastContainer position="bottom-center" autoClose={2000} transition={Bounce} theme="dark" hideProgressBar={true}/>
         </div>
