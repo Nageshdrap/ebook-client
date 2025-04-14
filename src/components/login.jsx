@@ -116,6 +116,7 @@ export function Login({clientId}){
             </div>
             
             <GoogleLogin
+                width="100%"
                 onSuccess={handleGoogleSuccess}
   onError={() => {
     console.log('Login Failed');
