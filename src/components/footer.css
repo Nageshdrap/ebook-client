@@ -50,6 +50,9 @@ footer{
     justify-content: start;
     list-style: none;
   }
+  .accordian-button::after{
+    color: white;
+  }
 
 
   @media screen and (min-width:310px) and (max-width:767px){

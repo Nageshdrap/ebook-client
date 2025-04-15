@@ -73,4 +73,7 @@
     .cart-item{
         width: 85%;
     }
+    .emptytext{
+        font-size: medium;
+    }
 }

@@ -5,6 +5,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlineMail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Footer = () =>{
 
@@ -49,7 +50,7 @@ const Footer = () =>{
                             <h2 className=''>Links</h2>
                             <hr className='text-danger  mb-1' style={{border:'2px solid white'}}/>
                             <div className='footerlistitem'>
-                            <li>Home</li>
+                            <Link to="/" className='text-light' style={{textDecoration:'none'}}><li>Home</li></Link>
                             <li>Wishlist</li>
                             <li>Cart</li>
                             <li>Blog</li>

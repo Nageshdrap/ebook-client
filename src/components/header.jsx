@@ -139,7 +139,7 @@ export function Header(){
       <img src={"Bookturncrop.ico"} alt="Bootstrap" width="30" height="24" />
     </a>
     </div>
-    <h3 className='text-center' style={{alignItems:'center'}}>BookLean.</h3>
+    <h1 className='text-center fs-3' style={{alignItems:'center'}}>BookTurn.</h1>
     </div>
             <nav className="bg-light ">
             

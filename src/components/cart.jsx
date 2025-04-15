@@ -113,7 +113,7 @@ export function Cart({cartOpen , setCartOpen}){
                    {    cartItem &&
                         cartItem.length === 0 ? (
                             <div>
-                            <pre><h3 className="fw-semibold fs-4 text-center mt-3">C A R T   I S   E M P T Y</h3></pre>
+                            <pre><h3 className="fw-semibold emptytext text-center mt-3">C A R T   I S   E M P T Y</h3></pre>
                             <div className="text-center mt-5 bounce-img"><img src={"/images/cartempty.webp"} alt="empty" width="190"/></div>
                             </div>
                         ):(
