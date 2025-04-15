@@ -16,7 +16,7 @@ const Footer = () =>{
                     <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
                     <div>
-                        <h1>Bookturn</h1> 
+                        <h1 className=''>BookTurn</h1> 
                     </div>
                     <div className='d-flex justify-content-evenly m-auto mb-3 w-50 'style={{fontSize:'25px'}}>
                         <div className=''><FaFacebook /></div>
