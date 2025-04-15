@@ -113,7 +113,7 @@ const Footer = () =>{
             </div>
             <div className='footer-bottom mt-2 bg-dark text-white text-center p-2'>
                     <div className="brand fw-bold " style={{fontSize:'1.2rem', color:'#55e11a'}}>BookTurn</div>
-                    <div><span className='me-2'>Term & condition</span>/<span className='ms-2'>Policy</span></div>
+                    <Link to='/term'style={{textDecoration:'none'}}><div className='text-light'><span className='me-2'>Term & condition</span>/<span className='ms-2'>Policy</span></div></Link>
                     <div className='copyright' style={{fontSize:'smaller'}}>&copy;2025 All rights reserved</div>
                 </div>
         </footer>

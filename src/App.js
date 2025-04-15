@@ -28,6 +28,7 @@ import OrderDetails from './components/orderDetails';
 import Confirmpage from './components/confirmpage';
 import PageNotFound from './components/pagenot';
 import AdminOrders from './components/adminOrders';
+import Term from './components/term';
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
               <Route  path='/placeorder' element={< PlaceOrder/>}/>
               <Route path='/edit-profile' element={< EditProfile />} />
               <Route path='/orders' element={< Orders />} />
+              <Route path='/term' element={< Term />} />
               {/* <Route  path='/placeorder' element={< PaymentDetails />}/> */}
               <Route path='/orderDetails' element={< OrderDetails />} />
               <Route path='/searchpage' element={<SearchPage/>} />

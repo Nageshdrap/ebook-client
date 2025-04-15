@@ -4,3 +4,8 @@
 .emptywish{
     margin-top: 50px;
 }
+@media screen and (min-width:310px) and (max-width:767px){
+    .emptywish{
+        font-size: medium;
+    }
+}
