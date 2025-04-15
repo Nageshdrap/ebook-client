@@ -11,10 +11,11 @@ const Footer = () =>{
     return(
         <footer className='mt-3'>
             <div className="container-fluid  text-white pt-4">
-                <div className="row ">
-                    <div className="col-xs-12 col-sm-12 col-md-4 text-center">
+                <section id='Blog'>
+                    <div className="row">
+                    <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
                     <div>
-                        <h3>BookLean</h3> 
+                        <h1>Bookturn</h1> 
                     </div>
                     <div className='d-flex justify-content-evenly m-auto mb-3 w-50 'style={{fontSize:'25px'}}>
                         <div className=''><FaFacebook /></div>
@@ -28,24 +29,91 @@ const Footer = () =>{
                         <button className="search-button1">Login</button>
                     </div>
                     </div>
-                    <div className="col-xs-12 col-sm-12 col-md-4">
-                        <h3 className='text-center'>Contact Us</h3>
-                        <div className='d-flex flex-column align-items-center'>
-                            <div><span className='me-3' style={{fontSize:'25px'}}><FaLocationDot /></span>Gandhi nagar,s-11,Berhampur</div>
-                            <div><span className='me-3' style={{fontSize:'25px'}}><MdOutlineMail /></span>NAGESHACHARY2@gmail.com</div>
-                            <div className='text-start'><span className='me-3 ' style={{fontSize:'25px'}}><FaWhatsapp /></span>+91 9692331146</div>
+                        <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                         <form action="" className='footerform'>  
+                        <div className='mb-2'>
+                   <label for="inputPassword5" class="form-label fw-semibold">If any book required just tell us..</label>
+                        <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder='Book name...'/>
+                        </div> 
+                        <div className='mb-2'>
+                        <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder='Deparment/stream/year...'/>
+                        </div>
+                        <div className='mb-2 d-flex gap-2'>
+                        <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder='Mobile number/Whatsup number'/>
+                        <input type="submit" className='btn  btn-success w-100'/>
+
+                        </div>  
+                        </form> 
+                        </div>
+                        <div className="col-md-3 col-lg-3 footerlist text-center">
+                            <h2 className=''>Links</h2>
+                            <hr className='text-danger  mb-1' style={{border:'2px solid white'}}/>
+                            <div className='footerlistitem'>
+                            <li>Home</li>
+                            <li>Wishlist</li>
+                            <li>Cart</li>
+                            <li>Blog</li>
+                            <li>Contact Us</li>
+                            </div>
                         </div>
                     </div>
-                    <div className="col">
-                        
+                </section>
+                <div className="row">
+                    <div className="col-xs-4 col-sm-4 col-md-5 col-lg-5">
+                        <img src={"Bookturncrop.png"} alt="logo" className='footerlogo'/>
                     </div>
+                   <div className='col-xs-12 col-sm-12 col-md-7 col-lg-7 '>
+                   <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button fw-semibold bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            What is Bookturn?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>Bookturn </strong> is an online bookstore where you can discover, explore, and purchase books across a wide range of genres. Whether you're into fiction, non-fiction, academic reads, or the latest bestsellers, Bookturn offers a seamless shopping experience with curated selections, secure checkout, and fast delivery — all from the comfort of your home.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button fw-semibold collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        How Bookturn helps reader?
+                                    </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>Bookturn.</strong>  helps readers by making book discovery simple and enjoyable. We offer personalized recommendations, detailed book descriptions, and reader reviews to help you find your next great read. Whether you're a student, a casual reader, or a bookworm, Bookturn connects you with the right books — all while saving you time and effort with a smooth online shopping experience.
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button fw-semibold collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Why should I choose Bookturn over other bookstores?
+                                    </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>Bookturn</strong>  is built with readers in mind. We focus on quality, affordability, and convenience. With competitive prices, exclusive deals, and a user-friendly interface, we make it easier for you to find and enjoy the books you love. Plus, our responsive support and fast delivery mean you can shop with confidence every time.
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                   </div>
+                   <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+
+                   </div>
                 </div>
                
                
             </div>
             <div className='footer-bottom mt-2 bg-dark text-white text-center p-2'>
-                    <div className="brand fw-bold " style={{fontSize:'1.2rem', color:'#3498db'}}>BookLean</div>
-                    <div className='copyright ' style={{fontSize:'smaller'}}>&copy;2025 All rights reserved</div>
+                    <div className="brand fw-bold " style={{fontSize:'1.2rem', color:'#55e11a'}}>BookTurn</div>
+                    <div><span className='me-2'>Term & condition</span>/<span className='ms-2'>Policy</span></div>
+                    <div className='copyright' style={{fontSize:'smaller'}}>&copy;2025 All rights reserved</div>
                 </div>
         </footer>
     )

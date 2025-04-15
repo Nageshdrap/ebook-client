@@ -133,10 +133,16 @@ export function Header(){
     <>
         <Loader loading={loading}/>
         <header className={`container-fluid d-flex justify-content-between align-items-center text-dark py-3 bg-light shadow ${visible? "visible" : "hidden "}`}>
-        
+            <div className='d-flex gap-2'>
+                <div>
+        <a class="navbar-brand" href="/">
+      <img src={"Bookturncrop.ico"} alt="Bootstrap" width="30" height="24" />
+    </a>
+    </div>
     <h3 className='text-center' style={{alignItems:'center'}}>BookLean.</h3>
-
+    </div>
             <nav className="bg-light ">
+            
                 {/* <div className=" searchbox d-flex justify-content-between">
                     <div className='fs-6 d-flex align-items-center text-dark text-center px-1 ps-2 fw-semibold  dropbox text-light' style={{cursor:'pointer'}} onClick={()=> {setPage(true);setRotate(true);}}>categories<span className={`m-2 arrow ${arrowRotate} `}><IoIosArrowDown /></span></div>
                     <input type="text" placeholder='search Books name or class...' className='p-3' value={searchValue} onChange={(e)=> setSearchValue(e.target.value)}></input>
