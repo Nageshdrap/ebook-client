@@ -20,12 +20,16 @@
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     animation: sildein 0.8s ease-in-out;
 }
-.cart-footer{
+.cart-content{
+    flex: 1;
+    overflow: auto;
+}
+/* .cart-footer{
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-}
+} */
 .cart-place{
     
     background-color: #4caf50;
@@ -72,16 +76,10 @@
 @media screen and (min-width:310px) and (max-width:767px){
     .cart-item{
         width: 85%;
-        height: 100vh;
     }
     .emptytext{
         font-size: medium;
     }
-    .cart-footer{
-        position: sticky;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-    }
+   
     
 }
