@@ -31,7 +31,7 @@ const AdminOrders = () =>{
     const orderStatus = ["processing","shipped" , "Out for Delivery","Delivered","cancelled"];
 
     const fetchOrders =async () =>{
-        const res = await axios.get('http://127.0.0.1:4500/api/adminorders');
+        const res = await axios.get('https://ebook-server-4izu.onrender.com/api/adminorders');
         setOrders(res.data);
         console.log(res.data);
     }
