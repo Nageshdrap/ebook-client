@@ -14,7 +14,7 @@
     top: 0;
     right: 0;
     width: 480px;
-    height: 100%;
+    height: 100vh;
     z-index: 11;
     background-color: white;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
