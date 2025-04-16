@@ -47,7 +47,13 @@ const Footer = () =>{
                         </form> 
                         </div>
                         <div className="col-md-3 col-lg-3 footerlist text-center">
-                            <h2 className=''>Links</h2>
+                            <img src={"Bookturncrop.png"} alt="logo" className='footerlogo'/>
+                        </div>
+                    </div>
+                </section>
+                <div className="row">
+                    <div className="col-xs-4 col-sm-4 col-md-5 col-lg-5">
+                    <h2 className=''>Links</h2>
                             <hr className='text-danger  mb-1' style={{border:'2px solid white'}}/>
                             <div className='footerlistitem'>
                             <Link to="/" className='text-light' style={{textDecoration:'none'}}><li>Home</li></Link>
@@ -56,12 +62,6 @@ const Footer = () =>{
                             <li>Blog</li>
                             <li>Contact Us</li>
                             </div>
-                        </div>
-                    </div>
-                </section>
-                <div className="row">
-                    <div className="col-xs-4 col-sm-4 col-md-5 col-lg-5">
-                        <img src={"Bookturncrop.png"} alt="logo" className='footerlogo'/>
                     </div>
                    <div className='col-xs-12 col-sm-12 col-md-7 col-lg-7 '>
                    <div class="accordion" id="accordionExample">
