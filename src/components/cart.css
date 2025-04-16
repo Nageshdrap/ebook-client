@@ -21,7 +21,7 @@
     animation: sildein 0.8s ease-in-out;
 }
 .cart-footer{
-    position: relative;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -75,5 +75,11 @@
     }
     .emptytext{
         font-size: medium;
+    }
+    .cart-footer{
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
     }
 }
