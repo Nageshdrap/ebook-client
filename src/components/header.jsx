@@ -136,7 +136,7 @@ export function Header(){
             <div className='d-flex gap-2'>
                 <div>
         <a class="navbar-brand" href="/">
-      <img src={"Bookturncrop.ico"} alt="Bootstrap" width="30" height="24" />
+      <img src={"Bookturncrop.ico"} alt="brandlogo" width="30" height="28" />
     </a>
     </div>
     <h1 className='text-center fs-3' style={{alignItems:'center'}}>BookTurn.</h1>
