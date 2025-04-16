@@ -71,6 +71,7 @@
 }
 @media screen and (min-width:310px) and (max-width:767px){
     .cart-item{
+        position: relative;
         width: 85%;
     }
     .emptytext{
@@ -78,7 +79,7 @@
     }
     .cart-footer{
         position: absolute;
-        top: 100;
+        bottom: 0;
         left: 0;
         width: 100%;
     }
