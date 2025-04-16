@@ -66,9 +66,14 @@ const Term = () =>{
                     <div>
                         <h1>6.Contact Us</h1>
                         <p>If you have any questions about these Terms, please contact us at:</p>
-                        <p>📧 Email: [nageshachary2@gmail.com]</p>
-                        <p>📞 Phone: [9692331146]</p>
-                        <p>🏢 Address: [old berhampur]</p>
+                        <p>📧 Email: nageshachary2@gmail.com</p>
+                        <p>📞 Phone: +91 9692331146</p>
+                        <p>🏢 Address: old berhampur mentu chaka square </p>
+                        <div>
+                            <div><strong>State</strong>:odisha</div>
+                            <div><strong>District</strong>:Gnajam</div>
+                            <div><strong>Pincode</strong>:760009</div>
+                        </div>
                     </div>
                 </div>
             </section>
