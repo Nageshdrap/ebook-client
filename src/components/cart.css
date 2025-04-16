@@ -79,8 +79,8 @@
     .cart-footer{
         position: fixed;
         bottom: 0;
-        left: 0;
-        width: max-content;
+        right: 0;
+        width: fit-content;
     }
     
 }
