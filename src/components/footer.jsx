@@ -20,7 +20,7 @@ const Footer = () =>{
                     </div>
                     <div className='d-flex justify-content-evenly m-auto mb-3 w-50 'style={{fontSize:'25px'}}>
                         <div className=''><FaFacebook /></div>
-                        <div><FaInstagram /></div>
+                        <a href="https://www.instagram.com/bookturn_?utm_source=qr&igsh=MWxoYmE1ZTRrZ3RjNA=="><div><FaInstagram /></div></a>
                         <div><FaTwitter /></div>
                     </div>
                     <div className="search-container1 container">
