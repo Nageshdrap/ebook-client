@@ -72,6 +72,7 @@
 @media screen and (min-width:310px) and (max-width:767px){
     .cart-item{
         width: 85%;
+        height: 100vh;
     }
     .emptytext{
         font-size: medium;
