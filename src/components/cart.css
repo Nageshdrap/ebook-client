@@ -13,6 +13,8 @@
     position: absolute;
     top: 0;
     right: 0;
+    display: flex;
+    flex-direction: column;
     width: 480px;
     height: 100vh;
     z-index: 11;
@@ -30,6 +32,9 @@
     left: 0;
     width: 100%;
 } */
+ .cart-footer{
+    border-top: 1px solid #ccc;
+ }
 .cart-place{
     
     background-color: #4caf50;
