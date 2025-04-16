@@ -76,5 +76,11 @@
     .emptytext{
         font-size: medium;
     }
+    .cart-footer{
+        position: absolute;
+        top: 100;
+        left: 0;
+        width: 100%;
+    }
     
 }
