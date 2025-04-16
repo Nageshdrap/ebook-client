@@ -76,10 +76,5 @@
     .emptytext{
         font-size: medium;
     }
-    .cart-footer{
-        position: relative;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-    }
+    
 }
