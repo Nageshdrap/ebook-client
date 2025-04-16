@@ -77,10 +77,10 @@
         font-size: medium;
     }
     .cart-footer{
-        position: fixed;
+        position: absolute;
         bottom: 0;
         right: 0;
-        width: fit-content;
+        width: 100%;
     }
     
 }
