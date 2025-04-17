@@ -155,7 +155,7 @@ export function PlaceOrder(){
 
                  });
                 //  setStep(3);
-                navigate('/');
+                navigate('/confirmpage');
                  toast.success("Your order placed successfully");
                 return;
             }else{
@@ -204,7 +204,7 @@ export function PlaceOrder(){
                    setTimeout(()=>{
                     setLoading(false);
                     // setStep(3);
-                    navigate("/");
+                    navigate("/confirmpage");
                     toast.success("your order placed");
                    },2000)
                    

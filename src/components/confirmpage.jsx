@@ -1,16 +1,26 @@
 import { Link } from "react-router-dom";
 import { Alert } from "./Alert";
 import './confirmpage.css';
-
+import Lottie from "lottie-react";
+import loadingAnimation from "../animation/cheake.json";
 
 
 const Confirmpage = () =>{
     return(
         <>
-                       <div className="container-fluid" style={{width:'100vw', height:"100vh"}}> <img src={"/images/confirm.avif"} alt="empty" className="img-fluid" style={{width:'100%', height:'100%',objectFit:'contain'}}/></div>
-                       <div className="text-center conorder">
-                       <div className="bg-dark container-fluid py-3 text-light slide-up-div m-auto">Your order placed successfully <span className="ms-3"> <Link className="text-decoration-none" to="/">GOTO HOME</Link></span></div>
-                       </div>
+                      <div className="container">
+
+                        <div>
+                            <Lottie animationData={loadingAnimation} loop={true} autoPlay={true} />
+                        </div>
+                        <div className="text-center m-auto bg-success text-white">
+                            Your order placed successfully <button className="btn btn-outline-warning">Go to order</button>
+                        </div>
+                        <div>
+                            <button className="btn btn-primary">Continue purchase</button>
+                        </div>
+
+                      </div>
 
         </>
     )
