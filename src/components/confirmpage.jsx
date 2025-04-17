@@ -10,7 +10,7 @@ const Confirmpage = () =>{
         <>
                       <div className="container">
 
-                        <div>
+                        <div style={{width:'70px',height:'75px'}}>
                             <Lottie animationData={loadingAnimation} loop={true} autoPlay={true} />
                         </div>
                         <div className="text-center m-auto bg-success text-white">
