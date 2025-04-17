@@ -48,7 +48,7 @@ const Term = () =>{
                     <div>
                         <h1>4.Shipping & Delivery</h1>
                         <ul>
-                            <li>Orders are processed and shipped within the timeframe mentioned on the product page.</li>
+                            <li>Orders are processed and shipped within the timeframe mentioned on below:</li>
                             <li><strong>Minimum Delivery Timeline</strong>: 2-3 business days</li>
                             <li><strong>Maximum Delivery Timeline</strong>: 7-10 business days</li>
                             <li>Shipping delays due to external factors (e.g., courier issues, weather) are not our responsibility.</li>
