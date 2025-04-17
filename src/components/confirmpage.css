@@ -1,24 +1,9 @@
-
-
-.slide-up-div{
-    position: fixed;
-    bottom: 0;
-
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    animation: slideup 1s ease-out forwards;
-    transform: translateY(100%);
+.confirmtext{
+    width: 70%;
 }
 
-@keyframes slideup {
-
-    from{
-        transform: translateY(100%);
+@media screen and (min-width:310px) and (max-width:767px){
+    .confirmtext{
+        width: 100%;
     }
-    to{
-        transform: translateY(-10px);
-        opacity: 1;
-    }
-    
 }
