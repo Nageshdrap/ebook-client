@@ -38,8 +38,8 @@ export function Cart({cartOpen , setCartOpen}){
                 headers:{Authorization : `Bearer ${localStorage.getItem("token")}`},
             });
             console.log(data.cart.items);
-            // setCartItem(data.cart.items || []);
-            // fetchCarts();
+            setCartItem(data.cart.items || []);
+            fetchCarts();
         } catch (error) {
             console.error("fetch cart failed");
         }
