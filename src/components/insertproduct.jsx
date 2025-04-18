@@ -21,6 +21,8 @@ export function InsertProduct(){
 
     const [valueCategory , setValueCategory] = useState('');
     const [valueSubcategory , setValueSubcategory] = useState('');
+    const [mrp , setMrp] = useState(0);
+    const [discount , setDiscount] = useState(0);
 
     const handleFile = (e)=>{
         setImage(e.target.files);
@@ -54,6 +56,8 @@ export function InsertProduct(){
         });
         formData.append('author', auther);
         formData.append('description', desc);
+        formData.append('mrp',mrp);
+        formData.append('discount', discount);
         formData.append('price', price);
         formData.append('category', valueCategory);
         formData.append('subcategory', valueSubcategory);
@@ -101,6 +105,10 @@ export function InsertProduct(){
                     <input type="text" placeholder="" onChange={(e) => setAuthor(e.target.value)}/>
                     <label htmlFor="">Description</label>
                     <input type="text" placeholder="" onChange={(e) => setDesc(e.target.value)}/>
+                    <label htmlFor="">MRP</label>
+                    <input type="text" placeholder="" onChange={(e) => setMrp(e.target.value)}/>
+                    <label htmlFor="">Discount</label>
+                    <input type="text" placeholder="" onChange={(e) => setDiscount(e.target.value)}/>
                     <label htmlFor="">price</label>
                     
                     <input type="text" placeholder="" onChange={(e)=> setPrice(e.target.value)}/>
