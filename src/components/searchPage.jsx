@@ -31,7 +31,10 @@ export function SearchPage(){
         <>
             <div className="mB">
                 <p className="text-muted">Result search for "{ query }"</p>
-                <Products product={product}/>
+                {
+                    !product ? (<><div className="">product not found</div></>):(<Products product={product}/>)
+                }
+                
             </div>
         </>
     )
