@@ -37,7 +37,7 @@ export function Cart({cartOpen , setCartOpen}){
             const { data } = await axios.get('https://ebook-server-4izu.onrender.com/cart/cartitems',{
                 headers:{Authorization : `Bearer ${localStorage.getItem("token")}`},
             });
-            console.log(data);
+            console.log(data.cart.items);
             // setCartItem(data.cart.items || []);
             // fetchCarts();
         } catch (error) {
