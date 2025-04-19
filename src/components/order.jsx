@@ -42,7 +42,7 @@ const Orders = () =>{
                     <Link to={`/orderDetails?order_id=${order._id}`}  style={{textDecoration:'none',color:'black'}}>
                     <div className='d-flex align-items-center shadow'>
                     <div className='py-2 ps-3  mt-2'  >
-                    <div className=' fw-semibold text-muted' style={{fontSize:'smaller'}}>Order Id :OD_{order._id}</div>
+                    <div className=' fw-semibold text-muted' style={{fontSize:'smaller'}}>Order Id:OD_{order._id}</div>
                     <div> Order Date :{
                         new Date(order.createdAt).toLocaleDateString('en-us',{
                             year:'numeric',

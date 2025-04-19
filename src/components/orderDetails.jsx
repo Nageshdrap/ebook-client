@@ -65,6 +65,7 @@ const OrderDetails = () =>{
                 </div>
                 {
                     pro.items?.map((item,index)=>(
+                        <>
                         <div className="d-flex gap-2" key={index}>
                            <div>
                             <div>
@@ -89,6 +90,8 @@ const OrderDetails = () =>{
                             }
                            </div>
                         </div>
+                        <hr />
+                        </>
                     ))
                 }
             </div>
