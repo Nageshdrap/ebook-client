@@ -64,7 +64,7 @@ export function ProductDetails(){
                 loadProductDetails(productid);
             }
            
-               
+            window.scrollTo({top:0,behavior:'smooth'});  
     },[productid ])
     
         

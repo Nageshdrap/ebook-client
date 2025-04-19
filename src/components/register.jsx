@@ -1,6 +1,6 @@
 import { TextField,fullWidth,Box,Button} from "@mui/material";
 import './logpage.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoEyeOutline } from "react-icons/io5";
 import { IoEyeOffOutline } from "react-icons/io5";
 import { InputAdornment } from '@mui/material';
@@ -64,7 +64,9 @@ export function RegiserUser(){
           
         });
        
-
+        useEffect(()=>{
+            window.scrollTo({top:0,behavior:'smooth'});
+        },[])
        
 
         return(

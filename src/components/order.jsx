@@ -25,7 +25,7 @@ const Orders = () =>{
         if(token){
             fetchOrders();
         }
-
+        window.scrollTo({top:0,behavior:'smooth'});
     },[])
 
 

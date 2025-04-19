@@ -3,6 +3,7 @@ import { Alert } from "./Alert";
 import './confirmpage.css';
 import Lottie from "lottie-react";
 import loadingAnimation from "../animation/cheake.json";
+import { useEffect } from "react";
 
 
 const Confirmpage = () =>{
@@ -12,6 +13,10 @@ const Confirmpage = () =>{
     const handleHome = () =>{
         navigate('/');
     }
+
+    useEffect(()=>{
+        window.scrollTo({top:0,behavior:'smooth'});
+    },[])
 
     return(
         <>

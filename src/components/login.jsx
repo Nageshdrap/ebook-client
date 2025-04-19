@@ -4,7 +4,7 @@ import { Link, Navigate } from "react-router-dom";
 import { Formik, useFormik } from "formik";
 import axios from "axios";
 import './logpage.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoEyeOutline } from "react-icons/io5";
 import { IoEyeOffOutline } from "react-icons/io5";
 import { InputAdornment } from '@mui/material';
@@ -83,6 +83,9 @@ export function Login({clientId}){
         }
     })
 
+    useEffect(()=>{
+        window.scrollTo({top:0,behavior:'smooth'});
+    },[])
 
     return(
         <>

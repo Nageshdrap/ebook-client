@@ -30,7 +30,7 @@ export function ProductDisplay(){
 
             useEffect(()=>{
                 LoadProducts();
-                
+                window.scrollTo({top:0,behavior:'smooth'});
             },[])
             
  

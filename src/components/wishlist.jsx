@@ -28,6 +28,7 @@ export function WishList(){
         }else{
             navigate('/login');
         }
+        window.scrollTo({top:0,behavior:'smooth'});
     },[]);
 
 
