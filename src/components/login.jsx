@@ -92,6 +92,14 @@ export function Login({clientId}){
         
         <div className="container d-flex justify-content-center  align-items-center  " style={{width:'100vw',height:'100vh'}}>
         <div className="d-flex flex-column justify-content-center  p-4 shadow bg-body-tertiary logpage" >
+            <div className="d-flex gap-3 align-items-center m-auto mb-4">
+                <div>
+                <img src={"Bookturncrop.ico"} alt="logo" width="35" height="30" />
+                </div>
+                <div>
+                    <h1 className="fs-3 fw-semibold">𝙱𝚘𝚘𝚔𝚝𝚞𝚛𝚗</h1>
+                </div>
+            </div>
             <form method="post" onSubmit={formik.handleSubmit} >
        
             
