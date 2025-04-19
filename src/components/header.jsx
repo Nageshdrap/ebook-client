@@ -163,14 +163,29 @@ export function Header(){
                     </div>
                 </div>
             </nav>
-            <div className='d-flex justify-content-between align-items-center'>
+            <div className='d-flex justify-content-between align-items-center user-menu'>
                 { (!userData) ?
                 (<AccountCircleSharpIcon  className='mx-2 fs-2' onClick={()=> setUserIcon(!userIcon)} style={{cursor:'pointer'}}/>):(<div className='bg-warning shadow text-center text-white me-2 d-flex justify-content-center align-items-center edit' onClick={()=> setUserIcon(!userIcon)} style={{width:'30px',height:'34px',borderRadius:'5px',cursor:'pointer'}}> <div className=''>{userData.substring(0,1).toUpperCase()}</div></div>)}
                 <Link to="/wishlist" className='text-decoration-none text-dark'><IoIosHeartEmpty className='mx-2 text-decoration-none fs-2' /></Link>
                 <div className='position-relative' style={{cursor:'pointer'}} onClick={() => setCartOpen(true)}><IoCartOutline className='mx-2 fs-2 fw-semibold' />{ cartItems && <span className='position-absolute   translate-middle qunti px-2  bg-danger border border-light rounded-circle text-white'>{cartItems.length}</span>}</div>
-                
-            </div>
-        </header>
+                <div className={ ` user-info bg-light p-4 text-center ${ userIcon? 'active' : 'inactive'  } `} ref={menuref}>
+{                       (!userInfo)?  <div className='d-flex justify-content-between align-items-start'><p className='fw-semibold'>New customer?</p><Link to="/register">sign in</Link></div>:<p  className='fw-semibold'> welcome to BookLean</p>}
+                            <ul className='w-100 list-group'>
+                            { (userInfo)? <li className='d-flex justify-content-start align-items-center' onClick={handleEdit}><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>:<li className='d-flex justify-content-start align-items-center'><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>}
+                                <li className='d-flex justify-content-start align-items-center' onClick={handleWishlist}><FaRegHeart className='fs-5 '/><div className=' ms-3 fw-semibold'>Wishlist</div></li>
+                                <li className='d-flex justify-content-start align-items-center' onClick={handleOrders}><IoBagCheckOutline className='fs-3 '/><div className='fw-semibold ms-3'>Orders</div></li>
+                                <li className='d-flex justify-content-start align-items-center'><IoSettingsOutline className='fs-3 '/><div className='fw-semibold ms-3'>Setting</div></li>
+                                <hr></hr>
+                            </ul>
+                            {   (!userInfo)?
+                            <Button variant="outlined" size="medium" className='w-100' onClick={()=>{
+                                        handleLogin()
+                                        }}>Login</Button>:<Button variant="outlined" size="medium" className='w-100' onClick={handleLogout}>Logout</Button>
+
+                                    }
+                        </div>
+                            </div>
+                        </header>
         {
             page && (<CategoryList page={page} setPage={setPage} rotate={rotate} setRotate={setRotate}/>)
         }
@@ -178,7 +193,7 @@ export function Header(){
             cartOpen && (< Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/>)
         }
         
-        <div className={ ` user-info bg-light p-4 text-center ${ userIcon? 'active' : 'inactive'  } `} ref={menuref}>
+        {/* <div className={ ` user-info bg-light p-4 text-center ${ userIcon? 'active' : 'inactive'  } `} ref={menuref}>
 {         (!userInfo)?  <div className='d-flex justify-content-between align-items-start'><p className='fw-semibold'>New customer?</p><Link to="/register">sign in</Link></div>:<p  className='fw-semibold'> welcome to BookLean</p>}
             <ul className='w-100 list-group'>
              { (userInfo)? <li className='d-flex justify-content-start align-items-center' onClick={handleEdit}><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>:<li className='d-flex justify-content-start align-items-center'><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>}
@@ -193,7 +208,7 @@ export function Header(){
                         }}>Login</Button>:<Button variant="outlined" size="medium" className='w-100' onClick={handleLogout}>Logout</Button>
 
                     }
-        </div>:
+        </div> */}
 
     
     </>
