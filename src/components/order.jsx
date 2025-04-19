@@ -55,7 +55,7 @@ const Orders = () =>{
                             {
                                 order.items.map((list) =>(
                                     <div style={{width:'60px' , height:'55px'}} key={list.productId._id}>
-                                        <img src={list.productId.images[0]} alt="book" className="img-fluid" style={{width:'100%',height:'100%'}}/>
+                                        <img src={list.productId.images?.[0]} alt="book" className="img-fluid" style={{width:'100%',height:'100%'}}/>
                                     </div>
                                 ))
                             }
