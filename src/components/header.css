@@ -133,9 +133,7 @@ header nav .dropbox .arrow.active{
     font-size: smaller;
     
 }
- 
-@media screen and (min-width:310px) and (max-width:767px){
-    
+@media screen and (min-width:310px) and (max-width:767px){ 
     .user-info.active{
         opacity: 1;
         position: absolute;
@@ -145,7 +143,7 @@ header nav .dropbox .arrow.active{
         height: fit-content;
     } 
     .user-info.inactive{
-        display: none;
+        opacity: 0;
     }
 }
 
