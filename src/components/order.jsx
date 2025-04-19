@@ -52,13 +52,13 @@ const Orders = () =>{
                         })
                         }</div>
                         <div className='d-flex  gap-3 mt-2 '>
-                            {/* {
-                                order.items.map((list) =>(
+                            {
+                                order.items?.map((list) =>(
                                     <div style={{width:'60px' , height:'55px'}} key={list.productId._id}>
                                         <img src={list.productId.images?.[0]} alt="book" className="img-fluid" style={{width:'100%',height:'100%'}}/>
                                     </div>
                                 ))
-                            } */}
+                            }
                            
                         </div>
                         <div className='mt-2'>
