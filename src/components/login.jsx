@@ -123,7 +123,10 @@ export function Login({clientId}){
             
             </form>
             <div>
-                 <hr />
+                 <hr className="mb-1"/>
+            </div>
+            <div>
+                <p style={{fontSize:'smaller'}}>Don't have an account? <Link to='/register' className="ms-3" style={{textDecoration:'none'}}>Sign in</Link></p>
             </div>
             <div style={{width:'100%'}}>
             <GoogleLogin

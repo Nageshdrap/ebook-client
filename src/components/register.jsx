@@ -133,8 +133,8 @@ export function RegiserUser(){
                     <Button sx={{ width: 500, maxWidth: '100%' }} size="medium" variant="contained" type="submit">Register</Button>
                     <hr width="100%"/>
                     <div className="container d-flex justify-content-between ">
-                        <span className="text-muted">you have an account?</span>
-                        <Button variant="outlined" size="medium" onClick={()=>{
+                        <span className="text-muted" style={{fontSize:'smaller'}}>you have an account?</span>
+                        <Button variant="outlined" size="small" onClick={()=>{
                             navigate('/login');
                             console.log('clicked');
                         }}>Login</Button>
