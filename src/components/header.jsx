@@ -171,10 +171,10 @@ export function Header(){
                 <div className={ ` user-info bg-light p-4 text-center ${ userIcon? 'active' : 'inactive'  } `} ref={menuref}>
 {                       (!userInfo)?  <div className='d-flex justify-content-between align-items-start'><p className='fw-semibold'>New customer?</p><Link to="/register">sign in</Link></div>:<p  className='fw-semibold'> welcome to Bookturn</p>}
                             <ul className='w-100 list-group'>
-                            { (userInfo)? <li className='d-flex justify-content-start align-items-center' onClick={handleEdit}><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>:<li className='d-flex justify-content-start align-items-center'><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>}
-                                <li className='d-flex justify-content-start align-items-center' onClick={handleWishlist}><FaRegHeart className='fs-5 '/><div className=' ms-3 fw-semibold'>Wishlist</div></li>
-                                <li className='d-flex justify-content-start align-items-center' onClick={handleOrders}><IoBagCheckOutline className='fs-3 '/><div className='fw-semibold ms-3'>Orders</div></li>
-                                <li className='d-flex justify-content-start align-items-center'><IoSettingsOutline className='fs-3 '/><div className='fw-semibold ms-3'>Setting</div></li>
+                            { (userInfo)? <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleEdit}><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>:<li className='d-flex justify-content-start align-items-center'><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>}
+                                <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleWishlist}><FaRegHeart className='fs-5 '/><div className=' ms-3 fw-semibold'>Wishlist</div></li>
+                                <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleOrders}><IoBagCheckOutline className='fs-3 '/><div className='fw-semibold ms-3'>Orders</div></li>
+                                <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}}><IoSettingsOutline className='fs-3 '/><div className='fw-semibold ms-3'>Setting</div></li>
                                 <hr></hr>
                             </ul>
                             {   (!userInfo)?
