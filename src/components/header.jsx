@@ -169,7 +169,7 @@ export function Header(){
                 <Link to="/wishlist" className='text-decoration-none text-dark'><IoIosHeartEmpty className='mx-2 text-decoration-none fs-2' /></Link>
                 <div className='position-relative' style={{cursor:'pointer'}} onClick={() => setCartOpen(true)}><IoCartOutline className='mx-2 fs-2 fw-semibold' />{ cartItems && <span className='position-absolute   translate-middle qunti px-2  bg-danger border border-light rounded-circle text-white'>{cartItems.length}</span>}</div>
                 <div className={ ` user-info bg-light p-4 text-center ${ userIcon? 'active' : 'inactive'  } `} ref={menuref}>
-{                       (!userInfo)?  <div className='d-flex justify-content-between align-items-start'><p className='fw-semibold'>New customer?</p><Link to="/register">sign in</Link></div>:<p  className='fw-semibold'> welcome to BookLean</p>}
+{                       (!userInfo)?  <div className='d-flex justify-content-between align-items-start'><p className='fw-semibold'>New customer?</p><Link to="/register">sign in</Link></div>:<p  className='fw-semibold'> welcome to Bookturn</p>}
                             <ul className='w-100 list-group'>
                             { (userInfo)? <li className='d-flex justify-content-start align-items-center' onClick={handleEdit}><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>:<li className='d-flex justify-content-start align-items-center'><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>}
                                 <li className='d-flex justify-content-start align-items-center' onClick={handleWishlist}><FaRegHeart className='fs-5 '/><div className=' ms-3 fw-semibold'>Wishlist</div></li>
