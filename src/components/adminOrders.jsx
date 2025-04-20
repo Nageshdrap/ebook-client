@@ -73,7 +73,7 @@ const AdminOrders = () =>{
                                         <td>{
                                                 order.items?.map((item)=>(
                                                     <div key={item._id}>
-                                                        <img src={item.productId.images[0]} alt="" width="170px" height="120px"/>
+                                                        <img src={item.productId.images?.[0]} alt="" width="170px" height="120px"/>
                                                         <div>Tittle: <p className="m-0">{item.productId.tittle}</p></div>
                                                         <div>Qty:{item.quantity}</div>
                                                         <div>price:{item.price}</div>
