@@ -119,7 +119,8 @@ export function Cart({cartOpen , setCartOpen}){
             <div className="overlay">  
             
             </div>
-            <div className="cart-item p-3" ref={cartMenu} style={{height:"calc(var(--vh,1vh)*100)"}}>
+            <div className="cartmenu" ref={cartMenu}>
+            <div className="cart-item p-3"  style={{height:"calc(var(--vh,1vh)*100)"}}>
                    <div className="d-flex justify-content-between align-items-center">
                         <div className="text-center fw-semibold"><h2>C A R T</h2></div>
                         <div className='fs-3 p-1' style={{border:'2px solid green',width:'max-content',cursor:'pointer'}} onClick={handleCart} ><FaAngleDoubleRight className='m-1'/></div>
@@ -175,7 +176,7 @@ export function Cart({cartOpen , setCartOpen}){
                         
                    </div>
                 </div>
-           
+                </div>
          
         </>
     )
