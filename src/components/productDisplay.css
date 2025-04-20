@@ -42,7 +42,7 @@
     right: -40px;
     
 }
-.product{
+.mP{
     margin-top: 10px;
 }
 
@@ -55,10 +55,10 @@
     height: 200px;
 }
 .product{
-    margin-top: 15px;
+    margin-top: 10px;
 }
 .mP{
-    margin-top: 50px;
+    margin-top: 60px;
 }
 .wishicon{
     position: absolute;
