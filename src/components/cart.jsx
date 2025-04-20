@@ -85,7 +85,6 @@ export function Cart({cartOpen , setCartOpen}){
     useEffect(()=>{
 
         fetchCart();
-
         const handler = (e) =>{
             if(!cartMenu.current.contains(e.target)){
                 setCartOpen(false);
@@ -106,7 +105,6 @@ export function Cart({cartOpen , setCartOpen}){
             document.documentElement.style.setProperty("--vh",`${vh}px`);
         };
         setViewportHeight();
-
         window.addEventListener("resize" , setViewportHeight);
         return () =>{
             document.removeEventListener("mousedown",handler);
