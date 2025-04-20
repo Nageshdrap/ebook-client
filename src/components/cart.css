@@ -11,7 +11,7 @@
 }
 .cart-item{
     position: relative;
-    top: -82px;
+    top: 0;
     margin-left: auto;
     display: flex;
     flex-direction: column;
