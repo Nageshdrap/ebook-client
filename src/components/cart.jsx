@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import { Link, useNavigate } from "react-router-dom";
 import './cart.css';
 import { FaAngleDoubleRight } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { width } from "@mui/system";
 import { AiOutlineDelete } from "react-icons/ai";
@@ -22,7 +22,7 @@ export function Cart({cartOpen , setCartOpen}){
 
     const [cartItem , setCartItem] = useState([]);
 
-    
+    const cartMenu = useRef();
     const PlaceOrder = () =>{
         setCartOpen(false);
         navigate('/placeorder');
@@ -86,7 +86,15 @@ export function Cart({cartOpen , setCartOpen}){
 
         fetchCart();
 
+        const handler = (e) =>{
+            if(!cartMenu.current.contains(e.target)){
+                handleClose();
+            }
+
+        };
+
         if(cartOpen){
+            document.addEventListener("mousedown",handler);
             document.body.style.position = 'fixed';
             document.body.style.width = '100%';
         }else{
@@ -101,6 +109,7 @@ export function Cart({cartOpen , setCartOpen}){
 
         window.addEventListener("resize" , setViewportHeight);
         return () =>{
+            document.removeEventListener("mousedown",handler);
             window.removeEventListener("resize",setViewportHeight);
             document.body.style.position = '';
             document.body.style.width = '';
@@ -112,7 +121,7 @@ export function Cart({cartOpen , setCartOpen}){
             <div className="overlay">  
             
             </div>
-            <div className="cart-item p-3" style={{height:"calc(var(--vh,1vh)*100)"}}>
+            <div className="cart-item p-3" ref={cartMenu} style={{height:"calc(var(--vh,1vh)*100)"}}>
                    <div className="d-flex justify-content-between align-items-center">
                         <div className="text-center fw-semibold"><h2>C A R T</h2></div>
                         <div className='fs-3 p-1' style={{border:'2px solid green',width:'max-content',cursor:'pointer'}} onClick={handleCart} ><FaAngleDoubleRight className='m-1'/></div>
