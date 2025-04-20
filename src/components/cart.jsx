@@ -88,7 +88,7 @@ export function Cart({cartOpen , setCartOpen}){
 
         const handler = (e) =>{
             if(!cartMenu.current.contains(e.target)){
-                handleClose();
+                setCartOpen(false);
             }
 
         };
