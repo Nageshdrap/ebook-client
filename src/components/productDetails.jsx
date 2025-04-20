@@ -70,6 +70,10 @@ export function ProductDetails(){
         
     return(
         <>
+        {
+        cartOpen && (< Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/>)
+
+}
         {  product && (
             <section className="container mB">
             <div className="row  gy-1">
@@ -121,10 +125,9 @@ export function ProductDetails(){
             </div>
             </section>
 )}
-{
-                cartOpen && (< Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/>)
-    
-}
-        </>
+ 
+      </>
+     
+
     )
 }
