@@ -101,9 +101,10 @@ export function Cart({cartOpen , setCartOpen}){
 
         window.addEventListener("resize" , setViewportHeight);
         return () =>{
+            window.removeEventListener("resize",setViewportHeight);
             document.body.style.position = '';
             document.body.style.width = '';
-            window.removeEventListener("resize",setViewportHeight);
+            
         }
     },[cartOpen])
     return(
