@@ -134,11 +134,12 @@ export function Cart({cartOpen , setCartOpen}){
                             <div className="text-center mt-5 bounce-img"><img src={"/images/cartempty.webp"} alt="empty" width="190"/></div>
                             </div>
                         ):(
+                            <div className="cart-content">{
                             cartItem.map((item,index)=>{
                                 
                                  
                                return (
-                                <div key={index} className="cart-content">
+                                <div key={index} >
                                 <div className="containern shadow gap-4 d-flex flex- justify-content-between p-2 mt-2 color-black" >
                                     <div style={{width:'130px', height:'100%', border:'1px solid grey'}}>
                                         <img src={item.productId.images?.[0]} className="image-fluid" alt="book"  style={{width:'100%',height:'100%',cursor:'pointer',objectFit:'cover'}}/>
@@ -162,6 +163,7 @@ export function Cart({cartOpen , setCartOpen}){
                                 
                                 </div>
                             )})
+                         } </div>
                         )
                    }
                    <div className="cart-footer ">
