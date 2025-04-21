@@ -82,6 +82,7 @@ export function PlaceOrder(){
         });
         setCartItem(data.items);
         console.log(data.items);
+        fetchCart();
     }
 
     const subTotal =() =>{
