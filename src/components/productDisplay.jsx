@@ -20,7 +20,7 @@ export function ProductDisplay(){
     let [product,setproduct] = useState([]);
     let [arrayKeywords, setArrayKeywords] = useState([]);
 
-        function LoadProducts(){
+       async function LoadProducts(){
             axios.get('https://ebook-server-4izu.onrender.com/api/product')
             .then(Res =>{
                 setproduct(Res.data);
