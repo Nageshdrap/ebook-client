@@ -67,7 +67,7 @@ export function Cart({cartOpen , setCartOpen}){
                 productId === item.productId._id ? {...item , quantity: newQuantity} : item
             )
           );
-           const { data } =await axios.put(`https://ebook-server-4izu.onrender.com/cart/update/${productId}` , {quantity:newQuantity},{
+           const { data } =await axios.put(`https://ebook-server-4izu.onrender.com/cart/update/${productId}` , {quantity:newQuantity , couponValue:null},{
                 
                     headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
             });
