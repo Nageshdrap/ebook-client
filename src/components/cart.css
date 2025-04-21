@@ -29,7 +29,7 @@
     animation: sildein 0.8s ease-in-out;
 }
 .cart-content{
-    overflow: scroll;
+    overflow-y: scroll;
 }
 /* .cart-content{
     flex: 1;
