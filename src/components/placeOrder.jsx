@@ -300,7 +300,7 @@ export function PlaceOrder(){
                                                                                                                  
 return (
 <div key={index} className="mt-4">
-<div className="containern gap-4 d-flex   align-items-center color-black" >
+<div className="containern gap-4 d-flex   color-black" >
     <div style={{width:'130px', height:'100%', border:'1px solid grey'}}>
         <img src={ item.productId.images?.[0]} className="image-fluid" alt="book"  style={{width:'100%',height:'100%',cursor:'pointer'}}/>
     </div>
