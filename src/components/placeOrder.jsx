@@ -50,6 +50,7 @@ export function PlaceOrder(){
             toast.success(res.data.msg);
             console.log(res.data);
         }else{
+            setCoupon(" ");
             toast.error(res.data.msg);
         }
     }else{
