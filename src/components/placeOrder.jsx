@@ -81,11 +81,8 @@ export function PlaceOrder(){
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
  
         });
-        setCartItem(data.cart.items || []);
-        setTotal(data.total);
-        if(coupon){
-            setCouponData(data);
-        }
+        setCartItem(dataitems || []);
+        fetchCart();
     }
 
     const subTotal =() =>{
