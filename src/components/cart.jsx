@@ -52,7 +52,7 @@ export function Cart({cartOpen , setCartOpen}){
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
  
         });
-        setCartItem(data.items);
+        setCartItem(data.cart.items);
         fetchCarts();
     }
 
