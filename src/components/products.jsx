@@ -62,7 +62,7 @@ const Products = ({product}) =>{
                  <div className="container mP">
                 <div className="row">
                     { product.map((item,index)=>(
-                    <div className="col col-xs-6 col-sm-6 col-md-4 col-lg-3 product1  bg-light" key={index}>
+                    <div className="col-xs-6 col-sm-6 col-md-4 col-lg-3 product1  bg-light" key={index}>
                         
                         <div className="p-1 product" to={`productDetails/${item._id}`} style={{height:'max-content'}}>
                         <div className="m-auto proimg" style={{maxWidth:'400px',maxHeight:'400px'}}><Link to={`/productDetails?pid=${item._id}`}><img src={ item.images} alt="book" className="img-fluid" style={{width:'100%',height:'100%'}}/></Link><i className={`wishicon fs-1 fw-semibold `} style={{}} onClick={()=>WishList(item._id)}>< IoIosHeartEmpty fill={likedItems.includes(item._id)? "red" : ""} /></i></div>
