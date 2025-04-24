@@ -154,7 +154,7 @@ export function CategoryList( {page , setPage ,setRotate , rotate}){
                             <ul style={{listStyle:'none',padding:0,margin:0}} >
                                 {
                                     subCategory.filter( sub => sub.category === item._id).map(sublist =>(
-                                        <li className='py-2 mt-2 ps-4 fs-4 ' style={{borderBottom:'0.5px solid #a3a0a0'}} onClick={()=>{handleCategoryList(item._id,sublist._id)}}  key={sublist._id}>{sublist.name}</li>
+                                        <li className='py-2 mt-2 ps-4 fs-4 ' style={{borderBottom:'0.5px solid #a3a0a0',cursor:'pointer'}} onClick={()=>{handleCategoryList(item._id,sublist._id)}}  key={sublist._id}>{sublist.name}</li>
                                         
                                     ))
                                 }
