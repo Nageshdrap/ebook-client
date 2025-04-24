@@ -11,13 +11,14 @@ import axios from 'axios';
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaAngleDoubleRight } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 
 
 export function CategoryList( {page , setPage ,setRotate , rotate}){
 
     const sideMenu = useRef();
-     
+    const navigate = useNavigate();
     const [category , setCategory] = useState([]);
     const [subCategory , setSubcategory] = useState([]);
 
@@ -57,6 +58,11 @@ export function CategoryList( {page , setPage ,setRotate , rotate}){
     function handleClose(){
         setPage('');
         setRotate(false);
+    }
+
+    const handleCategoryList = (category,subcategory) =>{
+        setPage(false);
+        navigate(`/products?category=${category}&subcategory=${subcategory}`);
     }
 
     useEffect(()=>{
@@ -148,7 +154,7 @@ export function CategoryList( {page , setPage ,setRotate , rotate}){
                             <ul style={{listStyle:'none',padding:0,margin:0}} >
                                 {
                                     subCategory.filter( sub => sub.category === item._id).map(sublist =>(
-                                        <li className='py-2 mt-2 ps-4 fs-4 ' style={{borderBottom:'0.5px solid #a3a0a0'}}  key={sublist._id}>{sublist.name}</li>
+                                        <li className='py-2 mt-2 ps-4 fs-4 ' style={{borderBottom:'0.5px solid #a3a0a0'}} onClick={()=>{handleCategoryList(item._id,sublist._id)}}  key={sublist._id}>{sublist.name}</li>
                                         
                                     ))
                                 }
