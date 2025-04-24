@@ -81,7 +81,7 @@ export function PlaceOrder(){
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
  
         });
-        setCartItem(dataitems || []);
+        setCartItem(data.items || []);
         fetchCart();
     }
 
