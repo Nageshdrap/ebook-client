@@ -17,14 +17,19 @@ const CategoryProduct = () =>{
     const category = searchparams.get('category');
     const subcategory = searchparams.get('subcategory');
 
-    useEffect(async ()=>{
-        const res = await axios.get('https://ebook-server-4izu.onrender.com/api/categorylist',{category , subcategory});
-        setProduct(res.data);
+    useEffect(()=>{
+        const fetchCategorylist = async () =>{
+            const res = await axios.get('https://ebook-server-4izu.onrender.com/api/categorylist',{category , subcategory});
+            setProduct(res.data);
+            console.log(res.data);
+        }
+        
+        fetchCategorylist();
     },[])
 
     return(
         <>
-            <Products product={product}/>
+            <div>hello</div>
         </>
     )
 }
