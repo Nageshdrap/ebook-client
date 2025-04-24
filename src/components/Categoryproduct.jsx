@@ -19,6 +19,7 @@ const CategoryProduct = () =>{
 
     useEffect(()=>{
         const fetchCategorylist = async () =>{
+            console.log(category , subcategory);
             const res = await axios.get('https://ebook-server-4izu.onrender.com/api/categorylist',{category , subcategory});
             setProduct(res.data);
             console.log(res.data);
