@@ -26,7 +26,7 @@ const CategoryProduct = () =>{
         }
         
         fetchCategorylist();
-    },[])
+    },[subcategory])
 
     return(
         <>
