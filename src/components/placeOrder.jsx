@@ -77,15 +77,15 @@ export function PlaceOrder(){
     const removeCart = async (id)=>{
         const productId = id;
 
-        const { data } = await axios.delete(`https://ebook-server-4izu.onrender.com/cart/remove/${productId}`,{
+        const { data } = await axios.delete(`https://ebook-server-4izu.onrender.com/cart/remove/${productId}`,{couponValue:coupon},{
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
  
         });
-        setCartItem(data.items);
-        
-        fetchCart();
-        handleCoupon();
-        console.log(data.items);
+        setCartItem(data.cart.items || []);
+        setTotal(data.total);
+        if(coupon){
+            setCouponData(data);
+        }
     }
 
     const subTotal =() =>{
@@ -240,7 +240,7 @@ export function PlaceOrder(){
         //     console.log(calculatedTotal,'nag');
         // }
         window.scrollTo({top:0,behavior:'smooth'});
-    },[step])
+    },[step,total])
 
     return(
         <>
