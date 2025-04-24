@@ -82,8 +82,10 @@ export function PlaceOrder(){
  
         });
         setCartItem(data.items);
-        console.log(data.items);
+        
         fetchCart();
+        handleCoupon();
+        console.log(data.items);
     }
 
     const subTotal =() =>{
