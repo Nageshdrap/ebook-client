@@ -65,7 +65,7 @@ const Products = ({product}) =>{
                     <div className="col-xs-6 col-sm-6 col-md-4 col-lg-3 product1  bg-light" key={index}>
                         
                         <div className="p-1 product" to={`productDetails/${item._id}`} style={{height:'max-content'}}>
-                        <div className="m-auto proimg" style={{maxWidth:'400px',maxHeight:'400px'}}><Link to={`/productDetails?pid=${item._id}`}><img src={ item.images} alt="book" className="img-fluid" style={{width:'100%',height:'100%'}}/></Link><i className={`wishicon fs-1 fw-semibold `} style={{}} onClick={()=>WishList(item._id)}>< IoIosHeartEmpty fill={likedItems.includes(item._id)? "red" : ""} /></i></div>
+                        <div className="m-auto proimg" style={{maxWidth:'400px',maxHeight:'400px'}}><Link to={`/productDetails?pid=${item._id}`} style={{maxWidth:'400px',maxHeight:'400px'}}><img src={ item.images} alt="book" className="img-fluid" style={{width:'100%',height:'100%'}}/></Link><i className={`wishicon fs-1 fw-semibold `} style={{}} onClick={()=>WishList(item._id)}>< IoIosHeartEmpty fill={likedItems.includes(item._id)? "red" : ""} /></i></div>
                             
                             <Link className="" style={{textDecoration:'none'}} to={`/productDetails?pid=${item._id}`}><tittle className="mb-1 text-success">{item.tittle}</tittle></Link>
                             <div className="d-flex gap-2 my-2"><div className="text-muted text-decoration-line-through ">&#8377;{item.mrp}</div><div className="bg-success text-white px-2 rounded-pill text-center" style={{fontSize:'smaller',alignItems:'center',paddingTop:'2px'}}>{item.discount}% Off</div><div className="fw-bold">&#8377;{item.price}</div></div>
