@@ -21,6 +21,7 @@ export function Cart({cartOpen , setCartOpen}){
     const navigate = useNavigate();
 
     const [cartItem , setCartItem] = useState([]);
+    const [coupon , setCoupon]= useState("");
 
     const cartMenu = useRef();
     const PlaceOrder = () =>{
@@ -48,7 +49,7 @@ export function Cart({cartOpen , setCartOpen}){
     const removeCart = async (id)=>{
         const productId = id;
 
-        const { data } = await axios.delete(`https://ebook-server-4izu.onrender.com/cart/remove/${productId}`,{
+        const { data } = await axios.delete(`https://ebook-server-4izu.onrender.com/cart/remove/${productId}`,{couponValue:coupon},{
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
  
         });
