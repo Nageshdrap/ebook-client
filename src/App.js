@@ -29,6 +29,7 @@ import Confirmpage from './components/confirmpage';
 import PageNotFound from './components/pagenot';
 import AdminOrders from './components/adminOrders';
 import Term from './components/term';
+import CategoryProduct from './components/Categoryproduct';
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
               <Route path='register' element={<RegiserUser/>}/>
               <Route path='/wishlist' element={<WishList />}/>
               <Route path='/cart' element={<Cart />}/>
+              <Route path='/products' element={<CategoryProduct />} />
               <Route  path='/placeorder' element={< PlaceOrder/>}/>
               <Route path='/edit-profile' element={< EditProfile />} />
               <Route path='/orders' element={< Orders />} />
