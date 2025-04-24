@@ -110,7 +110,9 @@ export function ProductDetails(){
                 <div className="col-sm-12 desc px-3 col-md-6" >
                 
                     <div className="mb-2  fs-4 fw-semibold">{product.tittle}</div>
-                    <p className="mb-2"> {product.price}</p>
+                    <p className="mb-2"> {product.price}</p>                            
+                    <div className="d-flex gap-2 my-2"><div className="text-muted text-decoration-line-through ">&#8377;{product.mrp}</div><div className="bg-success text-white px-2 rounded-pill text-center" style={{fontSize:'smaller',alignItems:'center',paddingTop:'2px'}}>{product.discount}% Off</div><div className="fw-bold">&#8377;{product.price}</div></div>
+
                     <div className="container bg-secondary-subtle py-2 fw-semibold" >SPECIFICATION</div>
                     <div className="px-2 mt-2"><pre className="m-0">Author  :   {product.author}</pre></div>
                     <div className="px-2 mb-2"><pre className="m-0">Type  :   Paperback</pre></div>
