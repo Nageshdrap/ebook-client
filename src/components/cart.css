@@ -32,7 +32,7 @@
     overflow-y: scroll;
 }
 .cart-content > :last-child{
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 /* .cart-content{
     flex: 1;
