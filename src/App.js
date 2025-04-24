@@ -32,7 +32,7 @@ const PlaceOrder = lazy(()=> import('./components/placeOrder'));
 // import { SearchPage } from './components/searchPage';
 const SearchPage = lazy(()=> import('./components/searchPage'));
 // import Footer from './components/footer';
-import { PaymentDetails } from './components/paymentDetails';
+// import { PaymentDetails } from './components/paymentDetails';
 import { UserProvider } from './components/contextApi/UserContext';
 import { CartProvider } from './components/contextApi/CartContext';
 // import EditProfile from './components/Edit-profile';
