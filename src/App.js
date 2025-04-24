@@ -1,35 +1,57 @@
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+
 import { Header } from './components/header';
-import { Login } from './components/login';
-import { RegiserUser } from './components/register';
-import { WishList } from './components/wishlist';
+// import { Login } from './components/login';
+const Login = lazy(()=> import('./components/login'));
+// import { RegiserUser } from './components/register';
+const RegiserUser = lazy(()=> import('./components/register'));
+// import { WishList } from './components/wishlist';
+const WishList = lazy(()=> import('./components/wishlist'));
 import { ProtectedUser } from './components/auth/ProtectedRoute';
-import { Cart } from './components/cart';
-import { AdminDash } from './components/adminDash';
-import { InsertProduct } from './components/insertproduct';
-import { InsertSubcategory } from './components/insert-subCategory';
-import { ProductDisplay } from './components/productDisplay';
-import { InsertCategory } from './components/insert-category';
-import { Home } from './components/home';
+// import { Cart } from './components/cart';
+const Cart = lazy(()=> import('./components/cart'));
+// import { AdminDash } from './components/adminDash';
+const AdminDash = lazy(()=> import('./components/adminDash'));
+// import { InsertProduct } from './components/insertproduct';
+const InsertProduct = lazy(()=> import('./components/insertproduct'));
+// import { InsertSubcategory } from './components/insert-subCategory';
+const InsertSubcategory = lazy(()=> import('./components/insert-subCategory'));
+// import { ProductDisplay } from './components/productDisplay';
+const ProductDisplay = lazy(()=> import('./components/productDisplay'));
+// import { InsertCategory } from './components/insert-category';
+const InsertCategory = lazy(()=> import('./components/insert-category'));
+// import { Home } from './components/home';
 import { ProductDetails } from './components/productDetails';
-import { ProgressBar } from './components/progressBar';
+const ProductDetails = lazy(()=> import('./components/productDetails'));
+// import { ProgressBar } from './components/progressBar';
 import { PlaceOrder } from './components/placeOrder';
-import { NavBar } from './components/nav2';
-import { SearchPage } from './components/searchPage';
-import Footer from './components/footer';
+const PlaceOrder = lazy(()=> import('./components/placeOrder'));
+// import { NavBar } from './components/nav2';
+// import { SearchPage } from './components/searchPage';
+const SearchPage = lazy(()=> import('./components/searchPage'));
+// import Footer from './components/footer';
 import { PaymentDetails } from './components/paymentDetails';
 import { UserProvider } from './components/contextApi/UserContext';
 import { CartProvider } from './components/contextApi/CartContext';
-import EditProfile from './components/Edit-profile';
-import Orders from './components/order';
-import OrderDetails from './components/orderDetails';
-import Confirmpage from './components/confirmpage';
-import PageNotFound from './components/pagenot';
-import AdminOrders from './components/adminOrders';
-import Term from './components/term';
-import CategoryProduct from './components/Categoryproduct';
+// import EditProfile from './components/Edit-profile';
+const EditProfile = lazy(()=> import('./components/Edit-profile'));
+// import Orders from './components/order';
+const Orders = lazy(()=> import('./components/order'));
+// import OrderDetails from './components/orderDetails';
+const OrderDetails = lazy(()=> import('./components/orderDetails'));
+// import Confirmpage from './components/confirmpage';
+const Confirmpage = lazy(()=> import('./components/confirmpage'));
+// import PageNotFound from './components/pagenot';
+const PageNotFound = lazy(()=> import('./components/pagenot'));
+// import AdminOrders from './components/adminOrders';
+const AdminOrders = lazy(()=> import('./components/adminOrders'));
+// import Term from './components/term';
+const Term = lazy(()=> import('./components/term'));
+// import CategoryProduct from './components/Categoryproduct';
+const CategoryProduct = lazy(()=> import('./components/Categoryproduct'));
+import { lazy, Suspense } from 'react';
 
 function App() {
   return (
@@ -56,6 +78,7 @@ function App() {
       <UserProvider>
        <Router>
           <Header/>
+          <Suspense fallback={<p>Loading..</p>}>
           <Routes>
               
               <Route path='/' element={< ProductDisplay />}/>
@@ -81,6 +104,7 @@ function App() {
             <Route  path='admin-orders/:id' element={< AdminOrders />} />
           </Route>
           </Routes>
+          </Suspense>
           <Footer/>
        </Router>
        </UserProvider>
