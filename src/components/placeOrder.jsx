@@ -237,7 +237,7 @@ export function PlaceOrder(){
         //     console.log(calculatedTotal,'nag');
         // }
         window.scrollTo({top:0,behavior:'smooth'});
-    },[step,total])
+    },[step])
 
     return(
         <>
