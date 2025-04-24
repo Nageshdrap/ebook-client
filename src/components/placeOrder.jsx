@@ -307,7 +307,8 @@ return (
     </div>
     <div>
         <p className="mb-1">{item.productId.tittle}</p>
-         <p className="mb-1">{item.productId.price}</p>
+        <div className="d-flex gap-2 my-2"><div className="text-muted text-decoration-line-through ">&#8377;{item.productId.mrp}</div><div className="bg-success text-white px-2 rounded-pill text-center" style={{fontSize:'smaller',alignItems:'center',paddingTop:'2px'}}>{item.productId.discount}% Off</div><div className="fw-bold">&#8377;{item.productId.price}</div></div>
+
         <div className="d-flex justify-content-between align-items-center mt-3">
             <div className="d-flex align-items-center" style={{border:'2px solid green'}}>
             <button className="px-2 bg-white " style={{height:'100%',width:'100%'}} disabled={item.quantity <= 1} onClick={()=>updateQuantity(item.productId._id , item.quantity - 1, coupon )}>-</button>
