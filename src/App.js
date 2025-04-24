@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import { lazy, Suspense } from 'react';
 import './App.css';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 
@@ -51,7 +52,7 @@ const AdminOrders = lazy(()=> import('./components/adminOrders'));
 const Term = lazy(()=> import('./components/term'));
 // import CategoryProduct from './components/Categoryproduct';
 const CategoryProduct = lazy(()=> import('./components/Categoryproduct'));
-import { lazy, Suspense } from 'react';
+
 
 function App() {
   return (
