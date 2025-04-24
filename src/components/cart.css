@@ -31,6 +31,9 @@
 .cart-content{
     overflow-y: scroll;
 }
+.cart-content > :last-child{
+    margin-bottom: 30px;
+}
 /* .cart-content{
     flex: 1;
     overflow: auto;
