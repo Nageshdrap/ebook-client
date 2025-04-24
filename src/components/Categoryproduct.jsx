@@ -29,7 +29,7 @@ const CategoryProduct = () =>{
 
     return(
         <>
-            <div>hello</div>
+            <Products product={product} />
         </>
     )
 }
