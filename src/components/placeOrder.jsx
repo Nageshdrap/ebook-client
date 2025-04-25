@@ -270,7 +270,7 @@ export function PlaceOrder(){
                                 }} autoComplete="off"  required/>
                                 {
                                     phoneError && (
-                                        <p className="" style={{color:'red',fontSize:'12px',marginTop:'4px'}}>{phoneError}</p>
+                                        <p className="mb-0 fw-semibold" style={{color:'red',fontSize:'12px',marginTop:'4px'}}>{phoneError}</p>
                                     )
                                 }
                             </div>
