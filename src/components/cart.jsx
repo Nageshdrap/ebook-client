@@ -123,6 +123,7 @@ const Cart = ({cartOpen , setCartOpen}) => {
             </div>
             <div className="cartmenu" ref={cartMenu}>
             <div className="cart-item p-3"  style={{height:"calc(var(--vh,1vh)*100)"}}>
+            <Suspense fallback={< Loader loading={true}/>}>
                    <div className="d-flex justify-content-between align-items-center">
                         <div className="text-center fw-semibold"><h2>C A R T</h2></div>
                         <div className='fs-3 p-1' style={{border:'2px solid green',width:'max-content',cursor:'pointer'}} onClick={handleCart} ><FaAngleDoubleRight className='m-1'/></div>
@@ -136,7 +137,7 @@ const Cart = ({cartOpen , setCartOpen}) => {
                             <div className="text-center mt-5 bounce-img"><img src={"/images/cartempty.webp"} alt="empty" width="190"/></div>
                             </div>
                         ):(
-                            <Suspense fallback={< Loader loading={true}/>}>
+                            
                             <div className="cart-content">{
                             cartItem.map((item,index)=>{
                                 
@@ -169,7 +170,7 @@ const Cart = ({cartOpen , setCartOpen}) => {
                                 </div>
                             )})
                          } </div>
-                         </Suspense>
+                         
                         )
                    }
                    <div className="cart-footer ">
@@ -183,6 +184,7 @@ const Cart = ({cartOpen , setCartOpen}) => {
                        
                         
                    </div>
+                   </Suspense>
                 </div>
                 </div>
          
