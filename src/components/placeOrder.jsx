@@ -314,9 +314,9 @@ return (
             <input className="form-control text-center mx-1" style={{width:'50px',border:'none'}} value={item.quantity} readOnly></input>
             <button className="px-2 bg-white" onClick={()=>updateQuantity(item.productId._id , item.quantity + 1 , coupon)}>+</button>
             </div>
-            <div className="p-2" style={{cursor:'pointer'}}>
+            {/* <div className="p-2" style={{cursor:'pointer'}}>
                 <AiOutlineDelete className="fs-4 " onClick={()=>removeCart(item.productId._id,coupon)}/>
-            </div>
+            </div> */}
         </div>
     </div>
                                                                 
