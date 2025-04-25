@@ -3,7 +3,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import React, { lazy, useEffect, useRef } from 'react';
+import React, { lazy, Suspense, useEffect, useRef } from 'react';
 import { useState } from 'react';
 import { CategoryList } from './categoryList';
 import { IoIosArrowDown } from "react-icons/io";
@@ -192,7 +192,7 @@ export function Header(){
             page && (<CategoryList page={page} setPage={setPage} rotate={rotate} setRotate={setRotate}/>)
         }
         {
-            cartOpen && (< Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/>)
+            cartOpen && ( <Suspense fallback={<p>loading....</p>}>< Cart cartOpen={cartOpen} setCartOpen={setCartOpen} /> </Suspense>)
         }
         
         {/* <div className={ ` user-info bg-light p-4 text-center ${ userIcon? 'active' : 'inactive'  } `} ref={menuref}>
