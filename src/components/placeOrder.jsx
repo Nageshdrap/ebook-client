@@ -24,6 +24,7 @@ export function PlaceOrder(){
     const [coupon , setCoupon] = useState("");
     const [total , setTotal] = useState(0);
     const [couponData , setCouponData] = useState("");
+    const [phoneError , setPhoneError] = useState("");
     const [orderData , setOrderData] = useState({
         shipping:{
             address:"",
@@ -130,9 +131,17 @@ export function PlaceOrder(){
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
-        setStep(step+1);
+        if(!phoneError){
+            setStep(step+1);
+        }
+        
     }
-
+    const validatePhone = (phone) =>{
+        const phoneRegEx = /^[0-9]{10}$/;
+        if(!phone) return "phone number is required";
+        if(!phoneRegEx.test(phone)) return "Phone number must be 10 digits";
+        return "";
+    }
     const handlePayment = async (method) =>{
 
         setOrderData({...orderData,payment:method});
@@ -252,7 +261,18 @@ export function PlaceOrder(){
                             <div className=" d-flex justify-content-start align-items-center bg-primary text-white py-2 text-center  w-100"><div className="bg-white px-2 py-1 text-black ms-2 me-4">1</div><div className="fw-semibold fs-5">DELIVERY ADDRESS</div></div>
                             <div className="mt-2 mb-2 px-2">
                                 <label for="exampleFormControlInput1" className="form-label">Mobile number/Whatsapp</label>
-                                <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="eg:9653254215" name="phone" onChange={(e)=>{setOrderData({...orderData, shipping : {...orderData.shipping , phone : e.target.value}})}} autoComplete="off"  required/>
+                                <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="eg:9653254215" value={orderData.shipping.phone} name="phone" onChange={(e)=>{
+                                    const value = e.target.value;
+                                    if(/^[0-9]{0,10}$/.test(value)){
+                                        setOrderData({...orderData, shipping : {...orderData.shipping , phone : e.target.value}});
+                                        setPhoneError(validatePhone(value));
+                                    }
+                                }} autoComplete="off"  required/>
+                                {
+                                    phoneError && (
+                                        <p className="" style={{color:'red',fontSize:'12px',marginTop:'4px'}}>{phoneError}</p>
+                                    )
+                                }
                             </div>
                             <div className="mb-2 px-2">
                                 <label for="exampleFormControlInput1" className="form-label">address</label>
