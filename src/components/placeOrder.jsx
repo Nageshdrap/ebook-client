@@ -187,7 +187,7 @@ export function PlaceOrder(){
             currency:data.order.currency,
             order_id:data.order.id,
             name:'Bookturn',
-            image: "Boobturncrop.ico",
+            image: "https://www.bookturn.in/Bookturncrop.ico",
             handler: async (response) =>{
                 try {
                    const verifyData = {
