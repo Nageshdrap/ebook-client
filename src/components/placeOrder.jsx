@@ -77,7 +77,7 @@ export function PlaceOrder(){
     const removeCart = async (id , coupons)=>{
         const productId = id;
 
-        const { data } = await axios.delete(`https://ebook-server-4izu.onrender.com/cart/remove/${productId}`,{couponValue:coupons},{
+        const { data } = await axios.delete(`https://ebook-server-4izu.onrender.com/cart/remove/${productId}`,{
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
  
         });
