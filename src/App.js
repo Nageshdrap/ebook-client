@@ -14,8 +14,8 @@ import { RegiserUser } from './components/register';
 import { WishList } from './components/wishlist';
 
 import { ProtectedUser } from './components/auth/ProtectedRoute';
-import { Cart } from './components/cart';
-// const Cart = lazy(()=> import('./components/cart'));
+// import { Cart } from './components/cart';
+const Cart = lazy(()=> import('./components/cart'));
 import { AdminDash } from './components/adminDash';
 // const AdminDash = lazy(()=> import('./components/adminDash'));
 import { InsertProduct } from './components/insertproduct';
