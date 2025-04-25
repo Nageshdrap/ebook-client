@@ -14,7 +14,7 @@ import { useCart } from "./contextApi/CartContext";
 
 
 
-export function Cart({cartOpen , setCartOpen}){
+const Cart = ({cartOpen , setCartOpen}) => {
 
    const { fetchCarts} = useCart();
 
@@ -188,3 +188,6 @@ export function Cart({cartOpen , setCartOpen}){
         </>
     )
 }
+
+
+export default Cart;
