@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import { Link, useNavigate } from "react-router-dom";
 import './cart.css';
 import { FaAngleDoubleRight } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { width } from "@mui/system";
 import { AiOutlineDelete } from "react-icons/ai";
@@ -135,6 +135,7 @@ export function Cart({cartOpen , setCartOpen}){
                             <div className="text-center mt-5 bounce-img"><img src={"/images/cartempty.webp"} alt="empty" width="190"/></div>
                             </div>
                         ):(
+                            <Suspense fallback={<p>loading...</p>}>
                             <div className="cart-content">{
                             cartItem.map((item,index)=>{
                                 
@@ -167,6 +168,7 @@ export function Cart({cartOpen , setCartOpen}){
                                 </div>
                             )})
                          } </div>
+                         </Suspense>
                         )
                    }
                    <div className="cart-footer ">

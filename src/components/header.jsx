@@ -3,7 +3,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import React, { useEffect, useRef } from 'react';
+import React, { lazy, useEffect, useRef } from 'react';
 import { useState } from 'react';
 import { CategoryList } from './categoryList';
 import { IoIosArrowDown } from "react-icons/io";
@@ -15,7 +15,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { RegiserUser } from './register';
-import { Cart } from './cart';
+// import { Cart } from './cart';
 import Loader from './loader';
 import { IoCartOutline } from "react-icons/io5";
 import axios from 'axios';
@@ -23,6 +23,8 @@ import { useUser } from './contextApi/UserContext';
 import { IoIosHeartEmpty } from "react-icons/io";
 import { useCart } from './contextApi/CartContext';
 import { googleLogout } from '@react-oauth/google';
+
+const Cart = lazy(()=> import('./cart'));
 
 
 
