@@ -9,6 +9,7 @@ import { width } from "@mui/system";
 import { AiOutlineDelete } from "react-icons/ai";
 import { PlaceOrder } from "./placeOrder";
 import { useCart } from "./contextApi/CartContext";
+import Loader from "./loader";
 
 
 
@@ -135,7 +136,7 @@ const Cart = ({cartOpen , setCartOpen}) => {
                             <div className="text-center mt-5 bounce-img"><img src={"/images/cartempty.webp"} alt="empty" width="190"/></div>
                             </div>
                         ):(
-                            <Suspense fallback={<p>loading...</p>}>
+                            <Suspense fallback={< Loader loading={true}/>}>
                             <div className="cart-content">{
                             cartItem.map((item,index)=>{
                                 
