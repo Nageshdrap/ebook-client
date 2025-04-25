@@ -74,10 +74,10 @@ export function PlaceOrder(){
         }
     }
 
-    const removeCart = async (id)=>{
+    const removeCart = async (id , coupons)=>{
         const productId = id;
 
-        const { data } = await axios.delete(`https://ebook-server-4izu.onrender.com/cart/remove/${productId}`,{couponValue:coupon},{
+        const { data } = await axios.delete(`https://ebook-server-4izu.onrender.com/cart/remove/${productId}`,{couponValue:coupons},{
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
  
         });
@@ -315,7 +315,7 @@ return (
             <button className="px-2 bg-white" onClick={()=>updateQuantity(item.productId._id , item.quantity + 1 , coupon)}>+</button>
             </div>
             <div className="p-2" style={{cursor:'pointer'}}>
-                <AiOutlineDelete className="fs-4 " onClick={()=>removeCart(item.productId._id)}/>
+                <AiOutlineDelete className="fs-4 " onClick={()=>removeCart(item.productId._id,coupon)}/>
             </div>
         </div>
     </div>
