@@ -1,12 +1,13 @@
 import axios from "axios";
-import React, { useEffect, useState }   from "react";
+import React, { lazy, useEffect, useState }   from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import './productDetails.css';
 import Cookies from "js-cookie";
 import API from "./api";
-import { Cart } from "./cart";
+// import { Cart } from "./cart";
 import './button-shrink.css';
 import { useCart } from "./contextApi/CartContext";
+const Cart = lazy(()=> import('./cart'));
 
 
 
