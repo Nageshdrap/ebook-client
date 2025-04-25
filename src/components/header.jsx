@@ -192,7 +192,7 @@ export function Header(){
             page && (<CategoryList page={page} setPage={setPage} rotate={rotate} setRotate={setRotate}/>)
         }
         {
-            cartOpen && ( <Suspense fallback={<Loader />}>< Cart cartOpen={cartOpen} setCartOpen={setCartOpen} /> </Suspense>)
+            cartOpen && ( <Suspense fallback={<Loader loading={true}/>}>< Cart cartOpen={cartOpen} setCartOpen={setCartOpen} /> </Suspense>)
         }
         
         {/* <div className={ ` user-info bg-light p-4 text-center ${ userIcon? 'active' : 'inactive'  } `} ref={menuref}>
