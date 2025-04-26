@@ -27,7 +27,7 @@ const LazyImage = ({src , alt }) =>{
     },[]);
 
     return (
-        <div ref={imgref} className="position-relative" style={{width:'100%',height:'100%'}}>
+        <div ref={imgref} className="position-relative" >
             {
                 isVisible? (
                     <img src={src} alt={alt} className="img-fluid" style={{width:'100%',height:'100%'}}/>
