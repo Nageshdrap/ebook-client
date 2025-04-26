@@ -1,11 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Grid2, Box ,Stack } from '@mui/material';
 import { palette } from '@mui/material';
 import { Button } from '@mui/material';
+import Loader from "./loader";
 
 
-import Products from "./products";
+// import Products from "./products";
+const Products = lazy(()=> import('./products'));
 
 
 
@@ -37,7 +39,9 @@ export function ProductDisplay(){
 
     return(
         <>
+        <Suspense fallback={<Loader loading={true}/>}>
             <Products product={product} />
+        </Suspense>
         </>
     )
 
