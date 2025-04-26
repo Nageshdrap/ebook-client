@@ -53,6 +53,7 @@ import AdminOrders from './components/adminOrders';
 import Term from './components/term';
 // const Term = lazy(()=> import('./components/term'));
 import CategoryProduct from './components/Categoryproduct';
+import Offer from './components/Offer';
 import Spinner from './components/spinner';
 // const CategoryProduct = lazy(()=> import('./components/Categoryproduct'));
 // const WishList = lazy(()=> import('./components/wishlist'));
@@ -84,6 +85,7 @@ function App() {
       <UserProvider>
        <Router>
           <Header/>
+          <Offer />
           <Suspense fallback={<p>Loading..</p>}>
           <Routes>
               
