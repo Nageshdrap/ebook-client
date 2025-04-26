@@ -27,7 +27,7 @@ import { ProductDisplay } from './components/productDisplay';
 import { InsertCategory } from './components/insert-category';
 // const InsertCategory = lazy(()=> import('./components/insert-category'));
 // import { Home } from './components/home';
-import { ProductDetails } from './components/productDetails';
+// import { ProductDetails } from './components/productDetails';
 // const ProductDetails = lazy(()=> import('./components/productDetails'));
 import { ProgressBar } from './components/progressBar';
 import { PlaceOrder } from './components/placeOrder';
@@ -53,9 +53,11 @@ import AdminOrders from './components/adminOrders';
 import Term from './components/term';
 // const Term = lazy(()=> import('./components/term'));
 import CategoryProduct from './components/Categoryproduct';
+import Spinner from './components/spinner';
 // const CategoryProduct = lazy(()=> import('./components/Categoryproduct'));
 // const WishList = lazy(()=> import('./components/wishlist'));
 const Cart = lazy(()=> import('./components/cart'));
+const ProductDetails = lazy(()=> import('./components/productDetails'));
 
 function App() {
   return (
@@ -86,7 +88,9 @@ function App() {
           <Routes>
               
               <Route path='/' element={< ProductDisplay />}/>
+              <Suspense fallback={<Spinner />}>
               <Route path='/productDetails' element={< ProductDetails />} />
+              </Suspense>
               <Route path='login' element={<Login/>}/>
               <Route path='register' element={<RegiserUser/>}/>
               <Route path='/wishlist' element={<WishList />}/>
