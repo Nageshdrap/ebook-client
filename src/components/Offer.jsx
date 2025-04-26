@@ -4,8 +4,8 @@
 const Offer = () =>{
     return(
         <>
-            <div className="container-fluid bg-success">
-                On first purchase you get upto 20%off apply Coupon<button className="btn btn-outline-primary">WELCOME10</button>
+            <div className="container-fluid  text-white " style={{backgroundColor:'#4caf50'}}>
+                On first purchase you get upto 20%off apply Coupon WELCOME10
             </div>
         </>
     )
