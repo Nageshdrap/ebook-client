@@ -1,8 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react"
+import { lazy, Suspense, useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom";
 import './searchPage.css';
-import Products from "./products";
+import Loader from "./loader";
+// import Products from "./products";
+const Products = lazy(()=> import('./products'));
 
 
 
@@ -32,7 +34,7 @@ export function SearchPage(){
             <div className="mB">
                 <p className="text-muted">Result search for "{ query }"</p>
                 {
-                    product.length === 0 ? (<><div className="">product not found</div></>):(<Products product={product}/>)
+                    product.length === 0 ? (<><div className="">product not found</div></>):(<Suspense fallback={<Loader loading={true}/>}><Products product={product}/></Suspense>)
                 }
                 
             </div>
