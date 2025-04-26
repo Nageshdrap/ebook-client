@@ -13,7 +13,7 @@ const Cart = lazy(()=> import('./cart'));
 
 
 
-const ProductDetails = () =>{
+export function ProductDetails(){
 
     const { fetchCarts} = useCart();
 
@@ -139,4 +139,3 @@ const ProductDetails = () =>{
 }
 
 
-export default ProductDetails;
