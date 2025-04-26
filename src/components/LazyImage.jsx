@@ -38,3 +38,6 @@ const LazyImage = ({src , alt }) =>{
         </div>
     )
 }
+
+
+export default LazyImage;
