@@ -1,6 +1,6 @@
 import axios from "axios";
 import { lazy, Suspense, useEffect, useState } from "react"
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import './searchPage.css';
 import Loader from "./loader";
 // import Products from "./products";
@@ -13,6 +13,7 @@ export function SearchPage(){
     const [product , setProduct] = useState([]);
     const location = useLocation();
     const query = new URLSearchParams(location.search).get("q");
+    const navigate = useNavigate();
 
     useEffect(()=>{
         const fetchSearch =async () =>{
@@ -34,7 +35,7 @@ export function SearchPage(){
             <div className="mB">
                 <p className="text-muted">Result search for "{ query }"</p>
                 {
-                    product.length === 0 ? (<><div className="">product not found</div></>):(<Suspense fallback={<Loader loading={true}/>}><Products product={product}/></Suspense>)
+                    product.length === 0 ? (<><div className="d-flex align-items-center text-center"><div className="fs-1 fw-semibold">product not found</div><div className="btn btn-ptimary p-2" onClick={()=>navigate('/')} style={{width:'max-content'}}>Home</div></div></>):(<Suspense fallback={<Loader loading={true}/>}><Products product={product}/></Suspense>)
                 }
                 
             </div>
