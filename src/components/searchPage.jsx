@@ -35,7 +35,7 @@ export function SearchPage(){
             <div className="mB">
                 <p className="text-muted">Result search for "{ query }"</p>
                 {
-                    product.length === 0 ? (<><div className=" text-center"><div className="fs-1 fw-semibold">product not found</div><div className="btn btn-primary p-2" onClick={()=>navigate('/')} style={{width:'max-content'}}>Home</div></div></>):(<Suspense fallback={<Loader loading={true}/>}><Products product={product}/></Suspense>)
+                    product.length === 0 ? (<><div className=" text-center"><div className="fs-1 fw-semibold">product not found</div><div className="btn btn-primary p-2 px-2 mt-3" onClick={()=>navigate('/')} style={{width:'max-content'}}>Home</div></div></>):(<Suspense fallback={<Loader loading={true}/>}><Products product={product}/></Suspense>)
                 }
                 
             </div>
