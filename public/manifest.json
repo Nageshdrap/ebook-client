@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Bookturn",
+  "name": "Bookturn - Your online Bookstore",
   "icons": [
     {
       "src": "Bookturncrop.ico",
