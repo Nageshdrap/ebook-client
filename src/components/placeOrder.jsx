@@ -41,6 +41,12 @@ export function PlaceOrder(){
     const [checkInput , setCheckInput] = useState({checkbox1:false , checkbox2:false});
     
 
+    const handleKeyDown = (e) =>{
+        if(e.key === 'enter'){
+            handleCoupon();
+        }
+    }
+
     const handleCoupon =async () =>{
         if(coupon){
         const res = await axios.post('https://ebook-server-4izu.onrender.com/api/coupon',{couponCode:coupon , totalCost:total});
@@ -351,7 +357,7 @@ return (
                         <div  className=" d-flex justify-content-start align-items-center bg-primary text-white py-2 text-center  w-100"><div className="bg-white px-2 py-1 text-black ms-2 me-4">2.1</div><div className="fw-semibold fs-5">PRICE DETAILS</div></div>
                         <div className="pricedet">
                                  <div className="shadow d-flex align-items-center subprice shadow mt-3 p-2" style={{height:'45px',border:'2px solid green'}}>
-                                                                <input type="text" placeholder="Apply coupon code..." value={coupon} onChange={(e)=>setCoupon(e.target.value)} style={{width:'100%',border:'none',outline:'none'}}/>
+                                                                <input type="text" placeholder="Apply coupon code..." value={coupon} onChange={(e)=>setCoupon(e.target.value)} onKeyDown={handleKeyDown} style={{width:'100%',border:'none',outline:'none'}}/>
                                                                 <FaArrowRight className="ms-2" onClick={handleCoupon} style={{cursor:'pointer'}}/>
                                                             </div>
                             <div className="text-start  card  subprice shadow mt-3 p-2 fw-semibold" >
