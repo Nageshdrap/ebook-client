@@ -66,7 +66,7 @@ const Cart = ({cartOpen , setCartOpen}) => {
           const { data } =await axios.put(`https://ebook-server-4izu.onrender.com/cart/update/${productId}` , {quantity:newQuantity , couponValue:null}, {
                headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
           });
-          setCartItem(data.cart.items || []);
+        //   setCartItem(data.cart.items || []);
           fetchCarts();
        } catch (error) {
            console.error("Error updating quantity", error);
