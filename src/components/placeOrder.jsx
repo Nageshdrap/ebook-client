@@ -42,7 +42,7 @@ export function PlaceOrder(){
     
 
     const handleKeyDown = (e) =>{
-        if(e.key === 'enter'){
+        if(e.key === 'Enter'){
             handleCoupon();
         }
     }
