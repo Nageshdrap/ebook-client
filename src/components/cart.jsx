@@ -65,7 +65,6 @@ const Cart = ({cartOpen , setCartOpen}) => {
     const updateQuantity = async (productId , newQuantity) =>{
         
         try {
-            setQuantity(newQuantity);
           setCartItem(cartItem => 
             cartItem.map((item)=>
                 productId === item.productId._id ? {...item , quantity: newQuantity} : item
@@ -77,7 +76,7 @@ const Cart = ({cartOpen , setCartOpen}) => {
             });
             
             setCartItem(data.cart.items || []);
-           
+           fetchCarts();
 
 
            
@@ -158,7 +157,7 @@ const Cart = ({cartOpen , setCartOpen}) => {
                                         <div className="d-flex justify-content-between align-items-center mt-3">
                                             <div className="d-flex  align-items-center p-0" style={{border:'2px solid green'}}>
                                             <button className="px-2 bg-white " style={{height:'100%',width:'100%'}} disabled={item.quantity <= 1} onClick={()=>updateQuantity(item.productId._id , item.quantity - 1 )}>-</button>
-                                            <input className="form-control text-center mx-1" style={{width:'50px',border:'none',outline:'none',boxShadow:'none'}} value={item.quantity || quantity} readOnly></input>
+                                            <input className="form-control text-center mx-1" style={{width:'50px',border:'none',outline:'none',boxShadow:'none'}} value={item.quantity} readOnly></input>
                                             <button className="px-2 bg-white"  onClick={()=>updateQuantity(item.productId._id , item.quantity + 1)}>+</button>
                                             </div>
                                             <div className="p-2" style={{cursor:'pointer'}}>
