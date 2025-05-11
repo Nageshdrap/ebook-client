@@ -84,7 +84,7 @@ function App() {
        <CartProvider>
       <UserProvider>
        <Router>
-       <Offer />
+       
           <Header/>
           
           <Suspense fallback={<p>Loading..</p>}>
