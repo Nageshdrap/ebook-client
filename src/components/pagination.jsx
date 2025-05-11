@@ -5,7 +5,7 @@
 const Pagination = ({totalPage , page , setPage}) =>{
     return(
         <>
-            <nav aria-label="...">
+            <nav aria-label="..." className="m-auto">
                 <ul class="pagination">
                     <li class={`page-item ${page === 1 ? 'disabled' : ''}`} ><button  class="page-link" onClick={()=>setPage(page-1)} disabled={page === 1}>Prev</button></li>
                     {
