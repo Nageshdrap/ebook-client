@@ -196,7 +196,7 @@ export function Header(){
         {
             cartOpen && ( <Suspense fallback={<Spinner />}>< Cart cartOpen={cartOpen} setCartOpen={setCartOpen} /> </Suspense>)
         }
-        <Coupon coupon="WELCOME10"/>
+       
         
         {/* <div className={ ` user-info bg-light p-4 text-center ${ userIcon? 'active' : 'inactive'  } `} ref={menuref}>
 {         (!userInfo)?  <div className='d-flex justify-content-between align-items-start'><p className='fw-semibold'>New customer?</p><Link to="/register">sign in</Link></div>:<p  className='fw-semibold'> welcome to BookLean</p>}
