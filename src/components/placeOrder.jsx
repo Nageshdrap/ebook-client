@@ -108,8 +108,9 @@ export function PlaceOrder(){
                 
                      headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
             });
-             setCartItem(data.cart.items || []);
-            setTotal(data.total);
+            //  setCartItem(data.cart.items || []);
+            // setTotal(data.total);
+            fetchCart();
             if(coupon){
                 setCouponData(data);
             }
