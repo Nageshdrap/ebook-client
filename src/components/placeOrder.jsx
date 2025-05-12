@@ -25,6 +25,11 @@ export function PlaceOrder(){
     const [total , setTotal] = useState(0);
     const [couponData , setCouponData] = useState("");
     const [phoneError , setPhoneError] = useState("");
+    const [pincodeError,setPincodeError] = useState("");
+
+    const [shippingCharge, setShippingCharge] = useState(0);
+    const freeShippingPincodes = ["760001","760002","760004","760005","760008","760009","760010"];
+    const extraShippingCharge = 25;
     const [orderData , setOrderData] = useState({
         shipping:{
             address:"",
@@ -149,6 +154,14 @@ export function PlaceOrder(){
         if(!phoneRegEx.test(phone)) return "Phone number must be 10 digits";
         return "";
     }
+    const validatePincode = (pincode) => {
+    const pinRegEx = /^[0-9]{6}$/;
+    if (!pincode) return "Pincode is required";
+    if (!pinRegEx.test(pincode)) return "Pincode must be 6 digits";
+    if (!freeShippingPincodes.includes(pincode)) return `Shipping to ${pincode} incurs an extra ₹${extraShippingCharge}`;
+    return ""; // valid
+};
+
     const handlePayment = async (method) =>{
 
         setOrderData({...orderData,payment:method});
@@ -160,7 +173,7 @@ export function PlaceOrder(){
                 price : item.productId.price
             })),
             totalAmount :cartItem.reduce((total , item) => total += (item.productId?.price || 0 )* (item.quantity || 0),0),
-            grandAmount:cartItem.reduce((total , item) => total += (item.productId?.price || 0 )* (item.quantity || 0),0) - (couponData?.discountAmount || 0 ),
+            grandAmount:cartItem.reduce((total , item) => total += (item.productId?.price || 0 )* (item.quantity || 0),0) - (couponData?.discountAmount || 0 ) + shippingCharge,
             couponCode:coupon || null,
             paymentmethod: method
         };
@@ -305,7 +318,23 @@ export function PlaceOrder(){
                             </div>
                             <div className="mb-2 px-2">
                                 <label for="exampleFormControlInput1" className="form-label">Pincode/Postel code</label>
-                                <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="eg:760009" name="pincode" onChange={(e)=>{setOrderData({...orderData, shipping : {...orderData.shipping , pincode : e.target.value}})}} required/>
+                                <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="eg:760009" name="pincode" onChange={(e)=>{
+                                    const pin = e.target.value;
+                                    if(/^[0-9]{0,6}$/.test(pin)){
+                                        setOrderData({...orderData, shipping : {...orderData.shipping , pincode : e.target.value}});
+                                        setPincodeError(validatePincode(pin));
+                                    }
+                                    if(!freeShippingPincodes.includes(pin)){
+                                        setShippingCharge(extraShippingCharge);
+                                    }else{
+                                        setShippingCharge(0);
+                                    }
+                                }} required/>
+                                {
+                                    pincodeError && (
+                                        <p className="mb-0 fw-semibold" style={{color:'red',fontSize:'12px',marginTop:'4px'}}>{pincodeError}</p>
+                                    )
+                                }
                             </div>
                             <div className="d-flex justify-content-between gap-2 mt-3 mb-2 align-items-center">
                                 <button className="py-2 ms-2 bg-success text-white" disabled={step === 0} onClick={()=>{setStep(step-1)}}>Back</button>
@@ -372,17 +401,19 @@ return (
                                 </div>}
                                 <div className="row">
                                     <div className="col " style={{fontSize:'smaller'}}>Delivery charge:</div>
-                                    <div className="col    style={{fontSize:'smaller'}}color-green">Free</div>
+                                    <div className="col "   style={{fontSize:'smaller'}}>{
+                                            shippingCharge > 0 ? `&#8377;${shippingCharge}` : "Free"
+                                        }</div>
                                 </div>
                                 <hr />
                                 { couponData? (
                                 <div className="row ">
                                     <div className="col fw-semibold">Grand Total:</div>
-                                    <div className="col fw-semibold color-green">&#8377; {total.toFixed(2)-couponData.discountAmount}</div>
+                                    <div className="col fw-semibold color-green">&#8377; {total.toFixed(2)-(couponData?.discountAmount || 0) + shippingCharge}</div>
                                 </div>) : (
                                     <div className="row ">
                                     <div className="col fw-semibold">Grand Total:</div>
-                                    <div className="col fw-semibold color-green">&#8377; {total.toFixed(2)}</div>
+                                    <div className="col fw-semibold color-green">&#8377; {total.toFixed(2) + shippingCharge}</div>
                                 </div>
                                 )
 }                                           
