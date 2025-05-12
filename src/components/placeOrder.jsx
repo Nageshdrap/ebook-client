@@ -26,7 +26,7 @@ export function PlaceOrder(){
     const [couponData , setCouponData] = useState("");
     const [phoneError , setPhoneError] = useState("");
     const [pincodeError,setPincodeError] = useState("");
-
+    const [pincodemsg, setPincodemsg] = useState("");
     const [shippingCharge, setShippingCharge] = useState(0);
     const freeShippingPincodes = ["760001","760002","760004","760005","760008","760009","760010"];
     const extraShippingCharge = 25;
@@ -323,12 +323,14 @@ export function PlaceOrder(){
                                         setOrderData({...orderData, shipping : {...orderData.shipping , pincode : e.target.value}});
                                         setPincodeError(validatePincode(pin));
                                     }
+                                    if(!pincodeError){
                                     if(!freeShippingPincodes.includes(pin)){
                                         setShippingCharge(extraShippingCharge);
                                         toast.success(`Shipping to ${pin} incurs an extra ₹ ${extraShippingCharge}`)
                                     }else{
                                         setShippingCharge(0);
                                     }
+                                }
                                 }} required/>
                                 {
                                     pincodeError && (
