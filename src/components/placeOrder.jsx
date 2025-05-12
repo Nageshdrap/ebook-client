@@ -345,7 +345,7 @@ export function PlaceOrder(){
                             </div>
                         </div>
                         </div>
-                        <ToastContainer position="bottom-center" autoClose={2000} transition={Bounce} theme="dark" hideProgressBar={true} closeButton={false} style={{marginBottom:'10px'}}/>
+                        <ToastContainer position="bottom-center" autoClose={2000} transition={Bounce} theme="dark" hideProgressBar={true} closeButton={false} toastStyle={{maxWidth:'100%'}} style={{marginBottom:'10px'}}/>
 
                         </form>
                         
