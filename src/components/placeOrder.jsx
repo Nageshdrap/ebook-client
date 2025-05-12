@@ -318,7 +318,7 @@ export function PlaceOrder(){
                             </div>
                             <div className="mb-2 px-2">
                                 <label for="exampleFormControlInput1" className="form-label">Pincode/Postel code</label>
-                                <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="eg:760009" name="pincode" onChange={(e)=>{
+                                <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="eg:760009" name="pincode" value={orderData.shipping.pincode} onChange={(e)=>{
                                     const pin = e.target.value;
                                     if(/^[0-9]{0,6}$/.test(pin)){
                                         setOrderData({...orderData, shipping : {...orderData.shipping , pincode : e.target.value}});
