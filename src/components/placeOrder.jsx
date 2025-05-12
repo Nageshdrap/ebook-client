@@ -323,20 +323,26 @@ export function PlaceOrder(){
                                         setOrderData({...orderData, shipping : {...orderData.shipping , pincode : e.target.value}});
                                         setPincodeError(validatePincode(pin));
                                     }
-                                    if(!pincodeError){
                                     if(!freeShippingPincodes.includes(pin)){
                                         setShippingCharge(extraShippingCharge);
-                                        toast.success(`Shipping to ${pin} incurs an extra ₹ ${extraShippingCharge}`)
+                                        setPincodemsg(`Shipping to ${pin} incurs an extra ₹ ${extraShippingCharge}`)
                                     }else{
                                         setShippingCharge(0);
                                     }
-                                }
+                                
                                 }} required/>
                                 {
                                     pincodeError && (
                                         <p className="mb-0 fw-semibold" style={{color:'red',fontSize:'12px',marginTop:'4px'}}>{pincodeError}</p>
                                     )
+                                    
                                 }
+                                {
+                                    pincodemsg && (
+                                        <p className="mb-0 fw-semibold" style={{color:'red',fontSize:'12px',marginTop:'4px'}}>{pincodemsg}</p>
+                                    )
+                                }
+
                             </div>
                             <div className="d-flex justify-content-between gap-2 mt-3 mb-2 align-items-center">
                                 <button className="py-2 ms-2 bg-success text-white" disabled={step === 0} onClick={()=>{setStep(step-1)}}>Back</button>
