@@ -143,7 +143,7 @@ export function PlaceOrder(){
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
-        if(!phoneError){
+        if(!phoneError && !pincodeError){
             setStep(step+1);
         }
         
@@ -158,7 +158,6 @@ export function PlaceOrder(){
     const pinRegEx = /^[0-9]{6}$/;
     if (!pincode) return "Pincode is required";
     if (!pinRegEx.test(pincode)) return "Pincode must be 6 digits";
-    if (!freeShippingPincodes.includes(pincode)) return `Shipping to ${pincode} incurs an extra ₹${extraShippingCharge}`;
     return ""; // valid
 };
 
@@ -326,6 +325,7 @@ export function PlaceOrder(){
                                     }
                                     if(!freeShippingPincodes.includes(pin)){
                                         setShippingCharge(extraShippingCharge);
+                                        toast.success(`Shipping to ${pin} incurs an extra ₹ ${extraShippingCharge}`)
                                     }else{
                                         setShippingCharge(0);
                                     }
@@ -342,7 +342,10 @@ export function PlaceOrder(){
                             </div>
                         </div>
                         </div>
+                        <ToastContainer position="bottom-center" autoClose={2000} transition={Bounce} theme="dark" hideProgressBar={true} closeButton={false} style={{marginBottom:'10px'}}/>
+
                         </form>
+                        
                     )
                 }
                 {
