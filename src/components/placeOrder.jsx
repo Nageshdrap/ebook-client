@@ -409,11 +409,11 @@ return (
                                 { couponData? (
                                 <div className="row ">
                                     <div className="col fw-semibold">Grand Total:</div>
-                                    <div className="col fw-semibold color-green">&#8377; {total.toFixed(2)-(couponData?.discountAmount || 0) + shippingCharge}</div>
+                                    <div className="col fw-semibold color-green">&#8377; {total.toFixed(2)-(couponData?.discountAmount || 0) + (shippingCharge.toFixed(2))}</div>
                                 </div>) : (
                                     <div className="row ">
                                     <div className="col fw-semibold">Grand Total:</div>
-                                    <div className="col fw-semibold color-green">&#8377; {total.toFixed(2) + shippingCharge}</div>
+                                    <div className="col fw-semibold color-green">&#8377; {total.toFixed(2) + (shippingCharge.toFixed(2))}</div>
                                 </div>
                                 )
 }                                           
