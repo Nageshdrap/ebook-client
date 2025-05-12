@@ -401,8 +401,8 @@ return (
                                 </div>}
                                 <div className="row">
                                     <div className="col " style={{fontSize:'smaller'}}>Delivery charge:</div>
-                                    <div className="col "   style={{fontSize:'smaller'}}>{
-                                            shippingCharge > 0 ? `&#8377;${shippingCharge}` : "Free"
+                                    <div className="col "   style={{fontSize:'smaller'}}>&#8377;{
+                                            shippingCharge > 0 ? `${shippingCharge}` : "Free"
                                         }</div>
                                 </div>
                                 <hr />
