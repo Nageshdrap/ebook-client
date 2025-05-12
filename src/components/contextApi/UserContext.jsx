@@ -17,7 +17,7 @@ export const UserProvider = ({children}) =>{
                 
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
     });
-    setUserData(res.data.user.email);
+    setUserData(res.data.user);
     }
 
     useEffect(()=>{
