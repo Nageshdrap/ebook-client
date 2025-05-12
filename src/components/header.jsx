@@ -25,6 +25,7 @@ import { useCart } from './contextApi/CartContext';
 import { googleLogout } from '@react-oauth/google';
 import Spinner from './spinner';
 import Coupon from './Coupon';
+import { IoHomeOutline } from "react-icons/io5";
 
 const Cart = lazy(()=> import('./cart'));
 
@@ -97,6 +98,10 @@ export function Header(){
         const handleWishlist = () =>{
             setUserIcon(false);
             navigate('/wishlist');
+        }
+        const handleHome = () =>{
+             setUserIcon(false);
+            navigate('/');
         }
         useEffect(()=>{
            
@@ -178,7 +183,7 @@ export function Header(){
                             { (userInfo)? <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleEdit}><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>:<li className='d-flex justify-content-start align-items-center'><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>}
                                 <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleWishlist}><FaRegHeart className='fs-5 '/><div className=' ms-3 fw-semibold'>Wishlist</div></li>
                                 <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleOrders}><IoBagCheckOutline className='fs-3 '/><div className='fw-semibold ms-3'>Orders</div></li>
-                                <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}}><IoSettingsOutline className='fs-3 '/><div className='fw-semibold ms-3'>Setting</div></li>
+                                <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleHome}><IoHomeOutline className='fs-3 '/><div className='fw-semibold ms-3'>Home</div></li>
                                 <hr></hr>
                             </ul>
                             {   (!userInfo)?
