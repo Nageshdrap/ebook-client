@@ -84,9 +84,11 @@ function App() {
        <CartProvider>
       <UserProvider>
        <Router>
+        <div className='d-flex flex-column min-vh-100'>
        <Offer />
           <Header/>
           
+          <main className='flex-grow-1'>
           <Suspense fallback={<p>Loading..</p>}>
           <Routes>
               
@@ -116,7 +118,9 @@ function App() {
           </Route>
           </Routes>
           </Suspense>
+          </main>
           <Footer/>
+          </div>
        </Router>
        </UserProvider>
        </CartProvider>
