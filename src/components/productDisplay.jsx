@@ -23,13 +23,15 @@ export function ProductDisplay(){
     let [product,setproduct] = useState([]);
     const [page , setPage] = useState(1);
     const [totalPage , setTotalPage] = useState(1);
+    const [seed , setSeed] = useState(Math.random().toFixed(2));
     let [arrayKeywords, setArrayKeywords] = useState([]);
 
        async function LoadProducts(){
-           await axios.get(`https://ebook-server-4izu.onrender.com/api/product?page=${page}`)
+           await axios.get(`https://ebook-server-4izu.onrender.com/api/product?page=${page}?seed=${seed}`)
             .then(Res =>{
                 setproduct(Res.data.products);
                setTotalPage(Res.data.totalPage);
+               setSeed(Res.data.seed);
             });
         }
 
