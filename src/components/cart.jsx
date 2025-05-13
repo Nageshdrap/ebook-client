@@ -10,6 +10,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { PlaceOrder } from "./placeOrder";
 import { useCart } from "./contextApi/CartContext";
 import Loader from "./loader";
+import Spinner from "./spinner";
 
 const Cart = ({cartOpen , setCartOpen}) => {
 
@@ -18,6 +19,7 @@ const Cart = ({cartOpen , setCartOpen}) => {
 
    const [cartItem , setCartItem] = useState([]);
    const [quantity , setQuantity] = useState(0);
+   const [loading , setLoading] = useState(false);
 
    const cartMenu = useRef();
    const debounceTimers = useRef({});
@@ -32,6 +34,7 @@ const Cart = ({cartOpen , setCartOpen}) => {
    }
 
    const fetchCart = async () =>{
+        setLoading(true);
        try {
            const { data } = await axios.get('https://ebook-server-4izu.onrender.com/cart/cartitems',{
                headers:{Authorization : `Bearer ${localStorage.getItem("token")}`},
@@ -40,6 +43,8 @@ const Cart = ({cartOpen , setCartOpen}) => {
            fetchCarts();
        } catch (error) {
            console.error("fetch cart failed");
+       }finally{
+        setLoading(false);
        }
    }
 
@@ -126,7 +131,10 @@ const Cart = ({cartOpen , setCartOpen}) => {
                    <div className='fs-3 p-1' style={{border:'2px solid green',width:'max-content',cursor:'pointer'}} onClick={handleCart} ><FaAngleDoubleRight className='m-1'/></div>
                </div>
                <hr />
-               {    cartItem && cartItem.length === 0 ? (
+                {
+                    loading ? (<Spinner />):(<>
+                    
+                        {    cartItem && cartItem.length === 0 ? (
                    <div>
                    <pre><h3 className="fw-semibold emptytext text-center mt-3">C A R T   I S   E M P T Y</h3></pre>
                    <div className="text-center mt-5 bounce-img"><img src={"/images/cartempty.webp"} alt="empty" width="190"/></div>
@@ -164,6 +172,10 @@ const Cart = ({cartOpen , setCartOpen}) => {
                        )})
                    } </div>
                )}
+                    
+                    </>)
+                }
+               
                <div className="cart-footer ">
                    { cartItem.length === 0 ? (null):(
                        <div> 
