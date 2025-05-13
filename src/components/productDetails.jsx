@@ -83,7 +83,12 @@ export function ProductDetails(){
     return(
         <>
         {
-            loading?( <Spinner /> ):(
+            loading?( <div
+          className="d-flex justify-content-center align-items-center"
+          style={{ minHeight: '500px' }} // Reserve height to prevent footer jump
+        >
+                <Spinner />
+                </div> ):(
                 <>
                      {  product && (
             <>
