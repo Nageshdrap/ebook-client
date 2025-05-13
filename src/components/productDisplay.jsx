@@ -56,7 +56,12 @@ export function ProductDisplay(){
         <>
         {
             loading ? (
+                 <div
+          className="d-flex justify-content-center align-items-center"
+          style={{ minHeight: '400px' }} // Reserve height to prevent footer jump
+        >
                 <Spinner />
+                </div>
             ):(
                 <Suspense fallback={<Loader loading={true}/>}>
             <Products product={product} />
