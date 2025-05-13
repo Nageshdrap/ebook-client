@@ -5,6 +5,7 @@ import { palette } from '@mui/material';
 import { Button } from '@mui/material';
 import Loader from "./loader";
 import Pagination from "./pagination";
+import Spinner from "./spinner";
 
 
 // import Products from "./products";
@@ -25,14 +26,23 @@ export function ProductDisplay(){
     const [totalPage , setTotalPage] = useState(1);
     const [seed , setSeed] = useState(Math.random().toFixed(2));
     let [arrayKeywords, setArrayKeywords] = useState([]);
+    const [loading,setLoading] = useState(false);
 
        async function LoadProducts(){
-           await axios.get(`https://ebook-server-4izu.onrender.com/api/product?page=${page}?seed=${seed}`)
+        setLoading(true)
+        try {
+            await axios.get(`https://ebook-server-4izu.onrender.com/api/product?page=${page}?seed=${seed}`)
             .then(Res =>{
                 setproduct(Res.data.products);
                setTotalPage(Res.data.totalPage);
                setSeed(Res.data.seed);
             });
+        } catch (error) {
+            console.log('error fetching', error);
+        }finally{
+            setLoading(false);
+        }
+           
         }
 
             useEffect(()=>{
@@ -44,10 +54,17 @@ export function ProductDisplay(){
 
     return(
         <>
-        <Suspense fallback={<Loader loading={true}/>}>
+        {
+            loading ? (
+                <Spinner />
+            ):(
+                <Suspense fallback={<Loader loading={true}/>}>
             <Products product={product} />
             <Pagination totalPage={totalPage} page={page} setPage={setPage} />
         </Suspense>
+            )
+        }
+        
         </>
     )
 
