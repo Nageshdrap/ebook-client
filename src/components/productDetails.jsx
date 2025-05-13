@@ -8,6 +8,7 @@ import API from "./api";
 import './button-shrink.css';
 import { useCart } from "./contextApi/CartContext";
 import Loader from "./loader";
+import Spinner from "./spinner";
 const Cart = lazy(()=> import('./cart'));
 
 
@@ -27,12 +28,21 @@ export function ProductDetails(){
     const [tokenValue , setTokenValue] = useState('');
     const [cartOpen , setCartOpen] = useState(false);
     const [isShrunk , setIsShrunk] = useState(false);
+    const [loading , setLoading] = useState(false);
 
   async  function  loadProductDetails(id){
-       await axios.get(`https://ebook-server-4izu.onrender.com/api/productdetails/${id}`)
+    setLoading(true);
+    try {
+         await axios.get(`https://ebook-server-4izu.onrender.com/api/productdetails/${id}`)
         .then(Res =>{
            setProduct(Res.data);
    });
+    } catch (error) {
+        console.error("product details failed");
+    }finally{
+        setLoading(false);
+    }
+      
    }
     
    async function addCart(id){
@@ -72,8 +82,10 @@ export function ProductDetails(){
         
     return(
         <>
-       
-        {  product && (
+        {
+            loading?( <Spinner /> ):(
+                <>
+                     {  product && (
             <>
              {
                 cartOpen && (<Suspense fallback={< Loader loading={true}/>}>< Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/></Suspense>)
@@ -131,6 +143,11 @@ export function ProductDetails(){
             </section>
             </>
 )}
+                </>
+            )
+        }
+       
+       
  
       </>
      
