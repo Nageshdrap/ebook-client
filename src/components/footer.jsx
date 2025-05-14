@@ -24,15 +24,16 @@ const Footer = () =>{
 
     const handleUserInfo = async(e) =>{
         e.preventDefault();
-        toast.success('sending...');
         try {
             const res = await axios.post('https://ebook-server-4izu.onrender.com/api/send-email',userData);
-            toast.success('message sent successfully');
+            if(res.data.success){
+                toast.success('message sent successfully');
             setUserData({
                 bookname:'',
                 deptname:'',
                 number:''
             });
+            }
         } catch (error) {
             toast.error('failed to send message');
         }
@@ -67,10 +68,10 @@ const Footer = () =>{
                         <input type="text" id="inputPassword5" name='bookname' value={userData.bookname} onChange={UserInfo} class="form-control" aria-describedby="passwordHelpBlock" placeholder='Book name...'/>
                         </div> 
                         <div className='mb-2'>
-                        <input type="text" id="inputPassword5" name='deptname' onChange={UserInfo} class="form-control" aria-describedby="passwordHelpBlock" placeholder='Deparment/stream/year...'/>
+                        <input type="text" id="inputPassword5" name='deptname' value={userData.deptname} onChange={UserInfo} class="form-control" aria-describedby="passwordHelpBlock" placeholder='Deparment/stream/year...'/>
                         </div>
                         <div className='mb-2 d-flex gap-2'>
-                        <input type="text" id="inputPassword5" name='number' class="form-control" onChange={UserInfo} aria-describedby="passwordHelpBlock" placeholder='Mobile number/Whatsup number'/>
+                        <input type="text" id="inputPassword5" name='number' value={userData.number} class="form-control" onChange={UserInfo} aria-describedby="passwordHelpBlock" placeholder='Mobile number/Whatsup number'/>
                         <input type="submit" className='btn  btn-success w-100'/>
 
                         </div>  
