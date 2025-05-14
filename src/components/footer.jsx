@@ -11,7 +11,7 @@ import axios from 'axios';
 
 const Footer = () =>{
 
-    const [userData , setUserData] = userData({
+    const [userData , setUserData] = useState({
         bookname:'',
         deptname:'',
         number:''
