@@ -182,8 +182,8 @@ export function Header(){
                             <ul className='w-100 list-group'>
                             { (userInfo)? <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleEdit}><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>:<li className='d-flex justify-content-start align-items-center'><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>}
                                 <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleWishlist}><FaRegHeart className='fs-5 '/><div className=' ms-3 fw-semibold'>Wishlist</div></li>
-                                <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleOrders}><IoBagCheckOutline className='fs-3 '/><div className='fw-semibold ms-3'>Orders</div></li>
-                                <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleHome}><IoHomeOutline className='fs-3 '/><div className='fw-semibold ms-3'>Home</div></li>
+                                <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleOrders}><IoBagCheckOutline className='fs-5 '/><div className='fw-semibold ms-3'>Orders</div></li>
+                                <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleHome}><IoHomeOutline className='fs-5 '/><div className='fw-semibold ms-3'>Home</div></li>
                                 <hr></hr>
                             </ul>
                             {   (!userInfo)?
