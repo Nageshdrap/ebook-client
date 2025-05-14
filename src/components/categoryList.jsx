@@ -133,6 +133,7 @@ export function CategoryList( {page , setPage ,setRotate , rotate}){
                 <>
                     <div className="overlays"></div>
                     <div className="categorymenu p-3" ref={sideMenu}>
+                        <div className='position-relative'>
                         <div className="d-flex justify-content-between align-items-center">
                             <div className="text-center fw-semibold"><h2>C A T E G O R Y</h2></div>
                             <div className='fs-3 p-1' style={{border:'2px solid green',width:'max-content',cursor:'pointer'}} onClick={handleClose} ><FaAngleDoubleLeft className='m-1'/></div>
@@ -166,6 +167,7 @@ export function CategoryList( {page , setPage ,setRotate , rotate}){
                             
                         ))
                     }
+                        </div>
                         </div>
                         </div>
                 </>

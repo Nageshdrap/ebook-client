@@ -6,8 +6,36 @@ import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlineMail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const Footer = () =>{
+
+    const [userData , setUserData] = userData({
+        bookname:'',
+        deptname:'',
+        number:''
+    });
+
+    const UserInfo = (e) =>{
+        setUserData({...userData , [e.target.name]:e.target.value});
+    };
+
+    const handleUserInfo = async(e) =>{
+        e.preventDefault();
+        toast.success('sending...');
+        try {
+            const res = await axios.post('https://ebook-server-4izu.onrender.com/api/send-email',userData);
+            toast.success('message sent successfully');
+            setUserData({
+                bookname:'',
+                deptname:'',
+                number:''
+            });
+        } catch (error) {
+            toast.error('failed to send message');
+        }
+    }
 
     return(
         <footer className='mt-3'>
@@ -23,6 +51,7 @@ const Footer = () =>{
                         <a href="https://www.instagram.com/bookturn_?utm_source=qr&igsh=MWxoYmE1ZTRrZ3RjNA=="><div><FaInstagram /></div></a>
                         <div><FaTwitter /></div>
                     </div>
+                    
                     <div className="search-container1 container">
                         <div className="input-wrapper1">
                             <input type="text" placeholder="Email" className="search-input1" />
@@ -31,16 +60,16 @@ const Footer = () =>{
                     </div>
                     </div>
                         <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-                         <form action="" className='footerform'>  
+                         <form className='footerform' onSubmit={handleUserInfo}>  
                         <div className='mb-2'>
                    <label for="inputPassword5" class="form-label fw-semibold">If any book required just tell us..</label>
-                        <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder='Book name...'/>
+                        <input type="text" id="inputPassword5" name='bookname' onChange={UserInfo} class="form-control" aria-describedby="passwordHelpBlock" placeholder='Book name...'/>
                         </div> 
                         <div className='mb-2'>
-                        <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder='Deparment/stream/year...'/>
+                        <input type="text" id="inputPassword5" name='deptname' onChange={UserInfo} class="form-control" aria-describedby="passwordHelpBlock" placeholder='Deparment/stream/year...'/>
                         </div>
                         <div className='mb-2 d-flex gap-2'>
-                        <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder='Mobile number/Whatsup number'/>
+                        <input type="text" id="inputPassword5" name='number' class="form-control" onChange={UserInfo} aria-describedby="passwordHelpBlock" placeholder='Mobile number/Whatsup number'/>
                         <input type="submit" className='btn  btn-success w-100'/>
 
                         </div>  
