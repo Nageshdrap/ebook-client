@@ -8,6 +8,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { Bounce, toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
+import { useState } from 'react';
 
 const Footer = () =>{
 
