@@ -27,7 +27,9 @@ const Footer = () =>{
         try {
             const res = await axios.post('https://ebook-server-4izu.onrender.com/api/send-email',userData);
             if(res.data.success){
-                toast.success('message sent successfully');
+                toast.success('message sent successfully',{
+                    autoClose: 2000
+                });
             setUserData({
                 bookname:'',
                 deptname:'',
@@ -35,7 +37,9 @@ const Footer = () =>{
             });
             }
         } catch (error) {
-            toast.error('failed to send message');
+            toast.error('failed to send message',{
+                autoClose: 2000
+            });
         }
     }
 
