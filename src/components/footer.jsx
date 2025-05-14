@@ -64,7 +64,7 @@ const Footer = () =>{
                          <form className='footerform' onSubmit={handleUserInfo}>  
                         <div className='mb-2'>
                    <label for="inputPassword5" class="form-label fw-semibold">If any book required just tell us..</label>
-                        <input type="text" id="inputPassword5" name='bookname' onChange={UserInfo} class="form-control" aria-describedby="passwordHelpBlock" placeholder='Book name...'/>
+                        <input type="text" id="inputPassword5" name='bookname' value={userData.bookname} onChange={UserInfo} class="form-control" aria-describedby="passwordHelpBlock" placeholder='Book name...'/>
                         </div> 
                         <div className='mb-2'>
                         <input type="text" id="inputPassword5" name='deptname' onChange={UserInfo} class="form-control" aria-describedby="passwordHelpBlock" placeholder='Deparment/stream/year...'/>
