@@ -154,7 +154,7 @@ const Footer = () =>{
                 </div>
 
         </footer>
-                                                <ToastContainer position="bottom-center" autoClose={2000} transition={Bounce} theme="dark" hideProgressBar={true} closeButton={false} toastStyle={{maxWidth:'400px'}} style={{marginBottom:'10px'}}/>
+                                                <ToastContainer position="bottom-center" autoClose={2000} transition={Bounce} limit={1} theme="dark" hideProgressBar={true} closeButton={false} toastStyle={{maxWidth:'400px'}} style={{marginBottom:'10px'}}/>
 
         </>
     )
