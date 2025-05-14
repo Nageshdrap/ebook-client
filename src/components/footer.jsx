@@ -145,6 +145,8 @@ const Footer = () =>{
                     <Link to='/term'style={{textDecoration:'none'}}><div className='text-light'><span className='me-2'>Term & condition</span>/<span className='ms-2'>Policy</span></div></Link>
                     <div className='copyright' style={{fontSize:'smaller'}}>&copy;2025 All rights reserved</div>
                 </div>
+                                        <ToastContainer position="bottom-center" autoClose={2000} transition={Bounce} theme="dark" hideProgressBar={true} closeButton={false} toastStyle={{maxWidth:'400px'}} style={{marginBottom:'10px'}}/>
+
         </footer>
     )
 }
