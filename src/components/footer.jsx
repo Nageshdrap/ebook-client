@@ -6,7 +6,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlineMail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { Bounce, toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
 
 const Footer = () =>{
