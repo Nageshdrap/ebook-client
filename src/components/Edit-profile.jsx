@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './edit-profile.css';
 import axios from 'axios';
 import { Alert } from './Alert';
+import Spinner from './spinner';
 
 
 
@@ -14,6 +15,7 @@ const EditProfile = () =>{
     const [editnum , setEditNum] = useState(false);
     const [alertMessage , setAlertMassege] = useState('');
     const [icons , setIcons] = useState('');
+    const [loading , setLoading] = useState(false);
 
     const handleChange = (e) =>{
         const { name , value} = e.target;
@@ -34,12 +36,21 @@ const EditProfile = () =>{
     }
 
     useEffect( ()=>{
+        
         const fetchUser = async () =>{
-        const res = await axios.get(`https://ebook-server-4izu.onrender.com/api/user`,{
+            setLoading(true);
+            try {
+                 const res = await axios.get(`https://ebook-server-4izu.onrender.com/api/user`,{
             headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
  
         });
         setUser(res.data.user);
+            } catch (error) {
+                console.error('fetching failed');
+            }finally{
+                setLoading(false);
+            }
+       
         
     }
     fetchUser();
@@ -47,7 +58,16 @@ const EditProfile = () =>{
     },[])
     return(
         <>
-            <div className="container edit-profile" >
+        {
+         loading ? (
+                 <div
+          className="d-flex justify-content-center align-items-center"
+          style={{ minHeight: '400px' }} // Reserve height to prevent footer jump
+        >
+                <Spinner />
+                </div>
+            ):(
+                 <div className="container edit-profile" >
                 <div className='profile-info'>
                     <div className="mb-3">
                         <div><label for="exampleFormControlInput1" class="form-label" className='fw-semibold mb-2'>Enter FullName</label>{editname ? <span className='ms-5 text-primary fw-semibold ' style={{cursor:'pointer'}} onClick={()=>setEditName(false)}>cancel</span> : <span className='ms-5 text-primary fw-semibold cursor-pointer' style={{cursor:'pointer'}} onClick={()=>setEditName(true)}>edit</span>}</div>
@@ -65,6 +85,9 @@ const EditProfile = () =>{
                     </div>
                 </div>
             </div>
+            )
+        }
+           
              {
                             alertMessage && (
                                 <Alert message={alertMessage} icon={icons} onClose={()=> setAlertMassege('')} />
