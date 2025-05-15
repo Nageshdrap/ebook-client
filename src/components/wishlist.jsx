@@ -16,7 +16,7 @@ export function WishList(){
     const navigate = useNavigate();
     
     const [product , setProduct] = useState([]);
-
+    const token = localStorage.getItem("token");
     const fetchWishProduct = async () =>{
         setLoading(true);
         try {
@@ -35,7 +35,8 @@ export function WishList(){
     }
 
     useEffect(()=>{
-        const token = localStorage.getItem("token");
+        
+        console.log("mm");
         if(token){
             fetchWishProduct();
         }else{
