@@ -39,13 +39,13 @@ const ProductCard = ({ item , fromWishlist}) => {
           <Link to={`/productDetails?pid=${item._id}`}>
             <LazyImage src={item.images} alt={"book"} />
           </Link>
-          <i 
+          <div 
             className="wishicon p-2 fs-4 fw-semibold"
             onClick={()=>handleWishlist(item._id)}
             style={{ color: inWishlist ? "red" : "black", cursor: "pointer",backgroundColor:'white',borderRadius:'50%' }}
           >
             {inWishlist ? <FaHeart /> : <FaRegHeart />}
-          </i>
+          </div>
         </div>
 
         <Link style={{ textDecoration: 'none' }} to={`/productDetails?pid=${item._id}`}>
