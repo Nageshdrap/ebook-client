@@ -37,7 +37,7 @@ export const WishlistProvider = ({children}) =>{
             await axios.delete(`https://ebook-server-4izu.onrender.com/api/deletewishlist/${productId}`,{
                                   headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}               
             });
-            setWishlist(prev => prev.filter(item => item.productId._id !== productId));
+            setWishlist(prev => prev.filter(item => item._id !== productId));
         } catch (error) {
             console.error('remove wishlist failed',error);
         }
