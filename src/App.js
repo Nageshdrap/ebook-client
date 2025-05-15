@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 
 import { Header } from './components/header';
+import WishlistCom from './components/wishlist';
 import Footer from './components/footer';
 import { UserProvider } from './components/contextApi/UserContext';
 import { CartProvider } from './components/contextApi/CartContext';
@@ -11,7 +12,6 @@ import { Login } from './components/login';
 // const Login = lazy(()=> import('./components/login'));
 import { RegiserUser } from './components/register';
 // const RegiserUser = lazy(()=> import('./components/register'));
-import { WishList } from './components/wishlist';
 
 import { ProtectedUser } from './components/auth/ProtectedRoute';
 // import { Cart } from './components/cart';
@@ -22,7 +22,7 @@ import { InsertProduct } from './components/insertproduct';
 // const InsertProduct = lazy(()=> import('./components/insertproduct'));
 import { InsertSubcategory } from './components/insert-subCategory';
 // const InsertSubcategory = lazy(()=> import('./components/insert-subCategory'));
-import { ProductDisplay } from './components/productDisplay';
+import { ProductDisplay } from './components/ProductDisplay';
 // const ProductDisplay = lazy(()=> import('./components/productDisplay'));
 import { InsertCategory } from './components/insert-category';
 // const InsertCategory = lazy(()=> import('./components/insert-category'));
@@ -58,6 +58,7 @@ import Spinner from './components/spinner';
 
 import { Bounce, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { WishlistProvider } from './components/contextApi/WishlistContext';
 // const CategoryProduct = lazy(()=> import('./components/Categoryproduct'));
 // const WishList = lazy(()=> import('./components/wishlist'));
 const Cart = lazy(()=> import('./components/cart'));
@@ -84,6 +85,7 @@ function App() {
           {/* </Route> */}
           
        {/* </Routes> */}
+       <WishlistProvider>
        <CartProvider>
       <UserProvider>
        <Router>
@@ -101,7 +103,7 @@ function App() {
               
               <Route path='login' element={<Login/>}/>
               <Route path='register' element={<RegiserUser/>}/>
-              <Route path='/wishlist' element={<WishList />}/>
+              <Route path='/wishlist' element={<WishlistCom />}/>
               <Route path='/cart' element={<Cart />}/>
               <Route path='/products' element={<CategoryProduct />} />
               <Route  path='/placeorder' element={< PlaceOrder/>}/>
@@ -128,6 +130,7 @@ function App() {
        </Router>
        </UserProvider>
        </CartProvider>
+       </WishlistProvider>
    </>
   );
 }

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Products from "./products";
+import ProductCard from "./ProductCard";
 
 
 
@@ -35,7 +36,17 @@ const CategoryProduct = () =>{
 
     return(
         <>
-            <Products product={product} />
+
+            <div className="container">
+                <div className="row">
+                    {
+                        product.map((item , index) =>(
+                            <ProductCard item={item} key={index} fromWishlist={false} />
+                        ))
+                    }
+                </div>
+            </div>
+           
         </>
     )
 }
