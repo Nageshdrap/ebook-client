@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useWishlist } from "./contextApi/WishlistContext"
 import ProductCard from "./ProductCard"
 import Spinner from "./spinner";
-
-
+import Lottie from "lottie-react";
+import emptyAnimation from '../animation/emptyWish.json';
 
 
 const WishlistCom = () =>{
@@ -16,9 +16,13 @@ const WishlistCom = () =>{
           <Spinner />
         </div>
             ):(
-                 <div className="container">
+                 <div className="container mbWish">
                 {
-                    wishlist?.length === 0 ? (<p>Wishlist Empty</p>):
+                    wishlist?.length === 0 ? (
+                        <div className="container" style={{height:'100%'}}>
+                            <Lottie animationData={emptyAnimation} loop={true} />
+                        </div>
+                    ):
                     (
                         <div className="row">
                     {
