@@ -34,7 +34,7 @@ export const WishlistProvider = ({children}) =>{
 
     const removeWishlist = async (productId) =>{
         try {
-            await axios.delete(`https://ebook-server-4izu.onrender.com/api/removewishlist/${productId}`,{
+            await axios.delete(`https://ebook-server-4izu.onrender.com/api/deletewishlist/${productId}`,{
                                   headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}               
             });
             setWishlist(prev => prev.filter(item => item.productId._id !== productId));
