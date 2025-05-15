@@ -7,7 +7,7 @@ import Loader from "./loader";
 
 const ProductList = lazy(() => import('./ProductList'));
 
-export function ProductDisplay() {
+export function ProductLine() {
   let [product, setproduct] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);

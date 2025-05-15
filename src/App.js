@@ -6,7 +6,7 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import { Header } from './components/header';
 import WishlistCom from './components/wishlist';
 import Footer from './components/footer';
-import { ProductDisplay } from './components/ProductDisplay';
+import { ProductLine } from './components/productline';
 import { UserProvider } from './components/contextApi/UserContext';
 import { CartProvider } from './components/contextApi/CartContext';
 import { Login } from './components/login';
@@ -98,7 +98,7 @@ function App() {
           <Suspense fallback={<p>Loading..</p>}>
           <Routes>
               
-              <Route path='/' element={< ProductDisplay />}/>
+              <Route path='/' element={< ProductLine />}/>
               
               <Route path='/productDetails' element={< ProductDetails />} />
               
