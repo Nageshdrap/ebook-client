@@ -22,13 +22,11 @@ const ProductCard = ({ item , fromWishlist}) => {
     try {
       if (originalState) {
       await removeWishlist(itemId);
-      toast("Removed from wishlist");
       if(fromWishlist){
         removeWishlist(itemId);
       }
     } else {
       await addWishlist(itemId);
-      toast("Added to wishlist");
     }
     } catch (error) {
       setInWishlist(originalState);
