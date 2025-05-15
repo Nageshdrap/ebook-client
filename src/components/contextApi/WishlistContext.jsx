@@ -22,8 +22,8 @@ export const WishlistProvider = ({children}) =>{
 
     const addWishlist = async( productId) =>{
         try {
-            await axios.post('https://ebook-server-4izu.onrender.com/api/addwishlist',{
-                                 headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
+            await axios.post('https://ebook-server-4izu.onrender.com/api/addwishlist',{productId},{
+                headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
             });
             fetchWishlist();
         } catch (error) {
