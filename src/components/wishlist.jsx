@@ -10,7 +10,7 @@ const WishlistCom = () =>{
         <>
             <div className="container">
                 {
-                    wishlist.length === 0 ? (<p>Wishlist Empty</p>):
+                    wishlist?.length === 0 ? (<p>Wishlist Empty</p>):
                     (
                         <div className="row">
                     {
