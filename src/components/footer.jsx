@@ -48,6 +48,7 @@ const Footer = () =>{
                         localStorage.setItem('token',res.data.token);
                         login();
                         navigate('/');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
                     }else{
                         toast.error(res.data.message);
                     }
