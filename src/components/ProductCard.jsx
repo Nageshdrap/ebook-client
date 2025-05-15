@@ -16,15 +16,15 @@ const ProductCard = ({ item , fromWishlist}) => {
 
   
 
-  const handleWishlist = async () => {
-    if (console.log("nag true",inWishlist)) {
-      await removeWishlist(item._id);
+  const handleWishlist = async (itemId) => {
+    if (inWishlist) {
+      await removeWishlist(itemId);
       toast("Removed from wishlist");
       if(fromWishlist){
-        removeWishlist(item._id);
+        removeWishlist(itemId);
       }
     } else {
-      await addWishlist(item._id);
+      await addWishlist(itemId);
       toast("Added to wishlist");
     }
   };
@@ -41,7 +41,7 @@ const ProductCard = ({ item , fromWishlist}) => {
           </Link>
           <i
             className="wishicon fs-1 fw-semibold"
-            onClick={handleWishlist}
+            onClick={()=>handleWishlist(item._id)}
             style={{ color: inWishlist ? "red" : "gray", cursor: "pointer" }}
           >
             {inWishlist ? <FaHeart fill="red"/> : <FaRegHeart />}
