@@ -20,7 +20,7 @@ const WishlistCom = () =>{
                  <div className="container mbWish">
                 {
                     wishlist?.length === 0 ? (
-                        <div className="" style={{height:'100vh',width:'100vw',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <div className="" style={{height:'100vh',width:'100vw',display:'flex',justifyContent:'center'}}>
                             <Lottie animationData={emptyAnimation} loop={true} style={{height:'80vh',width:'80vw'}}/>
                         </div>
                     ):
