@@ -42,9 +42,12 @@ export const WishlistProvider = ({children}) =>{
         }
     };
 
-    const isInWishlist = (productId) =>{
-        return wishlist.some((item) => item.productId._id === productId);
-    };
+    const isInWishlist = (productId) => {
+  return Array.isArray(wishlist) && wishlist.some((item) => {
+    const id = item?.productId?._id || item?.productId;
+    return id === productId;
+  });
+};
 
     useEffect(()=>{
         fetchWishlist();
