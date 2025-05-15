@@ -35,6 +35,10 @@ const Footer = () =>{
             if(token){
                 toast.success('you already logged in');
             }else{
+                if(!userLogin.email){
+                    setEmailError('Email is required');
+                    return;
+                }
                 if(!emailError){
                     const res = await axios.post('https://ebook-server-4izu.onrender.com/api/easylogin',userLogin);
                     if(res.data.success){
@@ -96,6 +100,8 @@ const Footer = () =>{
                                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                                 if(!emailRegex.test(value)){
                                     setEmailError('Please enter a valid email address');
+                                }else{
+                                    setEmailError('');
                                 }
                             }
                                 
