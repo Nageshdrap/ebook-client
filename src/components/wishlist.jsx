@@ -23,7 +23,7 @@ export function WishList(){
              const res = await axios.get('https://ebook-server-4izu.onrender.com/api/wishlist',{
             headers:{Authorization:`Bearer ${token}`}
         });
-        setProduct(res.data);
+        setProduct(res.data.list);
         } catch (error) {
             console.error('fetch wishlist error');
         }finally{
