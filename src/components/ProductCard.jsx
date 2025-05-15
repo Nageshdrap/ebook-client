@@ -17,7 +17,10 @@ const ProductCard = ({ item , fromWishlist}) => {
   
 
   const handleWishlist = async (itemId) => {
-    if (inWishlist) {
+    const originalState = inWishlist;
+    setInWishlist(!inWishlist)
+    try {
+      if (originalState) {
       await removeWishlist(itemId);
       toast("Removed from wishlist");
       if(fromWishlist){
@@ -27,6 +30,10 @@ const ProductCard = ({ item , fromWishlist}) => {
       await addWishlist(itemId);
       toast("Added to wishlist");
     }
+    } catch (error) {
+      setInWishlist(originalState);
+    }
+    
   };
   useEffect(()=>{
     setInWishlist(isInWishlist(item._id));
