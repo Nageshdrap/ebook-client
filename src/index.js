@@ -7,7 +7,6 @@ import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 import { CookiesProvider } from 'react-cookie';
 import axios from 'axios';
 import { Header } from './components/header';
-import { ProductDisplay } from './components/productDisplay';
 import { Login } from './components/login';
 import { Demo } from './components/demo';
 import { Demo2 } from './components/demo2';
@@ -24,7 +23,7 @@ root.render(
   <React.StrictMode>
     <GoogleOAuthProvider clientId={CLIENT_ID}>
      {/* <Header /> */}
-    {/* <ProductDisplay />  */}
+    
        <App/>
     {/* <Demo /> */}
     {/* <Demo2/> */}
