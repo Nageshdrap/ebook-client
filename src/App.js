@@ -6,6 +6,7 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import { Header } from './components/header';
 import WishlistCom from './components/wishlist';
 import Footer from './components/footer';
+import { ProductDisplay} from './components/ProductDisplay';
 import { UserProvider } from './components/contextApi/UserContext';
 import { CartProvider } from './components/contextApi/CartContext';
 import { Login } from './components/login';
@@ -22,7 +23,7 @@ import { InsertProduct } from './components/insertproduct';
 // const InsertProduct = lazy(()=> import('./components/insertproduct'));
 import { InsertSubcategory } from './components/insert-subCategory';
 // const InsertSubcategory = lazy(()=> import('./components/insert-subCategory'));
-import ProductDisplay from './components/ProductDisplay';
+
 // const ProductDisplay = lazy(()=> import('./components/productDisplay'));
 import { InsertCategory } from './components/insert-category';
 // const InsertCategory = lazy(()=> import('./components/insert-category'));
