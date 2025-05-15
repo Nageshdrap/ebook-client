@@ -12,7 +12,7 @@ const WishlistCom = () =>{
     return(
         <>{
             loading ? (
-                <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '400px' }}>
+                <div className="d-flex justify-content-center align-items-center mbWish" style={{ minHeight: '400px' }}>
           <Spinner />
         </div>
             ):(
