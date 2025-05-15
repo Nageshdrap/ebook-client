@@ -17,10 +17,36 @@ const Footer = () =>{
         deptname:'',
         number:''
     });
+    const [userLogin ,setUserLogin] = useState({
+        email:''
+    });
+    const [emailError,setEmailError] = useState('');
 
     const UserInfo = (e) =>{
         setUserData({...userData , [e.target.name]:e.target.value});
     };
+
+    const handleSubmit = async (e) =>{
+        e.preventDefault();
+        const token = localStorage.getItem('token');
+        try {
+            if(token){
+                toast.success('you already logged in');
+            }else{
+                if(!emailError){
+                    const res = await axios.post('https://ebook-server-4izu.onrender.com/api/easylogin',userLogin);
+                    if(res.data.success){
+                        toast.success('Logged in successful');
+                        localStorage.setItem('token',res.data.token);
+                    }else{
+                        toast.error(res.data.message);
+                    }
+                }
+            }
+        } catch (error) {
+            console.error('logged in failed');
+        }
+    }
 
     const handleUserInfo = async(e) =>{
         e.preventDefault();
@@ -58,13 +84,28 @@ const Footer = () =>{
                         <a href="https://www.instagram.com/bookturn_?utm_source=qr&igsh=MWxoYmE1ZTRrZ3RjNA=="><div><FaInstagram /></div></a>
                         <div><FaTwitter /></div>
                     </div>
-                    
+                    <form onSubmit={handleSubmit}>
                     <div className="search-container1 container">
                         <div className="input-wrapper1">
-                            <input type="text" placeholder="Email" className="search-input1" />
+                            <input type="text" placeholder="Email" name='email' onChange={(e)=>{
+                                const value = e.target.value;
+                                setUserLogin({...userLogin,[e.target.name]:value});
+                                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                if(!emailRegex.test(value)){
+                                    setEmailError('Please enter a valid email address');
+                                }
+                            }
+                                
+                            } className="search-input1" />
+                            {
+                                emailError && (
+                                    <p className="mb-0 fw-semibold" style={{color:'red',fontSize:'12px',marginTop:'4px'}}>{emailError}</p>
+                                )
+                            }
                         </div>
                         <button className="search-button1">Login</button>
                     </div>
+                    </form>
                     </div>
                         <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                          <form className='footerform' onSubmit={handleUserInfo}>  
