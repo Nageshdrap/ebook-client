@@ -48,3 +48,6 @@ export function ProductDisplay() {
     </>
   );
 }
+
+
+export default ProductDisplay;
