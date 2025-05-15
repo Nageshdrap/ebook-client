@@ -17,7 +17,7 @@ const ProductCard = ({ item , fromWishlist}) => {
   
 
   const handleWishlist = async () => {
-    if (inWishlist) {
+    if (console.log("nag true",inWishlist)) {
       await removeWishlist(item._id);
       toast("Removed from wishlist");
       if(fromWishlist){
