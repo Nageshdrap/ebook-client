@@ -47,7 +47,7 @@ export const WishlistProvider = ({children}) =>{
   return Array.isArray(wishlist) && wishlist.some((item) => {
     const id = item?.productId?._id || item?.productId;
     console.log("isinwishlist");
-    return id === productId;
+    return String(id) === String(productId);
   });
 };
 

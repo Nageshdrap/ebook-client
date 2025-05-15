@@ -2,7 +2,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import './productDisplay.css';
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LazyImage from "./LazyImage";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
@@ -10,10 +10,11 @@ import { useWishlist } from "./contextApi/WishlistContext";
 import { toast, Bounce, ToastContainer } from "react-toastify";
 
 const ProductCard = ({ item , fromWishlist}) => {
-  const { addWishlist, removeWishlist, isInWishlist } = useWishlist();
+  const { addWishlist, removeWishlist, isInWishlist , wishlist } = useWishlist();
+  const [inWishlist , setInWishlist] = useState(false);
   const navigate = useNavigate();
 
-  const inWishlist = isInWishlist(item._id);
+  
 
   const handleWishlist = async () => {
     if (inWishlist) {
@@ -27,6 +28,9 @@ const ProductCard = ({ item , fromWishlist}) => {
       toast("Added to wishlist");
     }
   };
+  useEffect(()=>{
+    setInWishlist(isInWishlist(item._id));
+  },[wishlist , item._id]);
 
   return (
     <div className="col-xs-6 col-sm-6 col-md-4 col-lg-3 product1 bg-light">
