@@ -9,10 +9,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Bounce, toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
 import { useState } from 'react';
+import { useUser } from './contextApi/UserContext';
 
 const Footer = () =>{
 
     const navigate = useNavigate();
+    const {login} = useUser();
 
     const [userData , setUserData] = useState({
         bookname:'',
@@ -44,6 +46,7 @@ const Footer = () =>{
                     if(res.data.success){
                         toast.success('Logged in successful');
                         localStorage.setItem('token',res.data.token);
+                        login();
                         navigate('/');
                     }else{
                         toast.error(res.data.message);
