@@ -55,6 +55,9 @@ import Term from './components/term';
 import CategoryProduct from './components/Categoryproduct';
 import Offer from './components/Offer';
 import Spinner from './components/spinner';
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // const CategoryProduct = lazy(()=> import('./components/Categoryproduct'));
 // const WishList = lazy(()=> import('./components/wishlist'));
 const Cart = lazy(()=> import('./components/cart'));
@@ -120,6 +123,7 @@ function App() {
           </Suspense>
           </main>
           <Footer/>
+          <ToastContainer position="bottom-center" autoClose={2000} transition={Bounce} theme="dark" hideProgressBar={true} closeButton={true} toastStyle={{maxWidth:'400px'}} style={{marginBottom:'10px'}}/>
           </div>
        </Router>
        </UserProvider>
