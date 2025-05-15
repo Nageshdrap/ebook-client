@@ -24,6 +24,7 @@ export function WishList(){
             headers:{Authorization:`Bearer ${token}`}
         });
         setProduct(res.data.list);
+        console.log("mm",res.data.list);
         } catch (error) {
             console.error('fetch wishlist error');
         }finally{
