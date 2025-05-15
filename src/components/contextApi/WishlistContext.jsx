@@ -8,8 +8,10 @@ const WishlistContext =createContext();
 
 export const WishlistProvider = ({children}) =>{
     const [wishlist , setWishlist] = useState([]);
+    const [loading , setLoading] = useState(false);
 
     const fetchWishlist = async () =>{
+        setLoading(true);
         try {
             const res = await axios.get('https://ebook-server-4izu.onrender.com/api/getwishlist',{
                  headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
@@ -18,6 +20,8 @@ export const WishlistProvider = ({children}) =>{
             console.log("suuu",res.data);
         } catch (error) {
             console.error("failed to fetch wishlist" , error);
+        }finally{
+            setLoading(false);
         }
     };
 
@@ -33,6 +37,7 @@ export const WishlistProvider = ({children}) =>{
     };
 
     const removeWishlist = async (productId) =>{
+        setLoading(true);
         try {
             await axios.delete(`https://ebook-server-4izu.onrender.com/api/deletewishlist/${productId}`,{
                                   headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}               
@@ -40,6 +45,8 @@ export const WishlistProvider = ({children}) =>{
             setWishlist(prev => prev.filter(item => item._id !== productId));
         } catch (error) {
             console.error('remove wishlist failed',error);
+        }finally{
+            setLoading(false);
         }
     };
 
@@ -54,7 +61,7 @@ export const WishlistProvider = ({children}) =>{
     },[]);
 
     return (
-        <WishlistContext.Provider value={{wishlist , addWishlist , removeWishlist , isInWishlist}}>{children}</WishlistContext.Provider>
+        <WishlistContext.Provider value={{wishlist , addWishlist , removeWishlist , isInWishlist,loading}}>{children}</WishlistContext.Provider>
     );
 };
 

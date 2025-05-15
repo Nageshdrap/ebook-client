@@ -1,14 +1,22 @@
+import { useState } from "react";
 import { useWishlist } from "./contextApi/WishlistContext"
 import ProductCard from "./ProductCard"
+import Spinner from "./spinner";
 
 
 
 
 const WishlistCom = () =>{
-    const {wishlist}= useWishlist();
+    
+    const {wishlist , loading}= useWishlist();
     return(
-        <>
-            <div className="container">
+        <>{
+            loading ? (
+                <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '400px' }}>
+          <Spinner />
+        </div>
+            ):(
+                 <div className="container">
                 {
                     wishlist?.length === 0 ? (<p>Wishlist Empty</p>):
                     (
@@ -23,6 +31,9 @@ const WishlistCom = () =>{
                 }
                 
             </div>
+            )
+        }
+           
         </>
     )
 }
