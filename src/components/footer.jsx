@@ -5,12 +5,14 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlineMail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Bounce, toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
 import { useState } from 'react';
 
 const Footer = () =>{
+
+    const navigate = useNavigate();
 
     const [userData , setUserData] = useState({
         bookname:'',
@@ -38,6 +40,7 @@ const Footer = () =>{
                     if(res.data.success){
                         toast.success('Logged in successful');
                         localStorage.setItem('token',res.data.token);
+                        navigate('/');
                     }else{
                         toast.error(res.data.message);
                     }
