@@ -55,9 +55,12 @@ export function WishList(){
                 </div>
             ):(<>
                  {
-            product.length === 0 && <div className="emptywish container bg-light px-3 py-2 fw-semibold ">E M P T Y  <span className="ms-3">  W I S H L I S T </span><Link to="/" className="text-decoration-none ms-3" style={{cursor:'pointer'}}>G O T O H O M E</Link></div>
+            product.length === 0 ? (<div className="emptywish container bg-light px-3 py-2 fw-semibold ">E M P T Y  <span className="ms-3">  W I S H L I S T </span><Link to="/" className="text-decoration-none ms-3" style={{cursor:'pointer'}}>G O T O H O M E</Link></div>):
+            (
+                <Products product={product}/> 
+            ) 
         }
-          <Products product={product}/> 
+          
           </>
             )
        }
