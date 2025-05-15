@@ -25,7 +25,7 @@ const WishlistCom = () =>{
                     wishlist?.length === 0 ? (
                         <div className="position-relative" style={{height:'500px',width:'100vw',display:'flex',justifyContent:'center'}}>
                             <Lottie animationData={emptyAnimation} loop={true} style={{height:'90%',width:'80vw'}}/>
-                            <div className="position-absolute bottom-10 start-50 bg-dark text-white" style={{position:'absolute'}}><div className="fw-semibold fs-4">Your Wishlist Empty... </div><button className="btn btn-primary w-25" >Home</button></div>
+                            <div className="position-absolute bottom-0 start-50 bg-dark text-white container" style={{}}><div className="fw-semibold fs-4">Your Wishlist Empty... </div><button className="btn btn-primary w-25" >Home</button></div>
                         </div>
                     ):
                     (
