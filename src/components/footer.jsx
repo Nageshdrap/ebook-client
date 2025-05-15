@@ -26,7 +26,7 @@ const Footer = () =>{
         setUserData({...userData , [e.target.name]:e.target.value});
     };
 
-    const handleSubmit = async (e) =>{
+    const handleFotterSubmit = async (e) =>{
         e.preventDefault();
         const token = localStorage.getItem('token');
         try {
@@ -84,7 +84,7 @@ const Footer = () =>{
                         <a href="https://www.instagram.com/bookturn_?utm_source=qr&igsh=MWxoYmE1ZTRrZ3RjNA=="><div><FaInstagram /></div></a>
                         <div><FaTwitter /></div>
                     </div>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleFotterSubmit}>
                     <div className="search-container1 container">
                         <div className="input-wrapper1">
                             <input type="text" placeholder="Email" name='email' onChange={(e)=>{
@@ -103,7 +103,7 @@ const Footer = () =>{
                                 )
                             }
                         </div>
-                        <button className="search-button1">Login</button>
+                        <button className="search-button1" type='submit'>Login</button>
                     </div>
                     </form>
                     </div>

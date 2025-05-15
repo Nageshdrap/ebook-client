@@ -137,7 +137,7 @@ export function Login({clientId}){
   }}
   useOneTap={false}
   flow="auth-code"
-  redirectUri="https://booklean.in"
+  redirectUri="https://bookturn.in"
 />
 </div>
         </div>
