@@ -15,7 +15,7 @@ export const WishlistProvider = ({children}) =>{
                  headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}
             });
             setWishlist(res.data);
-            console.log(res.data);
+            console.log("suuu",res.data);
         } catch (error) {
             console.error("failed to fetch wishlist" , error);
         }
