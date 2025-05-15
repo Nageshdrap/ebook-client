@@ -56,7 +56,7 @@ import CategoryProduct from './components/Categoryproduct';
 import Offer from './components/Offer';
 import Spinner from './components/spinner';
 
-import { ToastContainer } from 'react-toastify';
+import { Bounce, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // const CategoryProduct = lazy(()=> import('./components/Categoryproduct'));
 // const WishList = lazy(()=> import('./components/wishlist'));
