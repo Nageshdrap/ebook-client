@@ -48,6 +48,9 @@ const Footer = () =>{
                         localStorage.setItem('token',res.data.token);
                         login();
                         navigate('/');
+                        setUserLogin({
+                            email:''
+                        });
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                     }else{
                         toast.error(res.data.message);
@@ -98,7 +101,7 @@ const Footer = () =>{
                     <form onSubmit={handleFotterSubmit}>
                     <div className="search-container1 container">
                         <div className="input-wrapper1">
-                            <input type="text" placeholder="Email" name='email' onChange={(e)=>{
+                            <input type="text" placeholder="Email" name='email' value={userLogin.email} onChange={(e)=>{
                                 const value = e.target.value;
                                 setUserLogin({...userLogin,[e.target.name]:value});
                                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
