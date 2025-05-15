@@ -4,6 +4,7 @@ import ProductCard from "./ProductCard"
 import Spinner from "./spinner";
 import Lottie from "lottie-react";
 import emptyAnimation from '../animation/emptyWish.json';
+import './wishlist.css';
 
 
 const WishlistCom = () =>{

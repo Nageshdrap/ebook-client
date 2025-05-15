@@ -1,14 +1,14 @@
 
 
 
-.emptywish{
-    margin-top: 50px;
-}
+.mbWish{
+        margin-top: 20px;
+    }
 @media screen and (min-width:310px) and (max-width:767px){
     .emptywish{
         font-size: medium;
     }
     .mbWish{
-        margin-top: 80px;
+        margin-top: 50px;
     }
 }
