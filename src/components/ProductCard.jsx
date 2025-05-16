@@ -14,11 +14,12 @@ const ProductCard = ({ item , fromWishlist}) => {
   const { addWishlist, removeWishlist, isInWishlist , wishlist } = useWishlist();
   const [inWishlist , setInWishlist] = useState(false);
   const navigate = useNavigate();
-
+  const token = localStorage.getItem('token');
   
 
   const handleWishlist = async (itemId) => {
-    const originalState = inWishlist;
+    if(token){
+      const originalState = inWishlist;
     setInWishlist(!inWishlist)
     try {
       if (originalState) {
@@ -32,10 +33,17 @@ const ProductCard = ({ item , fromWishlist}) => {
     } catch (error) {
       setInWishlist(originalState);
     }
+    }else{
+      navigate('/login');
+    }
+    
     
   };
   useEffect(()=>{
-    setInWishlist(isInWishlist(item._id));
+    if(token){
+      setInWishlist(isInWishlist(item._id));
+    }
+    
   },[wishlist , item._id]);
 
   return (
