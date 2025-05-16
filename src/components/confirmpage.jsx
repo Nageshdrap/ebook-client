@@ -24,7 +24,7 @@ const Confirmpage = () => {
       ) : (
         <div className="container mbWish">
           <div className="d-flex flex-column align-items-center justify-content-center" style={{ height: '500px', width: '100%' }}>
-            <Lottie animationData={loadingAnimation} loop={false} style={{ height: '200px', width: '200px' }} />
+            <Lottie animationData={loadingAnimation} loop={true} style={{ height: '200px', width: '200px' }} />
             <div className="d-flex flex-column align-items-center gap-3 mt-3">
               <div className="fw-semibold fs-4 text-center">Your order has been placed successfully..!</div>
               <button className="btn btn-primary" onClick={() => navigate('/orders')}>Go to Order</button>
