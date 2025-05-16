@@ -15,7 +15,7 @@ const Footer = () =>{
 
     const navigate = useNavigate();
     const {login} = useUser();
-
+    const [isLoggingIn, setIsLoggingIn] = useState(false);
     const [userData , setUserData] = useState({
         bookname:'',
         deptname:'',
@@ -32,6 +32,7 @@ const Footer = () =>{
 
     const handleFotterSubmit = async (e) =>{
         e.preventDefault();
+        setIsLoggingIn(true);
         const token = localStorage.getItem('token');
         try {
             if(token){
@@ -59,6 +60,9 @@ const Footer = () =>{
             }
         } catch (error) {
             console.error('logged in failed');
+            toast.error('Login Failed');
+        }finally{
+            setIsLoggingIn(false);
         }
     }
 
@@ -119,8 +123,13 @@ const Footer = () =>{
                                 )
                             }
                         </div>
-                        <button className="search-button1" type='submit'>Login</button>
-                    </div>
+<button className="search-button1" type="submit" disabled={isLoggingIn}>
+  {isLoggingIn ? (
+    <div className="spinner-border spinner-border-sm text-light" role="status" />
+  ) : (
+    'Login'
+  )}
+</button>                    </div>
                     </form>
                     </div>
                         <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5">
