@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './order.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaAngleRight } from "react-icons/fa";
 import Lottie from 'lottie-react';
 import emptyOrderAnimation from '../animation/emptyorder.json'
@@ -16,7 +16,7 @@ const Orders = () =>{
     const [orders , setOrders] = useState([]);
     const [loading , setLoading] = useState(false);
     const token = localStorage.getItem("token");
-
+    const navigate = useNavigate();
     const fetchOrders = async () =>{
         setLoading(true);
         try {
