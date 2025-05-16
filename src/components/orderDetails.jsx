@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { FaAngleDown } from "react-icons/fa";
 import VerticalProgressBar from "./verticalprogressBar";
+import Spinner from "./spinner";
 
 
 
@@ -14,9 +15,11 @@ const OrderDetails = () =>{
     const [orderSteps , setOrderSteps] = useState([]);
     const [orderData , setOrderData] = useState(null);
     const [orderStatus , setOrderStatus] = useState(false);
+    const [loading , setLoading] = useState(false);
     
 
     const fetchOrderDetails = async (id) =>{
+        setLoading(true);
         try {
             console.log("token", token);
             const orderId = id;
@@ -43,6 +46,8 @@ const OrderDetails = () =>{
 
         } catch (error) {
             console.error("fetching failled");
+        }finally{
+            setLoading(false);
         }
        
     }
@@ -57,8 +62,18 @@ const OrderDetails = () =>{
 
     return(
     <>
-        <div className="container">
+     {
+                    loading ? (
+                         <div className="d-flex justify-content-center align-items-center " style={{ minHeight: '400px' }}>
+          <Spinner />
+        </div>
+                    ):
+                    (
+                        <>
+
+                            <div className="container">
             <div className="mt-5">
+               
                 <div className="bg-light mb-3 py-2 px-2">OrderId: <span className="ms-2">OD_
                     {
                         pro._id
@@ -116,6 +131,10 @@ const OrderDetails = () =>{
                 </div>
             </div>
         </div>
+                        </>
+                    )
+                }
+        
     </>
     )
 }
