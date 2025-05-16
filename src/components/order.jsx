@@ -3,6 +3,7 @@ import './order.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { FaAngleRight } from "react-icons/fa";
+import Spinner from './spinner';
 
 
 
