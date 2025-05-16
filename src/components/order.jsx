@@ -3,6 +3,8 @@ import './order.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { FaAngleRight } from "react-icons/fa";
+import Lottie from 'lottie-react';
+import emptyOrderAnimation from '../animation/emptyorder.json'
 import Spinner from './spinner';
 
 
@@ -49,8 +51,16 @@ const Orders = () =>{
         </div>
                 ):(
                     <>
-                        {orders.length === 0 ? (
-                <div>No order Found</div>
+                        {orders.length === 0 ? (<>
+                             <div className="d-flex flex-column align-items-center justify-content-center" style={{ height: '500px', width: '100%' }}>
+                            <Lottie animationData={emptyOrderAnimation} loop={true} style={{ height: '70%', width: '60%' }} />
+                            <div className="d-flex flex-column align-items-center gap-3 mt-3">
+                                <div className="fw-semibold fs-4">Your Orderlist is Empty...</div>
+                                <button className="btn btn-primary" onClick={()=>navigate('/')}>Home</button>
+                            </div>
+                        </div>
+                        </>
+                
             ) :
             (<>
         
