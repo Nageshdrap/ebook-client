@@ -5,10 +5,11 @@ import Spinner from "./spinner";
 import Lottie from "lottie-react";
 import emptyAnimation from '../animation/emptyWish.json';
 import './wishlist.css';
+import { useNavigate } from "react-router-dom";
 
 
 const WishlistCom = () =>{
-    
+    const navigate = useNavigate();
     const {wishlist , loading}= useWishlist();
     useEffect(()=>{
         window.scrollTo({top:0,behavior:'smooth'});
@@ -27,7 +28,7 @@ const WishlistCom = () =>{
                             <Lottie animationData={emptyAnimation} loop={true} style={{ height: '70%', width: '60%' }} />
                             <div className="d-flex flex-column align-items-center gap-3 mt-3">
                                 <div className="fw-semibold fs-4">Your Wishlist is Empty...</div>
-                                <button className="btn btn-primary">Home</button>
+                                <button className="btn btn-primary" onClick={()=>navigate('/')}>Home</button>
                             </div>
                         </div>
                     ):
