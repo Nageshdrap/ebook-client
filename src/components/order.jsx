@@ -11,14 +11,23 @@ import { FaAngleRight } from "react-icons/fa";
 const Orders = () =>{
 
     const [orders , setOrders] = useState([]);
+    const [loading , setLoading] = useState(false);
     const token = localStorage.getItem("token");
 
     const fetchOrders = async () =>{
-        const res = await axios.get('https://ebook-server-4izu.onrender.com/api/getorders',{
+        setLoading(true);
+        try {
+             const res = await axios.get('https://ebook-server-4izu.onrender.com/api/getorders',{
             headers:{Authorization:`Bearer ${token}`},
         })
         setOrders(res.data);
         console.log(res.data);
+        } catch (error) {
+            console.error('fetching error failed', error);
+        }finally{
+            setLoading(false);
+        }
+       
     }
     useEffect(() =>{
 
@@ -32,7 +41,14 @@ const Orders = () =>{
     return(
     <section className="orders">
         <div className='container'>
-            {orders.length === 0 ? (
+            {
+                loading ? (
+                     <div className="d-flex justify-content-center align-items-center mbWish" style={{ minHeight: '400px' }}>
+          <Spinner />
+        </div>
+                ):(
+                    <>
+                        {orders.length === 0 ? (
                 <div>No order Found</div>
             ) :
             (<>
@@ -76,6 +92,10 @@ const Orders = () =>{
             }  
             </>)
 }
+                    </>
+                )
+            }
+            
         </div>
     </section>)
 }

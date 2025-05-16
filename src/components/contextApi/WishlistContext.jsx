@@ -57,7 +57,11 @@ export const WishlistProvider = ({children}) =>{
 };
 
     useEffect(()=>{
-        fetchWishlist();
+        const token = localStorage.getItem('token');
+        if(token){
+            fetchWishlist();
+        }
+        
     },[]);
 
     return (
