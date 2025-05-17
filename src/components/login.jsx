@@ -33,6 +33,7 @@ export function Login({clientId}){
         const [user , setUser ] = useState(null);
         
         const handleGoogleSuccess = async (credentialResponse) =>{
+            setLoading(true);
             try {
                 const res = await axios.post("https://ebook-server-4izu.onrender.com/api/auth/google",{
                     credential:credentialResponse.credential,
@@ -44,7 +45,9 @@ export function Login({clientId}){
                     navigate('/');
                 }
             } catch (error) {
-                
+                console.error("google login error");
+            }finally{
+                setLoading(false);
             }
         };
          // Google One Tap Login
