@@ -128,18 +128,20 @@ export function Login({clientId}){
             <div>
                 <p style={{fontSize:'smaller'}}>Don't have an account? <Link to='/register' className="ms-3" style={{textDecoration:'none'}}>Sign in</Link></p>
             </div>
-            <div style={{width:'100%'}}>
-            <GoogleLogin
-                width="100%"
-                onSuccess={handleGoogleSuccess}
-  onError={() => {
-    console.log('Login Failed');
-  }}
-  useOneTap={false}
-  flow="auth-code"
-  redirectUri="https://bookturn.in"
-/>
+            <div style={{ width: '100%' }}>
+  <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <GoogleLogin
+      onSuccess={handleGoogleSuccess}
+      onError={() => {
+        console.log('Login Failed');
+      }}
+      useOneTap={false}
+      flow="auth-code"
+      redirectUri="https://bookturn.in"
+    />
+  </div>
 </div>
+
         </div>
             <ToastContainer position="bottom-center" autoClose={2000} transition={Bounce} theme="dark" hideProgressBar={true}/>
         </div>
