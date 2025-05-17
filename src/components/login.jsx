@@ -18,13 +18,14 @@ import { Bounce, toast, ToastContainer } from "react-toastify";
 import { useUser } from "./contextApi/UserContext";
 import { GoogleLogin , useGoogleOneTapLogin } from '@react-oauth/google';
 import { useWishlist } from "./contextApi/WishlistContext";
+import Spinner from "./spinner";
 
 
 export function Login({clientId}){
     const {fetchWishlist} = useWishlist();
 
     const {login}= useUser();
-
+    const [loading , setLoading] = useState(false);
     const navigate = useNavigate();
 
         const [type, setType] = useState('password');
@@ -113,8 +114,14 @@ export function Login({clientId}){
 
     return(
         <>
-        
-        <div className="container d-flex justify-content-center  align-items-center  " style={{width:'100vw',height:'100vh'}}>
+        {
+            loading? (
+                <div className="d-flex justify-content-center align-items-center mbWish" style={{ minHeight: '400px' }}>
+          <Spinner />
+        </div>
+            ):(<>
+
+                 <div className="container d-flex justify-content-center  align-items-center  " style={{width:'100vw',height:'100vh'}}>
         <div className="d-flex flex-column justify-content-center  p-4 shadow bg-body-tertiary logpage" >
             <div className="d-flex gap-3 align-items-center m-auto mb-4">
                 <div>
@@ -166,8 +173,13 @@ export function Login({clientId}){
 </div>
 
         </div>
-            <ToastContainer position="bottom-center" autoClose={2000} transition={Bounce} theme="dark" hideProgressBar={true}/>
         </div>
+            </>
+
+            )
+        }
+        
+       
     </>
     )
 }
