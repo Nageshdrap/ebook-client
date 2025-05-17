@@ -10,10 +10,12 @@ import { Bounce, toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
 import { useState } from 'react';
 import { useUser } from './contextApi/UserContext';
+import { useWishlist } from './contextApi/WishlistContext';
 
 const Footer = () =>{
 
     const navigate = useNavigate();
+    const {fetchWishlist} = useWishlist();
     const {login} = useUser();
     const [isLoggingIn, setIsLoggingIn] = useState(false);
     const [userData , setUserData] = useState({
@@ -48,6 +50,7 @@ const Footer = () =>{
                         toast.success('Logged in successful');
                         localStorage.setItem('token',res.data.token);
                         login();
+                        fetchWishlist();
                         navigate('/');
                         setUserLogin({
                             email:''
