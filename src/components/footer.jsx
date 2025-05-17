@@ -43,9 +43,9 @@ const Footer = () => {
           <div className="col-12 col-md-4 text-center text-md-start">
             <h1 className="fw-bold">BookTurn</h1>
             <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-2" style={{ fontSize: '22px' }}>
-              <Link to="https://www.facebook.com/profile.php?id=61576105416280"><FaFacebook /></Link>
+              <Link to="https://www.facebook.com/profile.php?id=61576105416280" className="text-white"><FaFacebook /></Link>
               <Link to="https://www.instagram.com/bookturn_?utm_source=qr&igsh=MWxoYmE1ZTRrZ3RjNA==" className="text-white"><FaInstagram /></Link>
-              <Link><FaTwitter /></Link>
+              <Link className="text-white"><FaTwitter /></Link>
             </div>
           </div>
 
@@ -94,7 +94,7 @@ const Footer = () => {
         <div className="row mt-4">
           <div className="col-12 col-md-4">
             <h5>Links</h5>
-            <hr className="text-light" />
+            <hr className="text-light w-75" />
             <ul className="list-unstyled d-flex flex-wrap gap-3" >
               <li><Link to="/" className="text-light text-decoration-none">Home</Link></li>
               <li><Link to="/wishlist" className="text-light text-decoration-none">Wishlist</Link></li>
