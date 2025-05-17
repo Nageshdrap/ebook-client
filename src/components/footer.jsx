@@ -43,9 +43,9 @@ const Footer = () => {
           <div className="col-12 col-md-4 text-center text-md-start">
             <h1 className="fw-bold">BookTurn</h1>
             <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-2" style={{ fontSize: '22px' }}>
-              <FaFacebook />
+              <Link to="https://www.facebook.com/profile.php?id=61576105416280"><FaFacebook /></Link>
               <Link to="https://www.instagram.com/bookturn_?utm_source=qr&igsh=MWxoYmE1ZTRrZ3RjNA==" className="text-white"><FaInstagram /></Link>
-              <FaTwitter />
+              <Link><FaTwitter /></Link>
             </div>
           </div>
 
