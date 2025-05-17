@@ -95,7 +95,7 @@ const Footer = () => {
           <div className="col-12 col-md-5">
             <h5>Links</h5>
             <hr className="text-light" />
-            <ul className="list-unstyled d-flex flex-column">
+            <ul className="list-unstyled d-flex flex-wrap gap-3" >
               <li><Link to="/" className="text-light text-decoration-none">Home</Link></li>
               <li><Link to="/wishlist" className="text-light text-decoration-none">Wishlist</Link></li>
               <li><Link to="/cart" className="text-light text-decoration-none">Cart</Link></li>
