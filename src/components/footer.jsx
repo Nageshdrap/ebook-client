@@ -50,7 +50,10 @@ const Footer = () =>{
                         toast.success('Logged in successful');
                         localStorage.setItem('token',res.data.token);
                         login();
-                        fetchWishlist();
+                        if(token){
+                            fetchWishlist();
+                        }
+                        
                         navigate('/');
                         setUserLogin({
                             email:''
