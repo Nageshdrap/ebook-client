@@ -11,13 +11,14 @@ import { useGoogleOneTapLogin, useGoogleLogin } from '@react-oauth/google';
 import { FaGoogle } from "react-icons/fa";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { useWishlist } from "./contextApi/WishlistContext";
 
 export function Login() {
   const { login } = useUser();
   const navigate = useNavigate();
   const [type, setType] = useState('password');
   const [icon, setIcon] = useState(IoEyeOffOutline);
-
+    const {fetchWishlist} = useWishlist();
   // Toggle password visibility
   function handleIcon() {
     if (type === 'password') {
@@ -39,6 +40,7 @@ export function Login() {
         if (res.data.success) {
           localStorage.setItem('token', res.data.token);
           login();
+          fetchWishlist();
           navigate('/');
         }
       } catch (err) {
@@ -61,6 +63,7 @@ export function Login() {
         if (res.data.success) {
           localStorage.setItem('token', res.data.token);
           login();
+          fetchWishlist();
           navigate('/');
         }
       } catch (error) {
@@ -84,6 +87,7 @@ export function Login() {
         toast.success(res.data.message);
         localStorage.setItem('token', res.data.token);
         login();
+        fetchWishlist();
         navigate('/');
       } else {
         toast.error(res.data.message);

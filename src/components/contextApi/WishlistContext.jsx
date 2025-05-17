@@ -60,12 +60,14 @@ export const WishlistProvider = ({children}) =>{
         const token = localStorage.getItem('token');
         if(token){
             fetchWishlist();
+        }else{
+            setWishlist([]);
         }
         
     },[]);
 
     return (
-        <WishlistContext.Provider value={{wishlist , addWishlist , removeWishlist , isInWishlist,loading}}>{children}</WishlistContext.Provider>
+        <WishlistContext.Provider value={{wishlist , addWishlist , removeWishlist , isInWishlist,loading ,fetchWishlist , clearWishlist: () => setWishlist([]),}}>{children}</WishlistContext.Provider>
     );
 };
 

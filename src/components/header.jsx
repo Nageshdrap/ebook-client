@@ -26,6 +26,7 @@ import { googleLogout } from '@react-oauth/google';
 import Spinner from './spinner';
 import Coupon from './Coupon';
 import { IoHomeOutline } from "react-icons/io5";
+import { useWishlist } from './contextApi/WishlistContext';
 
 const Cart = lazy(()=> import('./cart'));
 
@@ -37,7 +38,7 @@ const Cart = lazy(()=> import('./cart'));
 export function Header(){ 
 
     const {cartItems , setCartItems} = useCart();
-
+    const { clearWishlist} = useWishlist();
     const {userData , setUserData} = useUser();
 
     const navigate = useNavigate();
@@ -87,6 +88,7 @@ export function Header(){
             setLoading(true);
             setUserIcon(false);
             setCartItems([]);
+            clearWishlist();
             setTimeout(()=>{
                 navigate('/');
                 setLoading(false);
