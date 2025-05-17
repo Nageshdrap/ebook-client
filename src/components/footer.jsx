@@ -92,7 +92,7 @@ const Footer = () => {
 
         {/* Links */}
         <div className="row mt-4">
-          <div className="col-12 col-md-5">
+          <div className="col-12 col-md-4">
             <h5>Links</h5>
             <hr className="text-light" />
             <ul className="list-unstyled d-flex flex-wrap gap-3" >
@@ -105,7 +105,7 @@ const Footer = () => {
           </div>
 
           {/* Accordion Section */}
-          <div className="col-12 col-md-7">
+          <div className="col-12 col-md-8">
             <div className="accordion" id="accordionExample">
               {[{
                 id: 1,
