@@ -32,45 +32,45 @@ const Footer = () =>{
         setUserData({...userData , [e.target.name]:e.target.value});
     };
 
-    const handleFotterSubmit = async (e) =>{
-        e.preventDefault();
-        setIsLoggingIn(true);
-        const token = localStorage.getItem('token');
-        try {
-            if(token){
-                toast.success('you already logged in');
-            }else{
-                if(!userLogin.email){
-                    setEmailError('Email is required');
-                    return;
-                }
-                if(!emailError){
-                    const res = await axios.post('https://ebook-server-4izu.onrender.com/api/easylogin',userLogin);
-                    if(res.data.success){
-                        toast.success('Logged in successful');
-                        localStorage.setItem('token',res.data.token);
-                        login();
-                        if(token){
-                            fetchWishlist();
-                        }
+    // const handleFotterSubmit = async (e) =>{
+    //     e.preventDefault();
+    //     setIsLoggingIn(true);
+    //     const token = localStorage.getItem('token');
+    //     try {
+    //         if(token){
+    //             toast.success('you already logged in');
+    //         }else{
+    //             if(!userLogin.email){
+    //                 setEmailError('Email is required');
+    //                 return;
+    //             }
+    //             if(!emailError){
+    //                 const res = await axios.post('https://ebook-server-4izu.onrender.com/api/easylogin',userLogin);
+    //                 if(res.data.success){
+    //                     toast.success('Logged in successful');
+    //                     localStorage.setItem('token',res.data.token);
+    //                     login();
+    //                     if(token){
+    //                         fetchWishlist();
+    //                     }
                         
-                        navigate('/');
-                        setUserLogin({
-                            email:''
-                        });
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }else{
-                        toast.error(res.data.message);
-                    }
-                }
-            }
-        } catch (error) {
-            console.error('logged in failed');
-            toast.error('Login Failed');
-        }finally{
-            setIsLoggingIn(false);
-        }
-    }
+    //                     navigate('/');
+    //                     setUserLogin({
+    //                         email:''
+    //                     });
+    //                     window.scrollTo({ top: 0, behavior: 'smooth' });
+    //                 }else{
+    //                     toast.error(res.data.message);
+    //                 }
+    //             }
+    //         }
+    //     } catch (error) {
+    //         console.error('logged in failed');
+    //         toast.error('Login Failed');
+    //     }finally{
+    //         setIsLoggingIn(false);
+    //     }
+    // }
 
     const handleUserInfo = async(e) =>{
         e.preventDefault();
@@ -108,35 +108,6 @@ const Footer = () =>{
                         <a href="https://www.instagram.com/bookturn_?utm_source=qr&igsh=MWxoYmE1ZTRrZ3RjNA=="><div><FaInstagram /></div></a>
                         <div><FaTwitter /></div>
                     </div>
-                    <form onSubmit={handleFotterSubmit}>
-                    <div className="search-container1 container">
-                        <div className="input-wrapper1">
-                            <input type="text" placeholder="Email" name='email' value={userLogin.email} onChange={(e)=>{
-                                const value = e.target.value;
-                                setUserLogin({...userLogin,[e.target.name]:value});
-                                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                                if(!emailRegex.test(value)){
-                                    setEmailError('Please enter a valid email address');
-                                }else{
-                                    setEmailError('');
-                                }
-                            }
-                                
-                            } className="search-input1" />
-                            {
-                                emailError && (
-                                    <p className="mb-0 fw-semibold" style={{color:'red',fontSize:'12px',marginTop:'4px'}}>{emailError}</p>
-                                )
-                            }
-                        </div>
-<button className="search-button1" type="submit" disabled={isLoggingIn}>
-  {isLoggingIn ? (
-    <div className="spinner-border spinner-border-sm text-light" role="status" />
-  ) : (
-    'Login'
-  )}
-</button>                    </div>
-                    </form>
                     </div>
                         <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                          <form className='footerform' onSubmit={handleUserInfo}>  
