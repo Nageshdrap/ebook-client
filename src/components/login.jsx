@@ -50,7 +50,7 @@ export function Login() {
     onError: () => {
       console.error('Google Login Failed');
     },
-    flow: 'implicit',
+    flow: 'auth-code',
   });
 
   // Google One Tap Login
