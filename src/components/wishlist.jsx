@@ -35,7 +35,7 @@ const WishlistCom = () =>{
                     (
                         <div className="row">
                     {
-                        wishlist?.map((item ,index)=>(
+                        wishlist.map((item ,index)=>(
                             <ProductCard item={item} key={index} fromWishlist={true}/>
                         ))
                     }
