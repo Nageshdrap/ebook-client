@@ -44,7 +44,7 @@ const Footer = () => {
             <h1 className="fw-bold">BookTurn</h1>
             <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-2" style={{ fontSize: '22px' }}>
               <FaFacebook />
-              <a href="https://www.instagram.com/bookturn_?utm_source=qr&igsh=MWxoYmE1ZTRrZ3RjNA==" className="text-white"><FaInstagram /></a>
+              <Link to="https://www.instagram.com/bookturn_?utm_source=qr&igsh=MWxoYmE1ZTRrZ3RjNA==" className="text-white"><FaInstagram /></Link>
               <FaTwitter />
             </div>
           </div>
@@ -95,7 +95,7 @@ const Footer = () => {
           <div className="col-12 col-md-5">
             <h5>Links</h5>
             <hr className="text-light" />
-            <ul className="list-unstyled">
+            <ul className="list-unstyled d-flex flex-column">
               <li><Link to="/" className="text-light text-decoration-none">Home</Link></li>
               <li><Link to="/wishlist" className="text-light text-decoration-none">Wishlist</Link></li>
               <li><Link to="/cart" className="text-light text-decoration-none">Cart</Link></li>
