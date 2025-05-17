@@ -50,6 +50,7 @@ export function Login({clientId}){
          // Google One Tap Login
   useGoogleOneTapLogin({
     onSuccess: async (credentialResponse) => {
+        setLoading(true);
       try {
         const res = await axios.post("https://ebook-server-4izu.onrender.com/api/auth/google", {
           credential: credentialResponse.credential,
@@ -62,6 +63,8 @@ export function Login({clientId}){
         }
       } catch (error) {
         console.error('One Tap Login Failed:', error);
+      }finally{
+        setLoading(false);
       }
     },
     onError: () => {
