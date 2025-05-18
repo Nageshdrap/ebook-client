@@ -62,7 +62,7 @@ const ProductCard = ({ item , fromWishlist}) => {
           </div>
           <div
             className="offer2">
-              <div className="bg-dark text-white px-2 rounded-pill text-center offer" style={{ fontSize: 'smaller', paddingTop: '2px' }}>
+              <div className="bg-dark text-white px-2 rounded-pill text-center" style={{ fontSize: 'smaller', paddingTop: '2px' }}>
               {item.discount}% Off
               </div>
           </div>
