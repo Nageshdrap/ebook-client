@@ -47,7 +47,7 @@ const ProductCard = ({ item , fromWishlist}) => {
   },[wishlist , item._id]);
 
   return (
-    <div className="col-xs-6 col-sm-6 col-md-4 col-lg-3 product1 bg-light">
+    <div className="col-6 col-md-4 col-lg-3 product1 bg-light">
       <div className="p-1 product" style={{ height: 'max-content' }}>
         <div className="m-auto proimg" style={{ width: '200px', height: '280px' }}>
           <Link to={`/productDetails?pid=${item._id}`}>
