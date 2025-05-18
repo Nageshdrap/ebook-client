@@ -17,15 +17,14 @@
     display: block;
     bottom: 130px;
 } */
-.product p{
+.ptittle{
     width: 100%;
-    height: 3em;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    white-space: normal;
+     display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
 }
 .product1:hover{
     cursor: pointer;
