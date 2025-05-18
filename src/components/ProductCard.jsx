@@ -49,7 +49,7 @@ const ProductCard = ({ item , fromWishlist}) => {
   return (
     <div className="col-6 col-md-4 col-lg-3 product1 bg-light">
       <div className="p-1 product" style={{ height: 'max-content' }}>
-        <div className="m-auto proimg" style={{ maxWidth: '200px', height: '280px' }}>
+        <div className="proimg" style={{ maxWidth: '200px', height: '280px' }}>
           <Link to={`/productDetails?pid=${item._id}`}>
             <LazyImage src={item.images} alt={"book"} />
           </Link>
@@ -62,9 +62,14 @@ const ProductCard = ({ item , fromWishlist}) => {
           </div>
         </div>
 
-        <Link style={{ textDecoration: 'none' }} to={`/productDetails?pid=${item._id}`}>
-          <tittle className="mb-1 text-success">{item.tittle}</tittle>
-        </Link>
+        <div className="mt-2">
+  <Link to={`/productDetails?pid=${item._id}`} style={{ textDecoration: 'none' }}>
+    <div className="text-success fw-semibold" style={{ fontSize: '1rem' }}>
+      {item.tittle}
+    </div>
+  </Link>
+</div>
+
 
         <div className="d-flex gap-2 my-2">
           <div className="text-muted text-decoration-line-through">&#8377;{item.mrp}</div>
