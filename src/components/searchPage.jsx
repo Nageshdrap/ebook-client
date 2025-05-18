@@ -41,7 +41,7 @@ export function SearchPage(){
     return(
         <>
             <div className="mB">
-                <p className="text-muted">Result search for "{ query }"</p>
+                
                 {
                     loading ? (
                          <div className="d-flex justify-content-center align-items-center mbWish" style={{ minHeight: '400px' }}>
@@ -58,8 +58,10 @@ export function SearchPage(){
                                 <button className="btn btn-primary" onClick={()=>navigate('/')}>Home</button>
                             </div>
                         </div>
-                                ):(
+                                ):(<>
+                                    <p className="text-muted ">Result search for "{ query }"</p>
                                     <ProductList product={product}/>
+                                </>
                                 )
                             }
                         </>
