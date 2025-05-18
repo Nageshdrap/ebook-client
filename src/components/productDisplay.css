@@ -63,7 +63,7 @@
   margin: auto;
   width: 100%;
   max-width: 200px;
-  height: 280px;
+  max-height: 280px;
 }
 .product{
     margin-top: 10px;
