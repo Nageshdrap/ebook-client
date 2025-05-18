@@ -54,7 +54,7 @@ const ProductCard = ({ item , fromWishlist}) => {
             <LazyImage src={item.images} alt={"book"} />
           </Link>
           <div 
-            className="wishicon  fs-4 fw-semibold rounded-circle px-2 py-1"
+            className="wishicon"
             onClick={()=>handleWishlist(item._id)}
             style={{ color: inWishlist ? "red" : "black", cursor: "pointer",backgroundColor:'white' }}
           >

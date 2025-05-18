@@ -36,16 +36,24 @@
 .proimg{
     position: relative;
 }
-.wishicon{
-    position: absolute;
-    top: -5px;
-    right: -2px;
-    
-}
+
 .mP{
     margin-top: 10px;
 }
-
+.wishicon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
 
 @media screen and (min-width:310px) and (max-width:767px){
 
@@ -60,12 +68,12 @@
 .mP{
     margin-top: 60px;
 }
-.wishicon{
-    position: absolute;
-    top: -15px;
-    right: -30px;
-    
-}
+.wishicon {
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+  }
 
 
 
