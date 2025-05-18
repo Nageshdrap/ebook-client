@@ -60,6 +60,12 @@ const ProductCard = ({ item , fromWishlist}) => {
           >
             {inWishlist ? <FaHeart /> : <FaRegHeart />}
           </div>
+          <div
+            className="offer2">
+              <div className="bg-dark text-white px-2 rounded-pill text-center offer" style={{ fontSize: 'smaller', paddingTop: '2px' }}>
+              {item.discount}% Off
+              </div>
+          </div>
         </div>
 
         <div className="mt-2">
@@ -73,7 +79,7 @@ const ProductCard = ({ item , fromWishlist}) => {
 
         <div className="d-flex gap-2 my-2">
           <div className="text-muted text-decoration-line-through">&#8377;{item.mrp}</div>
-          <div className="bg-success text-white px-2 rounded-pill text-center" style={{ fontSize: 'smaller', paddingTop: '2px' }}>
+          <div className="bg-success text-white px-2 rounded-pill text-center offer" style={{ fontSize: 'smaller', paddingTop: '2px' }}>
             {item.discount}% Off
           </div>
           <div className="fw-bold">&#8377;{item.price}</div>

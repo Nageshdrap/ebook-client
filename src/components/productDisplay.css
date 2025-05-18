@@ -53,6 +53,9 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 8;
 }
+.offer2{
+    display: none;
+}
 
 @media screen and (min-width:310px) and (max-width:767px){
 
@@ -76,7 +79,14 @@
     width: 28px;
     height: 28px;
   }
-
+  .offer{
+    display: none;
+  }
+  .offer2{
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+  }
 
 
 }
