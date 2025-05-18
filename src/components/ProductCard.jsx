@@ -64,7 +64,7 @@ const ProductCard = ({ item , fromWishlist}) => {
 
         <div className="mt-2">
   <Link to={`/productDetails?pid=${item._id}`} style={{ textDecoration: 'none' }}>
-    <div className="text-success fw-semibold" style={{ fontSize: '1rem' }}>
+    <div className="text-success fw-semibold" style={{ fontSize: '1rem',wordBreak:'break-word' }}>
       {item.tittle}
     </div>
   </Link>
