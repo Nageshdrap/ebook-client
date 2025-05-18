@@ -30,7 +30,7 @@ const LazyImage = ({src , alt }) =>{
         <div ref={imgref} className="position-relative" >
             {
                 isVisible? (
-                    <img src={src} alt={alt} className="img-fluid" style={{width:'100%',height:'100%'}}/>
+                    <img src={src} alt={alt} className="img-fluid" style={{width:'100%',height:'100%',objectFit:'cover'}}/>
                 ):(
                     <div><Spinner /></div>
                 )
