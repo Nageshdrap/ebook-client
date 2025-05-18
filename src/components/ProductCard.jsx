@@ -49,7 +49,7 @@ const ProductCard = ({ item , fromWishlist}) => {
   return (
     <div className="col-6 col-md-4 col-lg-3 product1 bg-light">
       <div className="p-1 product" style={{ height: 'max-content' }}>
-        <div className="m-auto proimg" style={{ maxWidth: '200px', maxHeight: '280px' }}>
+        <div className="m-auto proimg" style={{ maxWidth: '200px', height: '280px' }}>
           <Link to={`/productDetails?pid=${item._id}`}>
             <LazyImage src={item.images} alt={"book"} />
           </Link>
