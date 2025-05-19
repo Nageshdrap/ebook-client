@@ -73,6 +73,10 @@ export function InsertProduct(){
             }
         })
     }
+    const handleDiscount = () =>{
+        const value = Math.round(mrp - (mrp * discount/100));
+        setPrice(value);
+    }
 
     useEffect(()=>{
 
@@ -111,7 +115,7 @@ export function InsertProduct(){
                     <input type="text" placeholder="" onChange={(e) => setDiscount(e.target.value)}/>
                     <label htmlFor="">price</label>
                     
-                    <input type="text" placeholder="" value={()=> Math.round(mrp - (mrp * discount/100))} onChange={(e)=> setPrice(e.target.value)}/>
+                    <input type="text" placeholder="" onClick={handleDiscount} value={price} onChange={(e)=> setPrice(e.target.value)}/>
                     <br />
                     <select name="" id="" onChange={(e)=>{ setValueCategory(e.target.value)}}>
                         <option value="">select category</option>
