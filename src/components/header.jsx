@@ -130,6 +130,7 @@ export function Header(){
                         setUserIcon(false);
                     }else{
                         setVisible(true);
+                        setUserIcon(false);
                     }
                     prevScrollY.current = curScrollPos;
                     
