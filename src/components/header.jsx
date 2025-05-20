@@ -127,6 +127,7 @@ export function Header(){
                         setVisible(true);
                     }else if( curScrollPos > prevScrollY.current){
                         setVisible(false);
+                        setUserIcon(false);
                     }else{
                         setVisible(true);
                     }
