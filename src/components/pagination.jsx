@@ -21,7 +21,7 @@ const Pagination = ({ totalPage, page, setPage }) => {
     <nav aria-label="Pagination" className="mt-3">
       <ul className="pagination justify-content-center flex-wrap">
         <li className={`page-item ${page === 1 ? 'disabled' : ''}`} style={{ cursor: 'pointer' }}>
-          <button className="page-link" onClick={() => setPage(page - 1)} disabled={page === 1}>Prev</button>
+          <a className="page-link" onClick={() => setPage(page - 1)} disabled={page === 1}>Prev</a>
         </li>
 
         {visiblePages[0] > 1 && (
@@ -33,19 +33,19 @@ const Pagination = ({ totalPage, page, setPage }) => {
 
         {visiblePages.map((p) => (
           <li key={p} className={`page-item ${page === p ? 'active' : ''}`} style={{ cursor: 'pointer' }}>
-            <button className="page-link" onClick={() => setPage(p)}>{p}</button>
+            <a className="page-link" onClick={() => setPage(p)}>{p}</a>
           </li>
         ))}
 
         {visiblePages[visiblePages.length - 1] < totalPage && (
           <>
             <li className="page-item disabled"><span className="page-link">...</span></li>
-            <li className="page-item"><button className="page-link" onClick={() => setPage(totalPage)}>{totalPage}</button></li>
+            <li className="page-item"><a className="page-link" onClick={() => setPage(totalPage)}>{totalPage}</a></li>
           </>
         )}
 
         <li className={`page-item ${page === totalPage ? 'disabled' : ''}`} style={{ cursor: 'pointer' }}>
-          <button className="page-link" onClick={() => setPage(page + 1)} disabled={page === totalPage}>Next</button>
+          <a className="page-link" onClick={() => setPage(page + 1)} disabled={page === totalPage}>Next</a>
         </li>
       </ul>
     </nav>
