@@ -4,12 +4,14 @@ import { useLocation } from "react-router-dom";
 import Products from "./products";
 import ProductCard from "./ProductCard";
 import ProductList from "./ProductList";
+import Spinner from "./spinner";
 
 
 
 const CategoryProduct = () =>{
 
     const [product,setProduct] = useState([]);
+    const [loading , setLoading] = useState(false);
     // const location = useLocation();
     // const searchparams = new URLSearchParams(location.search);
     // const productid = searchparams.get('pid');
@@ -21,7 +23,9 @@ const CategoryProduct = () =>{
 
     useEffect(()=>{
         const fetchCategorylist = async () =>{
-            console.log(category , subcategory);
+            setLoading(true);
+            try {
+                console.log(category , subcategory);
             const res = await axios.get('https://ebook-server-4izu.onrender.com/api/categorylist',{
                 params:{
                     category:category,
@@ -30,6 +34,12 @@ const CategoryProduct = () =>{
             });
             setProduct(res.data);
             console.log(res.data);
+            } catch (error) {
+                console.error("category list failed", error);
+            }finally{
+                setLoading(false);
+            }
+            
         }
         
         fetchCategorylist();
@@ -37,10 +47,15 @@ const CategoryProduct = () =>{
 
     return(
         <>
-
-           {
-             <ProductList product={product} />
-           }
+            {
+                
+            loading ? (
+                <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '400px' }}>
+          <Spinner />
+        </div>
+            ):(<ProductList product={product} />)
+            }
+          
         </>
     )
 }
