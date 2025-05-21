@@ -12,6 +12,7 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import Spinner from './spinner';
 
 
 
@@ -21,7 +22,7 @@ export function CategoryList( {page , setPage ,setRotate , rotate}){
     const navigate = useNavigate();
     const [category , setCategory] = useState([]);
     const [subCategory , setSubcategory] = useState([]);
-
+    const [loading , setLoading] = useState(true);
     const [activeMenu , setActiveMenu] = useState(null);
     const [submenuClose , setSubmenuClose] = useState('active');
 
@@ -73,10 +74,11 @@ export function CategoryList( {page , setPage ,setRotate , rotate}){
         .then(([categoryData , subCategoryData]) =>{
             setCategory(categoryData);
             setSubcategory(subCategoryData);
-            
+            setLoading(false);
         })
         .catch((error)=>{
             console.error('erroe in fetching data', error);
+            setLoading(false);
         })
         
     },[])
@@ -86,48 +88,6 @@ export function CategoryList( {page , setPage ,setRotate , rotate}){
     
     return(
        <>
-            {/* { (page) &&
-            <div className='sidemenu ' >
-                <div className=" list py-4" ref={sideMenu}>
-                   
-                    <span data-bs-dismiss="model" className='btn-close cross' style={{cursor:'pointer'}} onClick={handleClose} ></span>
-                    <div className='mt-5'>
-                    {
-                        category.map((item) =>(
-                            <div key={item._id} className=''>
-                                <div className='ms-4 p-3 fs-2' onClick={()=>{handleMenu(item._id);setSubmenuClose('active')}} style={{cursor:'pointer',borderTop:'0.5px solid #a3a0a0'}}>{item.name}</div>
-                                
-                                { activeMenu === item._id && (
-                                    <div className={`submenu ${submenuClose}`}>
-                                        <div className='d-flex justify-content-start align-items-center'>
-                                            <div className='fs-3 p-1' style={{border:'2px solid green',width:'max-content'}} onClick={handleSubmenuClose}><FaAngleDoubleLeft className='m-2'/></div>
-                                            <div className='fs-1 ms-5'>{item.name}</div>
-                                        </div>
-                                        <hr />
-                            <ul style={{listStyle:'none',padding:0,margin:0}} >
-                                {
-                                    subCategory.filter( sub => sub.category === item._id).map(sublist =>(
-                                        <li className='py-2 mt-2 ps-4 fs-4 ' style={{borderBottom:'0.5px solid #a3a0a0'}}  key={sublist._id}>{sublist.name}</li>
-                                        
-                                    ))
-                                }
-                            </ul>
-                            </div>
-                                )}
-                            </div>
-                            
-                            
-                        ))
-                    }
-                   </div>
-                   <div className='sub-footer m-3'>
-                    <div className='d-flex justify-content-between'>
-                    <div><FaFacebookSquare className='' style={{fontSize:'45px'}}/></div>
-                   <div><FaInstagram className='' style={{fontSize:'45px',cursor:'pointer'}}/></div>
-                   </div>
-                   </div>
-                  </div>
-            </div>} */}
             {
                page && 
                 <>
@@ -139,7 +99,10 @@ export function CategoryList( {page , setPage ,setRotate , rotate}){
                             <div className='fs-3 p-1' style={{border:'2px solid green',width:'max-content',cursor:'pointer'}} onClick={handleClose} ><FaAngleDoubleLeft className='m-1'/></div>
                         </div>
                             <hr />
-                        <div>
+                            {
+                                loading ? (<Spinner />) : (
+                                    <>
+                                         <div>
                         {
                         category.map((item) =>(
                             <div key={item._id} className=''>
@@ -168,6 +131,10 @@ export function CategoryList( {page , setPage ,setRotate , rotate}){
                         ))
                     }
                         </div>
+                                    </>
+                                )
+                            }
+                       
                         </div>
                         </div>
                 </>
