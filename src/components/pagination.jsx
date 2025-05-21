@@ -1,23 +1,55 @@
+import React from 'react';
 
+const Pagination = ({ totalPage, page, setPage }) => {
+  const maxVisiblePages = 5; // Show at most 5 page numbers
 
+  const getVisiblePages = () => {
+    if (totalPage <= maxVisiblePages) {
+      return [...Array(totalPage)].map((_, i) => i + 1);
+    }
 
+    const start = Math.max(1, page - Math.floor(maxVisiblePages / 2));
+    const end = Math.min(totalPage, start + maxVisiblePages - 1);
+    const actualStart = Math.max(1, end - maxVisiblePages + 1);
 
-const Pagination = ({totalPage , page , setPage}) =>{
-    return(
-        <>
-            <nav aria-label="..." className="mt-3">
-                <ul class="pagination justify-content-center">
-                    <li class={`page-item ${page === 1 ? 'disabled' : ''}`} style={{cursor:'pointer'}}><a  class="page-link" onClick={()=>setPage(page-1)} disabled={page === 1}>Prev</a></li>
-                    {
-                       [...Array(totalPage)].map((_,index)=>(
-                        <li class={`page-item ${page === index + 1 ? 'active' : ''}`} style={{cursor:'pointer'}}><a class="page-link" onClick={()=>setPage(index + 1)}>{index + 1}</a></li>
-                       )) 
-                    }
-                    <li class={`page-item ${page === totalPage ? 'disabled' : ''}`} style={{cursor:'pointer'}}><a class="page-link" onClick={()=>setPage(page + 1)} disabled={page === totalPage}>Next</a></li>
-                </ul>
-            </nav>
-        </>
-    )
-}
+    return Array.from({ length: end - actualStart + 1 }, (_, i) => actualStart + i);
+  };
+
+  const visiblePages = getVisiblePages();
+
+  return (
+    <nav aria-label="Pagination" className="mt-3">
+      <ul className="pagination justify-content-center flex-wrap">
+        <li className={`page-item ${page === 1 ? 'disabled' : ''}`} style={{ cursor: 'pointer' }}>
+          <button className="page-link" onClick={() => setPage(page - 1)} disabled={page === 1}>Prev</button>
+        </li>
+
+        {visiblePages[0] > 1 && (
+          <>
+            <li className="page-item"><button className="page-link" onClick={() => setPage(1)}>1</button></li>
+            <li className="page-item disabled"><span className="page-link">...</span></li>
+          </>
+        )}
+
+        {visiblePages.map((p) => (
+          <li key={p} className={`page-item ${page === p ? 'active' : ''}`} style={{ cursor: 'pointer' }}>
+            <button className="page-link" onClick={() => setPage(p)}>{p}</button>
+          </li>
+        ))}
+
+        {visiblePages[visiblePages.length - 1] < totalPage && (
+          <>
+            <li className="page-item disabled"><span className="page-link">...</span></li>
+            <li className="page-item"><button className="page-link" onClick={() => setPage(totalPage)}>{totalPage}</button></li>
+          </>
+        )}
+
+        <li className={`page-item ${page === totalPage ? 'disabled' : ''}`} style={{ cursor: 'pointer' }}>
+          <button className="page-link" onClick={() => setPage(page + 1)} disabled={page === totalPage}>Next</button>
+        </li>
+      </ul>
+    </nav>
+  );
+};
 
 export default Pagination;
