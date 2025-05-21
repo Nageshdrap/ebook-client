@@ -100,7 +100,9 @@ export function CategoryList( {page , setPage ,setRotate , rotate}){
                         </div>
                             <hr />
                             {
-                                loading ? (<Spinner />) : (
+                                loading ? (<div className="d-flex justify-content-center align-items-center" style={{ minHeight: '400px' }}>
+          <Spinner />
+        </div>) : (
                                     <>
                                          <div>
                         {
