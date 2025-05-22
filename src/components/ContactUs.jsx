@@ -81,7 +81,7 @@ const ContactUs = () => {
         <form onSubmit={handleSubmit}>
             <div className="input-group">
           <label>Full Name</label>
-          <input type="text" name="name" value={userData ? userData.name : form.name} onChange={handleChange} placeholder="Your name" />
+          <input type="text" name="name" value={userData ? userData.uname : form.name} onChange={handleChange} placeholder="Your name" />
           {errors.name && <span className="error m-0">{errors.name}</span>}
             </div>
 
