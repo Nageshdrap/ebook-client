@@ -71,21 +71,30 @@ const ContactUs = () => {
       <div className="contact-form">
         <h2>Send us a message</h2>
         <form onSubmit={handleSubmit}>
+            <div className="input-group">
           <label>Full Name</label>
           <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your name" />
           {errors.name && <span className="error m-0">{errors.name}</span>}
+            </div>
 
+           <div className="input-group">
           <label>Email Address</label>
           <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="you@example.com" />
           {errors.email && <span className="error m-0">{errors.email}</span>}
+            </div> 
 
+            <div className="input-group">
           <label>Subject (Optional)</label>
           <input type="text" name="subject" value={form.subject} onChange={handleChange} placeholder="How can we help you?" />
+            </div>
 
+            
+            <div className="input-group">
           <label>Message</label>
           <textarea name="message" value={form.message} onChange={handleChange} placeholder="Your message here..." />
           {errors.message && <span className="error m-0">{errors.message}</span>}
-
+            </div>
+            
           <button type="submit">Send Message</button>
           {success && <p className="success">{success}</p>}
         </form>

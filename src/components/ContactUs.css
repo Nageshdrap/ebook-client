@@ -65,7 +65,6 @@
 .contact-form textarea {
   width: 100%;
   padding: 10px 14px;
-  margin-bottom: 15px;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 15px;
@@ -75,7 +74,9 @@
   resize: vertical;
   min-height: 100px;
 }
-
+.input-group {
+  margin-bottom: 15px;
+}
 .contact-form button {
   width: 100%;
   padding: 12px;
