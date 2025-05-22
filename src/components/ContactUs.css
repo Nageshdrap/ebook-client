@@ -1,18 +1,21 @@
 .contact-wrapper {
   display: flex;
+  flex-wrap: wrap;
   max-width: 1000px;
   margin: 40px auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   overflow: hidden;
   font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* LEFT SIDE */
 .contact-info {
   background-color: #4c3fc7;
   color: white;
   padding: 30px;
   flex: 1;
+  min-width: 280px;
 }
 
 .contact-info h2 {
@@ -38,10 +41,12 @@
   font-size: 20px;
 }
 
+/* RIGHT SIDE */
 .contact-form {
   flex: 1;
   background-color: #fff;
   padding: 30px;
+  min-width: 280px;
 }
 
 .contact-form h2 {
@@ -97,4 +102,49 @@
   color: green;
   margin-top: 10px;
   font-weight: 500;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    display: flex;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info h2,
+  .contact-form h2 {
+    font-size: 20px;
+  }
+
+  .contact-form label {
+    font-size: 14px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+  }
+
+  .contact-form button {
+    font-size: 15px;
+  }
 }
