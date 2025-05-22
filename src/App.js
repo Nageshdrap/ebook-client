@@ -60,6 +60,7 @@ import Spinner from './components/spinner';
 import { Bounce, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { WishlistProvider } from './components/contextApi/WishlistContext';
+import ContactUs from './components/ContactUs';
 // const CategoryProduct = lazy(()=> import('./components/Categoryproduct'));
 // const WishList = lazy(()=> import('./components/wishlist'));
 const Cart = lazy(()=> import('./components/cart'));
@@ -111,6 +112,7 @@ function App() {
               <Route path='/edit-profile' element={< EditProfile />} />
               <Route path='/orders' element={< Orders />} />
               <Route path='/term' element={< Term />} />
+              <Route path='/contact' element={< ContactUs />} />
               {/* <Route  path='/placeorder' element={< PaymentDetails />}/> */}
               <Route path='/orderDetails' element={< OrderDetails />} />
               <Route path='/searchpage' element={<SearchPage/>} />
