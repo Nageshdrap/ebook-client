@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ContactUs.css';
 
 const ContactUs = () => {
@@ -50,6 +50,10 @@ const ContactUs = () => {
       alert('Server error. Try again later.');
     }
   };
+
+  useEffect(()=>{
+    window.scrollTo({top:0 , behavior:'smooth'});
+  },[])
 
   return (
     <div className="contact-wrapper">
