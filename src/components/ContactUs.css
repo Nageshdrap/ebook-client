@@ -108,6 +108,7 @@
 @media (max-width: 768px) {
   .contact-wrapper {
     flex-direction: column;
+    margin-top: 30px;
   }
 
   .contact-info,
