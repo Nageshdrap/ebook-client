@@ -94,7 +94,7 @@ const Footer = () => {
         <div className="row mt-4">
           <div className="col-12 col-md-4">
             <h5>Links</h5>
-            <hr className="text-light w-75" />
+            <hr className="text-light hor" />
             <ul className="list-unstyled d-flex flex-wrap gap-3" >
               <li><Link to="/" className="text-light text-decoration-none">Home</Link></li>
               <li><Link to="/wishlist" className="text-light text-decoration-none">Wishlist</Link></li>

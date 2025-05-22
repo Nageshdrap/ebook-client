@@ -57,9 +57,9 @@ const ContactUs = () => {
         <h2>Get in Touch</h2>
         <p>We'd love to hear from you. Fill out the form and our team will get back to you shortly.</p>
         <div className="contact-detail">
-          <p><strong>📞 Phone:</strong> (123) 456-7890</p>
-          <p><strong>📧 Email:</strong> contact@example.com</p>
-          <p><strong>📍 Office:</strong><br />123 Innovation Drive<br />San Francisco, CA 94107</p>
+          <p><strong>📞 Phone:</strong> (+91) 9692331146</p>
+          <p><strong>📧 Email:</strong> nageshachary2@gmail.com</p>
+          <p><strong>📍 Office:</strong><br />Old Berhampur<br />Mentu chaka, 760009</p>
         </div>
         <div className="social-icons">
           <a href="#"><i className="fab fa-twitter"></i></a>
@@ -94,7 +94,7 @@ const ContactUs = () => {
           <textarea name="message" value={form.message} onChange={handleChange} placeholder="Your message here..." />
           {errors.message && <span className="error m-0">{errors.message}</span>}
             </div>
-            
+
           <button type="submit">Send Message</button>
           {success && <p className="success">{success}</p>}
         </form>

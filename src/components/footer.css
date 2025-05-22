@@ -53,6 +53,9 @@ footer{
   .accordian-button::after{
     color: white;
   }
+  .hor{
+    width: 75%;
+  }
 
 
   @media screen and (min-width:310px) and (max-width:767px){
@@ -78,6 +81,9 @@ footer{
       align-items: center;
       gap: 15px;
       margin-top: 10px;
+    }
+    .hor{
+      width: 100%;
     }
   
   }
