@@ -63,7 +63,7 @@ import { WishlistProvider } from './components/contextApi/WishlistContext';
 import ContactUs from './components/ContactUs';
 // const CategoryProduct = lazy(()=> import('./components/Categoryproduct'));
 // const WishList = lazy(()=> import('./components/wishlist'));
-const Cart = lazy(()=> import('./components/cart'));
+import Cart from './components/cart';
 
 
 function App() {

@@ -93,7 +93,7 @@ export function ProductDetails(){
                      {  product && (
             <>
              {
-                cartOpen && (<Suspense fallback={< Loader loading={true}/>}>< Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/></Suspense>)
+                cartOpen && (< Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/>)
         
         }
             <section className="container mB">
