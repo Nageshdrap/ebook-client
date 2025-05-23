@@ -186,10 +186,10 @@ const Cart = ({cartOpen , setCartOpen}) => {
                
                <div className="cart-footer ">
                    { cartItem.length === 0 ? (null):(
-                       <div> 
-                           <div className="d-flex justify-content-between px-3 bg-light">
-                               <h3>Subtotal</h3>
-                               <h3>&#8377; {subTotal().toFixed(2)}</h3>
+                       <div className="d-flex justify-content-between"> 
+                           <div className=" px-3">
+                               <div>Subtotal</div>
+                               <div>&#8377; {subTotal().toFixed(2)}</div>
                            </div>
                            <div className="cart-place  text-center" style={{cursor:'pointer'}} onClick={PlaceOrder}>Place Order</div>
                        </div>
