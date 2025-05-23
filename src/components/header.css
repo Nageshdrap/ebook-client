@@ -134,6 +134,29 @@ header nav .dropbox .arrow.active{
     font-size: smaller;
     
 }
+.wishlist-icon-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.wishlist-icon {
+  font-size: 2rem;
+}
+
+.wishlist-badge {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+
 @media screen and (min-width:310px) and (max-width:767px){ 
     .user-info.active{
         opacity: 1;
