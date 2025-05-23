@@ -191,7 +191,7 @@ const Cart = ({cartOpen , setCartOpen}) => {
                                <div>Subtotal</div>
                                <div>&#8377; {subTotal().toFixed(2)}</div>
                            </div>
-                           <div className="cart-place  text-center" style={{cursor:'pointer'}} onClick={PlaceOrder}>Place Order</div>
+                           <div className="cart-place btn text-center" style={{cursor:'pointer'}} onClick={PlaceOrder}>Place Order</div>
                        </div>
                    )}
                </div>
