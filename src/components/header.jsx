@@ -184,7 +184,7 @@ export function Header(){
             </nav>
             <div className='d-flex justify-content-between align-items-center user-menu'>
                 { (!userData) ?
-                (<FaRegUser  className='mx-2 fw-normal fs-3' onClick={()=> setUserIcon(!userIcon)} style={{cursor:'pointer'}}/>):(<div className='bg-warning shadow text-center text-white me-2 d-flex justify-content-center align-items-center edit' onClick={()=> setUserIcon(!userIcon)} style={{width:'30px',height:'34px',borderRadius:'5px',cursor:'pointer'}}> <div className=''>{userData.uname?.substring(0,1).toUpperCase() || userData.email?.substring(0,1).toUpperCase()}</div></div>)}
+                (<FaRegUser  className='mx-2 fw-normal fs-3' onClick={()=> setUserIcon(prev => !prev)} style={{cursor:'pointer'}}/>):(<div className='bg-warning shadow text-center text-white me-2 d-flex justify-content-center align-items-center edit' onClick={()=> setUserIcon(!userIcon)} style={{width:'30px',height:'34px',borderRadius:'5px',cursor:'pointer'}}> <div className=''>{userData.uname?.substring(0,1).toUpperCase() || userData.email?.substring(0,1).toUpperCase()}</div></div>)}
               <div className="wishlist-icon-container" onClick={handleWishIcon}>
   <IoIosHeartEmpty className="wishlist-icon fs-2" />
   {wishlist.length > 0 && <span className="wishlist-badge"></span>}
