@@ -227,7 +227,7 @@ export function Header(){
             page && (<CategoryList page={page} setPage={setPage} rotate={rotate} setRotate={setRotate}/>)
         }
         {
-            cartOpen && ( <Suspense fallback={<Spinner />}>< Cart cartOpen={cartOpen} setCartOpen={setCartOpen} /> </Suspense>)
+            cartOpen && ( < Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />)
         }
        
         
