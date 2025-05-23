@@ -186,12 +186,12 @@ export function Header(){
                 { (!userData) ?
                 (<FaRegUser  className='mx-2 fs-3' onClick={()=> setUserIcon(!userIcon)} style={{cursor:'pointer'}}/>):(<div className='bg-warning shadow text-center text-white me-2 d-flex justify-content-center align-items-center edit' onClick={()=> setUserIcon(!userIcon)} style={{width:'30px',height:'34px',borderRadius:'5px',cursor:'pointer'}}> <div className=''>{userData.uname?.substring(0,1).toUpperCase() || userData.email?.substring(0,1).toUpperCase()}</div></div>)}
               <div className="wishlist-icon-container" onClick={handleWishIcon}>
-  <IoIosHeartEmpty className="wishlist-icon" />
+  <IoIosHeartEmpty className="wishlist-icon fs-2" />
   {wishlist.length > 0 && <span className="wishlist-badge"></span>}
 </div>
 
 
-                <div className='position-relative' style={{cursor:'pointer'}} onClick={() => setCartOpen(true)}><IoCartOutline className='mx-2  fw-semibold' style={{fontSize:'1.5rem'}} />{ cartItems && <span className='position-absolute   translate-middle qunti px-2  bg-danger border border-light rounded-circle text-white'>{cartItems.length}</span>}</div>
+                <div className='position-relative' style={{cursor:'pointer'}} onClick={() => setCartOpen(true)}><IoCartOutline className='mx-2 fs-2 fw-semibold'  />{ cartItems && <span className='position-absolute   translate-middle qunti px-2  bg-danger border border-light rounded-circle text-white'>{cartItems.length}</span>}</div>
                 <div className={ ` user-info bg-light p-4 text-center shadow ${ userIcon? 'active' : 'inactive'  } `} ref={menuref} style={{borderRadius:'10px'}}>
 {                       (!userInfo)?  <div className='d-flex justify-content-between align-items-start'><p className='fw-semibold'>New customer?</p><Link to="/register">sign in</Link></div>:<p  className='fw-semibold'> welcome to Bookturn</p>}
                             <ul className='w-100 list-group'>
