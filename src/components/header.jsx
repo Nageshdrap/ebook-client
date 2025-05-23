@@ -191,7 +191,7 @@ export function Header(){
 </div>
 
 
-                <div className='position-relative' style={{cursor:'pointer'}} onClick={() => setCartOpen(true)}><IoCartOutline className='mx-2  fw-semibold' style={{fontSize:'2rem'}} />{ cartItems && <span className='position-absolute   translate-middle qunti px-2  bg-danger border border-light rounded-circle text-white'>{cartItems.length}</span>}</div>
+                <div className='position-relative' style={{cursor:'pointer'}} onClick={() => setCartOpen(true)}><IoCartOutline className='mx-2  fw-semibold' style={{fontSize:'1rem'}} />{ cartItems && <span className='position-absolute   translate-middle qunti px-2  bg-danger border border-light rounded-circle text-white'>{cartItems.length}</span>}</div>
                 <div className={ ` user-info bg-light p-4 text-center shadow ${ userIcon? 'active' : 'inactive'  } `} ref={menuref} style={{borderRadius:'10px'}}>
 {                       (!userInfo)?  <div className='d-flex justify-content-between align-items-start'><p className='fw-semibold'>New customer?</p><Link to="/register">sign in</Link></div>:<p  className='fw-semibold'> welcome to Bookturn</p>}
                             <ul className='w-100 list-group'>
