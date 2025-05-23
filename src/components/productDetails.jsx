@@ -29,7 +29,7 @@ export function ProductDetails(){
     const [cartOpen , setCartOpen] = useState(false);
     const [isShrunk , setIsShrunk] = useState(false);
     const [loading , setLoading] = useState(false);
-
+    const [buttonLoading, setButtonLoading] = useState(false);
   async  function  loadProductDetails(id){
     setLoading(true);
     try {
@@ -46,6 +46,7 @@ export function ProductDetails(){
    }
     
    async function addCart(id){
+    setButtonLoading(true);
     try {
         const productId = id;
         console.log(productId);
@@ -61,6 +62,8 @@ export function ProductDetails(){
         }
     } catch (error) {
         alert('falied');
+    }finally{
+        setButtonLoading(false);
     }
        
    }
@@ -117,10 +120,30 @@ export function ProductDetails(){
                           
                         }
                     </div>
-                    <div className="w-100 mt-4 d-flex justify-content-between ">
-                    <button className={`py-3 cart bg-dark text-white shrink-button ${isShrunk ? 'shrink-animation' : ''}`} onClick={() =>{ addCart(productid)}}  style={{cursor:'pointer'}}>Buy Now</button>
-                    <button className=" py-3 wish" style={{cursor:'pointer'}} onClick={() =>{ addCart(productid)}}>AddCart</button>
-                    </div>
+                    <div className="w-100 mt-4 d-flex justify-content-between">
+  <button
+    className={`py-3 cart bg-dark text-white shrink-button ${isShrunk ? 'shrink-animation' : ''}`}
+    onClick={() => addCart(productid)}
+    style={{ cursor: 'pointer', width: '48%' }}
+    disabled={buttonLoading}
+  >
+    {buttonLoading ? (
+      <span className="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span>
+    ) : 'Buy Now'}
+  </button>
+
+  <button
+    className={`py-3 wish btn btn-outline-secondary shrink-button ${isShrunk ? 'shrink-animation' : ''}`}
+    style={{ cursor: 'pointer', width: '48%' }}
+    onClick={() => addCart(productid)}
+    disabled={buttonLoading}
+  >
+    {buttonLoading ? (
+      <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    ) : 'Add Cart'}
+  </button>
+</div>
+
                     
                 </div>
                 <div className="col-sm-12 desc px-3 col-md-6" >
