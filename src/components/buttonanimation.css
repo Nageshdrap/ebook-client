@@ -1,0 +1,9 @@
+
+
+.button-animation{
+     transition: all 0.3s ease;
+    transform: scale(1);
+}
+.button-animation:active{
+    transform: scale(0.95);
+}

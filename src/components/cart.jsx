@@ -11,6 +11,7 @@ import { PlaceOrder } from "./placeOrder";
 import { useCart } from "./contextApi/CartContext";
 import Loader from "./loader";
 import Spinner from "./spinner";
+import './buttonanimation.css';
 
 const Cart = ({cartOpen , setCartOpen}) => {
 
@@ -191,7 +192,7 @@ const Cart = ({cartOpen , setCartOpen}) => {
                                <div className="fw-semibold text-underline-dark">Subtotal</div>
                                <div>&#8377; {subTotal().toFixed(2)}</div>
                            </div>
-                           <div className="cart-place text-center" style={{cursor:'pointer',width:'60%',padding:'10px 0',textAlign:'center'}} onClick={PlaceOrder}>Place Order</div>
+                           <button className="cart-place text-center button-animation" style={{cursor:'pointer',width:'60%',padding:'10px 0',textAlign:'center'}} onClick={PlaceOrder}>Place Order</button>
                        </div>
                    )}
                </div>
