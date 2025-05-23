@@ -9,7 +9,7 @@ import './button-shrink.css';
 import { useCart } from "./contextApi/CartContext";
 import Loader from "./loader";
 import Spinner from "./spinner";
-const Cart = lazy(()=> import('./cart'));
+import Cart from "./cart";
 
 
 
@@ -133,7 +133,7 @@ export function ProductDetails(){
   </button>
 
   <button
-    className={`py-3 wish btn btn-outline-secondary shrink-button ${isShrunk ? 'shrink-animation' : ''}`}
+    className={`py-3 wish shrink-button ${isShrunk ? 'shrink-animation' : ''}`}
     style={{ cursor: 'pointer', width: '48%' }}
     onClick={() => addCart(productid)}
     disabled={buttonLoading}
