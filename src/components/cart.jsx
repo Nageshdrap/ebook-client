@@ -188,7 +188,7 @@ const Cart = ({cartOpen , setCartOpen}) => {
                    { cartItem.length === 0 ? (null):(
                        <div className="d-flex justify-content-start gap-2 text-center"> 
                            <div className=" " style={{width:'35%'}}>
-                               <div className="fw-semibold">Subtotal</div>
+                               <div className="fw-semibold text-underline-dark">Subtotal</div>
                                <div>&#8377; {subTotal().toFixed(2)}</div>
                            </div>
                            <div className="cart-place text-center" style={{cursor:'pointer',width:'60%',padding:'10px 0',textAlign:'center'}} onClick={PlaceOrder}>Place Order</div>
