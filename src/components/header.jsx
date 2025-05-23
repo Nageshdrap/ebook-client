@@ -206,7 +206,7 @@ export function Header(){
 
                 <div className='position-relative' style={{cursor:'pointer'}} onClick={() => setCartOpen(true)}><IoCartOutline className='mx-2 fs-2 fw-semibold'  />{ cartItems && <span className='position-absolute   translate-middle qunti px-2  bg-danger border border-light rounded-circle text-white'>{cartItems.length}</span>}</div>
                 <div className={ ` user-info bg-light p-4 text-center shadow ${ userIcon? 'active' : ''  } `} ref={menuref} style={{borderRadius:'10px'}}>
-{                       (!userInfo)?  <div className='d-flex justify-content-between align-items-start'><p className='fw-semibold'>New customer?</p><p className='text-primary' onClick={()=>{setUserIcon(false); navigate('/register')}}>sign in</p></div>:<p  className='fw-semibold'> welcome to Bookturn</p>}
+{                       (!userInfo)?  <div className='d-flex justify-content-between align-items-start'><p className='fw-semibold'>New customer?</p><p className='text-primary' style={{cursor:'pointer'}} onClick={()=>{setUserIcon(false); navigate('/register')}}>sign in</p></div>:<p  className='fw-semibold'> welcome to Bookturn</p>}
                             <ul className='w-100 list-group'>
                                 <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleEdit}><FaRegUser className='fs-5 '/><div className=' ms-3 fw-semibold'>Edit profile</div></li>
                                 <li className='d-flex justify-content-start align-items-center' style={{cursor:'pointer'}} onClick={handleWishlist}><FaRegHeart className='fs-5 '/><div className=' ms-3 fw-semibold'>Wishlist</div></li>
