@@ -189,8 +189,8 @@ export function Header(){
   <IoIosHeartEmpty className='fs-2' />
   {wishlist.length > 0 && (
     <span
-      className="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"
-      style={{ width: '6px', height: '6px' }}
+      className="position-absolute  translate-middle p-1 bg-danger border border-light rounded-circle"
+      style={{ width: '4px', height: '4px' ,position:'absolute',top:'10px',right:'5px'}}
     ></span>
   )}
 </div>
