@@ -62,7 +62,7 @@ header nav .dropbox .arrow.active{
     display: block;
     z-index: 11;
 }
-.user-info.inactive{
+.user-info{
     display: none;
 }
 .user-info.active ul li{
