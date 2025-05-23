@@ -186,8 +186,8 @@ const Cart = ({cartOpen , setCartOpen}) => {
                
                <div className="cart-footer ">
                    { cartItem.length === 0 ? (null):(
-                       <div className="d-flex justify-content-start gap-2 py-2 text-center"> 
-                           <div className=" px-3" style={{width:'35%'}}>
+                       <div className="d-flex justify-content-start gap-2 text-center"> 
+                           <div className=" " style={{width:'35%'}}>
                                <div className="fw-semibold">Subtotal</div>
                                <div>&#8377; {subTotal().toFixed(2)}</div>
                            </div>
