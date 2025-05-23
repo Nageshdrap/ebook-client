@@ -92,10 +92,7 @@ export function ProductDetails(){
                 <>
                      {  product && (
             <>
-             {
-                cartOpen && (< Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/>)
-        
-        }
+             
             <section className="container mB">
             <div className="row  gy-1">
                 <div className="col-sm-12  col-md-1 pt-4 text-center thumbnil-img " >
@@ -152,7 +149,10 @@ export function ProductDetails(){
             )
         }
        
-       
+       {
+                cartOpen && (< Cart cartOpen={cartOpen} setCartOpen={setCartOpen}/>)
+        
+        }
  
       </>
      
