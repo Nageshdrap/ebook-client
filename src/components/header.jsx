@@ -27,8 +27,8 @@ import Spinner from './spinner';
 import Coupon from './Coupon';
 import { IoHomeOutline } from "react-icons/io5";
 import { useWishlist } from './contextApi/WishlistContext';
+import Cart from './cart';
 
-const Cart = lazy(()=> import('./cart'));
 
 
 
