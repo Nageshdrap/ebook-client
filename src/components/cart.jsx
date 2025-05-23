@@ -149,7 +149,7 @@ const Cart = ({cartOpen , setCartOpen}) => {
                    </div>
                ):(
                    <div className="cart-content">{
-                   cartItem.map((item,index)=>{
+                   cartItem.slice().reverse().map((item,index)=>{
                        return (
                            <div key={index} >
                            <div className="containern shadow gap-4 d-flex flex- justify-content-between p-2 mt-2 color-black" >
