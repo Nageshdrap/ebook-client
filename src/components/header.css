@@ -166,9 +166,7 @@ header nav .dropbox .arrow.active{
         right: 1px;
         height: fit-content;
     } 
-    .user-info.inactive{
-        opacity: 0;
-    }
+    
 }
 
 
