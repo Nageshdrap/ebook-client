@@ -40,7 +40,7 @@ export function SearchPage(){
 
     return(
         <>
-            <div className="mB">
+            <div className="">
                 
                 {
                     loading ? (
@@ -59,8 +59,8 @@ export function SearchPage(){
                             </div>
                         </div>
                                 ):(<>
-                                    <p className="text-muted ">Result search for "{ query }"</p>
-                                    <ProductList product={product}/>
+                                    
+                                    <ProductList product={product} query={query} searchQuery={true}/>
                                 </>
                                 )
                             }

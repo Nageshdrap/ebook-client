@@ -69,7 +69,7 @@ export function Header(){
             if(searchValue.trim()){
                 navigate(`/searchpage?q=${searchValue}`);
             }
-            setSearchValue("");
+            
         }
         const handleOrders = () =>{
             setUserIcon(false);
