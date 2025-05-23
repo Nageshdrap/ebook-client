@@ -190,7 +190,7 @@ export function Header(){
   {wishlist.length > 0 && (
     <span
       className="position-absolute bg-danger p-1 border border-light rounded-circle"
-      style={{ width: '2px', height: '2px' ,position:'absolute',top:'5px'}}
+      style={{ width: '2px', height: '2px' ,position:'absolute',top:'3px',right:'3px'}}
     ></span>
   )}
 </div>
