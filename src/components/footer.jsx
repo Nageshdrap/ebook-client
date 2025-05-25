@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useUser } from './contextApi/UserContext';
 import { useWishlist } from './contextApi/WishlistContext';
+import Cart from './cart';
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ const Footer = () => {
     deptname: '',
     number: ''
   });
+  const [cartOpen , setCartOpen] = useState(false);
 
   const UserInfo = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -98,7 +100,7 @@ const Footer = () => {
             <ul className="list-unstyled d-flex flex-wrap gap-3" >
               <li><Link to="/" className="text-light text-decoration-none">Home</Link></li>
               <li><Link to="/wishlist" className="text-light text-decoration-none">Wishlist</Link></li>
-              <li><Link to="/cart" className="text-light text-decoration-none">Cart</Link></li>
+              <li onClick={setCartOpen(true)}>Cart</li>
               <li><Link to="/blog" className="text-light text-decoration-none">Blog</Link></li>
               <li><Link to="/contact" className="text-light text-decoration-none">Contact Us</Link></li>
             </ul>
@@ -146,6 +148,9 @@ const Footer = () => {
           <div style={{ fontSize: 'smaller' }} className="mt-1">&copy; 2025 All rights reserved</div>
         </div>
       </div>
+      {
+        cartOpen && (< Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />)
+      }
     </footer>
   );
 };
