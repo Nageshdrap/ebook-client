@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './ContactUs.css';
 import { useUser } from './contextApi/UserContext';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const ContactUs = () => {
 
@@ -38,17 +40,14 @@ const ContactUs = () => {
     if (!validate()) return;
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
-      if (res.ok) {
+      const res = axios.post('https://ebook-server-4izu.onrender.com/api/send-contact', form);
+      if (res.success) {
         setSuccess('Message sent successfully!');
         setForm({ name: '', email: '', subject: '', message: '' });
         setErrors({});
+        toast.success('Message send successfully');
       } else {
-        alert('Failed to send message.');
+        toast.error('Failed to send message.');
       }
     } catch (err) {
       alert('Server error. Try again later.');
