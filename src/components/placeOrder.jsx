@@ -448,7 +448,7 @@ return (
                             </div>
                         </div>
                         { cartItem.length !== 0 &&
-                        <div className="text-end py-2 mt-3 bg-white"><button className="py-3 bg-success text-white" onClick={()=>{setStep(step+1)}}>Continue</button></div>}
+                        <div className="text-end py-2 mt-3 bg-white"><button className="py-3 bg-success text-white" onClick={()=>{setStep(step+1)}} disabled={qytloader}>Continue</button></div>}
                         </div>
                     </div>
                 }
