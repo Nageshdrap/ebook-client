@@ -40,7 +40,7 @@ const ContactUs = () => {
     if (!validate()) return;
 
     try {
-      const res = axios.post('https://ebook-server-4izu.onrender.com/api/send-contact', form);
+      const res =await axios.post('https://ebook-server-4izu.onrender.com/api/send-contact', form);
       if (res.data.success) {
         setSuccess('Message sent successfully!');
         setForm({ name: '', email: '', subject: '', message: '' });
