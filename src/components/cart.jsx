@@ -154,9 +154,10 @@ const Cart = ({cartOpen , setCartOpen}) => {
                        return (
                            <div key={index} >
                            <div className="containern shadow gap-4 d-flex flex- justify-content-between p-2 mt-2 color-black" >
-                               <div style={{width:'130px', height:'100%', border:'1px solid grey'}}>
-                                   <img src={item.productId.images?.[0]} className="image-fluid" alt="book"  style={{width:'100%',height:'100%',cursor:'pointer',objectFit:'cover'}}/>
-                               </div>
+                               <div className="image-container">
+                                    <img src={item.productId.images?.[0]} alt="book" />
+                                </div>
+
                                <div className="productn">
                                    <p className="mb-1 mt-0" >{item.productId.tittle}</p>
                                    <div className="d-flex gap-2 my-2">
