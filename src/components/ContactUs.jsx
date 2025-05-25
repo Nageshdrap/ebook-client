@@ -7,8 +7,8 @@ const ContactUs = () => {
 
     const {userData} = useUser();
   const [form, setForm] = useState({
-    name: userData.uname ? userData.uname : form.name,
-    email: userData.email? userData.email : form.email,
+    name: '',
+    email: '',
     subject: '',
     message: '',
   });
@@ -56,8 +56,11 @@ const ContactUs = () => {
   };
 
   useEffect(()=>{
+    if(userData){
+      setForm(prev => ({...prev , name : userData.uname || '' , email : userData.email || ''}));
+    }
     window.scrollTo({top:0 , behavior:'smooth'});
-  },[])
+  },[userData])
 
   return (
     <div className="contact-wrapper">
