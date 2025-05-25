@@ -401,7 +401,7 @@ return (
                                                             </div>
                             <div className="text-start  card position-relative subprice shadow mt-3 p-2 fw-semibold" >
                                 {
-                                    qytloader ? (<div className="d-flex justify-content-center align-items-center " style={{ minHeight: '200px' }}>
+                                    qytloader ? (<div className="d-flex justify-content-center align-items-center " style={{ minHeight: '100px' }}>
           <Spinner />
         </div>):
                                     (
