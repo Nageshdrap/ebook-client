@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FaAngleDown } from "react-icons/fa";
 import VerticalProgressBar from "./verticalprogressBar";
 import Spinner from "./spinner";
@@ -17,7 +17,7 @@ const OrderDetails = () =>{
     const [orderStatus , setOrderStatus] = useState(false);
     const [loading , setLoading] = useState(false);
     
-
+    const navigate = useNavigate();
     const fetchOrderDetails = async (id) =>{
         setLoading(true);
         try {
@@ -102,7 +102,7 @@ const OrderDetails = () =>{
                            </div>
                            <div style={{width:'130px',height:'90px'}}>
                             {
-                                <img src={item.productId.images[0]} alt="" style={{width:'100%',height:'100%',objectFit:'contain'}}/>
+                                <img src={item.productId.images[0]} alt="" onClick={()=>{navigate(`/productDetails?pid=${item.productId._id}`)}} style={{width:'100%',height:'100%',objectFit:'contain'}}/>
                             }
                            </div>
                         </div>
