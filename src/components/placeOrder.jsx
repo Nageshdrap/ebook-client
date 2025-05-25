@@ -55,7 +55,9 @@ export function PlaceOrder(){
     }
 
     const handleCoupon =async () =>{
-        if(coupon){
+        setQytLoader(true);
+        try {
+             if(coupon){
         const res = await axios.post('https://ebook-server-4izu.onrender.com/api/coupon',{couponCode:coupon , totalCost:total});
         // setCouponData(res.data);
         // toast.error(res.data.msg);
@@ -70,6 +72,12 @@ export function PlaceOrder(){
     }else{
         toast.error('required coupon code');
     }
+        } catch (error) {
+            console.error('coupon apply failed');
+        }finally{
+            setQytLoader(false);
+        }
+       
     }
 
 
