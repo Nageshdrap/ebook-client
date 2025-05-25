@@ -41,7 +41,7 @@ const ContactUs = () => {
 
     try {
       const res = axios.post('https://ebook-server-4izu.onrender.com/api/send-contact', form);
-      if (res.success) {
+      if (res.data.success) {
         setSuccess('Message sent successfully!');
         setForm({ name: '', email: '', subject: '', message: '' });
         setErrors({});
