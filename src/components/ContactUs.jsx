@@ -7,8 +7,8 @@ const ContactUs = () => {
 
     const {userData} = useUser();
   const [form, setForm] = useState({
-    name: '',
-    email: '',
+    name: userData.uname ? userData.uname : form.name,
+    email: userData.email? userData.email : form.email,
     subject: '',
     message: '',
   });
@@ -81,13 +81,13 @@ const ContactUs = () => {
         <form onSubmit={handleSubmit}>
             <div className="input-group">
           <label>Full Name</label>
-          <input type="text" name="name" value={userData ? userData.uname : form.name} onChange={handleChange} placeholder="Your name" />
+          <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your name" />
           {errors.name && <span className="error m-0">{errors.name}</span>}
             </div>
 
            <div className="input-group">
           <label>Email Address</label>
-          <input type="email" name="email" value={userData? userData.email : form.email} onChange={handleChange} placeholder="you@example.com" />
+          <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="you@example.com" />
           {errors.email && <span className="error m-0">{errors.email}</span>}
             </div> 
 
