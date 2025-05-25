@@ -16,6 +16,7 @@ const ContactUs = () => {
   });
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState('');
+  const [loading , setLoading] = useState(false);
 
   const validate = () => {
     let tempErrors = {};
@@ -38,7 +39,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
-
+    setLoading(true);
     try {
       const res =await axios.post('https://ebook-server-4izu.onrender.com/api/send-contact', form);
       if (res.data.success) {
@@ -51,6 +52,8 @@ const ContactUs = () => {
       }
     } catch (err) {
       alert('Server error. Try again later.');
+    }finally{
+      setLoading(false);
     }
   };
 
@@ -105,7 +108,17 @@ const ContactUs = () => {
           {errors.message && <span className="error m-0">{errors.message}</span>}
             </div>
 
-          <button type="submit">Send Message</button>
+          <button type="submit" className="" disabled={loading}>
+  {loading ? (
+    <>
+      <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+      Sending...
+    </>
+  ) : (
+    'Send Message'
+  )}
+</button>
+
           {success && <p className="success">{success}</p>}
         </form>
       </div>
