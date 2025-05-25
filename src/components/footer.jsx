@@ -18,7 +18,7 @@ const Footer = () => {
     deptname: '',
     number: ''
   });
-  const [cartOpen , setCartOpen] = useState(false);
+
 
   const UserInfo = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -100,7 +100,7 @@ const Footer = () => {
             <ul className="list-unstyled d-flex flex-wrap gap-3" >
               <li><Link to="/" className="text-light text-decoration-none">Home</Link></li>
               <li><Link to="/wishlist" className="text-light text-decoration-none">Wishlist</Link></li>
-              <li onClick={setCartOpen(true)}>Cart</li>
+              
               <li><Link to="/blog" className="text-light text-decoration-none">Blog</Link></li>
               <li><Link to="/contact" className="text-light text-decoration-none">Contact Us</Link></li>
             </ul>
