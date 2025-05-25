@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import { FaArrowRight } from "react-icons/fa";
 import Coupons from "./coupons";
+import Spinner from "./spinner";
 
 
 
@@ -28,6 +29,7 @@ export function PlaceOrder(){
     const [pincodeError,setPincodeError] = useState("");
     const [pincodemsg, setPincodemsg] = useState("");
     const [shippingCharge, setShippingCharge] = useState(0);
+    const [qytloader , setQytLoader] = useState(false);
     const freeShippingPincodes = ["760001","760002","760004","760005","760008","760009","760010"];
     const extraShippingCharge = 25;
     const [orderData , setOrderData] = useState({
@@ -108,7 +110,7 @@ export function PlaceOrder(){
     
     
     const updateQuantity = async (productId , newQuantity , coupons) =>{
-        
+        setQytLoader(true);
         try {
           setCartItem(cartItem => 
             cartItem.map((item)=>
@@ -133,6 +135,8 @@ export function PlaceOrder(){
            
         } catch (error) {
             console.error("Error updaating quantity", error);
+        }finally{
+            setQytLoader(false);
         }
     }
 
@@ -395,8 +399,12 @@ return (
                                                                 <input type="text" placeholder="Apply coupon code..." value={coupon} onChange={(e)=>setCoupon(e.target.value)} onKeyDown={handleKeyDown} style={{width:'100%',border:'none',outline:'none'}}/>
                                                                 <FaArrowRight className="ms-2" onClick={handleCoupon} style={{cursor:'pointer'}}/>
                                                             </div>
-                            <div className="text-start  card  subprice shadow mt-3 p-2 fw-semibold" >
-                                <div className="row  ">
+                            <div className="text-start  card position-relative subprice shadow mt-3 p-2 fw-semibold" >
+                                {
+                                    qytloader ? (<Spinner />):
+                                    (
+                                        <>
+                                             <div className="row  ">
                                     <div className="col " style={{fontSize:'smaller'}}>Subtotal : </div>
                                     <div className="col " style={{fontSize:'smaller'}}>&#8377; {total.toFixed(2)}</div>
                                 </div>
@@ -422,8 +430,11 @@ return (
                                     <div className="col fw-semibold color-green">&#8377; {parseFloat(total.toFixed(2)) + (shippingCharge)}</div>
                                 </div>
                                 )
-}                                           
-<ToastContainer position="bottom-center" autoClose={2000} transition={Bounce} theme="dark" hideProgressBar={true} closeButton={false} style={{marginBottom:'10px'}}/>
+}                                        
+                                        </>
+                                    )
+                                }
+                                  
 
                             </div>
                         </div>
