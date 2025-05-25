@@ -148,9 +148,7 @@ const Footer = () => {
           <div style={{ fontSize: 'smaller' }} className="mt-1">&copy; 2025 All rights reserved</div>
         </div>
       </div>
-      {
-        cartOpen && (< Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />)
-      }
+      
     </footer>
   );
 };
