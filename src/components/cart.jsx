@@ -155,9 +155,9 @@ const Cart = ({cartOpen , setCartOpen}) => {
                            <div key={index} >
                            <div className="containern shadow gap-4 d-flex flex- justify-content-between p-2 mt-2 color-black" >
                 <div style={{width:'130px', height:'100%', border:'1px solid grey'}}>
-                    <Link to={`/productDetails?pid=${item.productId._id}`}>
-                                   <img src={item.productId.images?.[0]} className="image-fluid" alt="book"  style={{width:'100%',height:'100%',cursor:'pointer',objectFit:'cover'}}/>
-                                  </Link> 
+                    
+                                   <img src={item.productId.images?.[0]} className="image-fluid" alt="book" onClick={()=>{setCartOpen(false);navigate(`/productDetails?pid=${item.productId._id}`)}} style={{width:'100%',height:'100%',cursor:'pointer',objectFit:'cover'}}/>
+                                   
                                </div>
 
                                <div className="productn">
