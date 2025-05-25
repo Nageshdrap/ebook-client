@@ -409,8 +409,8 @@ return (
                                                             </div>
                             <div className="text-start  card position-relative subprice shadow mt-3 p-2 fw-semibold" >
                                 {
-                                    qytloader ? (<><span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-      Loading...</>):
+                                    qytloader ? (<div className="d-flex justify-content-center align-items-center" style={{maxHeight:'100px'}}><span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+      <span>Loading...</span></div>):
                                     (
                                         <>
                                              <div className="row  ">
